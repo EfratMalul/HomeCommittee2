@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HomeCommitteeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="building_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="address" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="num" Type="int" Nullable="false" />
+    <Property Name="city" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="entrance" Type="int" Nullable="false" />
+    <Property Name="zip_code" Type="int" Nullable="false" />
+    <Property Name="num_apartments" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="expenditure_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sum" Type="float" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="destination" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="description" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="building_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fault_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="description" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="building_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="message_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="description" Type="nchar" MaxLength="80" />
+    <Property Name="day" Type="int" />
+    <Property Name="date" Type="date" />
+    <Property Name="start_time" Type="time" Precision="7" />
+    <Property Name="end_time" Type="time" Precision="7" />
+    <Property Name="building_id" Type="int" />
+  </EntityType>
+  <EntityType Name="notification_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="messege" Type="nchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="payment_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="building_id" Type="int" Nullable="false" />
+    <Property Name="sum" Type="float" Nullable="false" />
+    <Property Name="pay_for_date" Type="date" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="permission_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="session_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="date" />
+    <Property Name="issue" Type="nchar" MaxLength="50" />
+    <Property Name="building_id" Type="int" />
+  </EntityType>
+  <EntityType Name="survey_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="issue" Type="nchar" MaxLength="50" />
+    <Property Name="option" Type="nchar" MaxLength="1000" />
+    <Property Name="is_open" Type="bit" />
+    <Property Name="open_date" Type="datetime" />
+    <Property Name="building_id" Type="int" />
+    <Property Name="num_answard" Type="int" />
+  </EntityType>
+  <EntityType Name="SurveyDetails">
+    <Key>
+      <PropertyRef Name="SurveyDetailsId" />
+    </Key>
+    <Property Name="SurveyDetailsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SurveyHedearId" Type="bigint" Nullable="false" />
+    <Property Name="QuestionSubject" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ExtrnalNum1" Type="int" />
+    <Property Name="ExtrnalNum2" Type="int" />
+    <Property Name="ExtrnalNum3" Type="int" />
+    <Property Name="ExtrnalNum4" Type="int" />
+    <Property Name="ExtrnalNum5" Type="int" />
+    <Property Name="ExtrnalChar1" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExtrnalChar2" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExtrnalChar3" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExtrnalChar4" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExtrnalChar5" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExtrnalCount1" Type="int" />
+    <Property Name="ExtrnalCount2" Type="int" />
+    <Property Name="ExtrnalCount3" Type="int" />
+    <Property Name="ExtrnalCount4" Type="int" />
+    <Property Name="ExtrnalCount5" Type="int" />
+  </EntityType>
+  <EntityType Name="SurveyHedear">
+    <Key>
+      <PropertyRef Name="SurveyHedearId" />
+    </Key>
+    <Property Name="SurveyHedearId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="CountAnswers" Type="int" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="BuildingId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tenant_payment_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenant_id" Type="int" Nullable="false" />
+    <Property Name="payment_id" Type="int" Nullable="false" />
+    <Property Name="paymentDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tenant_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="first_name" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="last_name" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="floor" Type="int" Nullable="false" />
+    <Property Name="phone" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="email" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="type" Type="bit" Nullable="false" />
+    <Property Name="house_num" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="building_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user_notification_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="notification_id" Type="int" />
+    <Property Name="is_read" Type="bit" />
+  </EntityType>
+  <EntityType Name="user_permissions_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="permission_id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_name" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vote_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="survey_id" Type="int" />
+    <Property Name="voting" Type="int" />
+  </EntityType>
+  <Association Name="FK_fault_tbl_fault_tbl">
+    <End Role="building_tbl" Type="Self.building_tbl" Multiplicity="1" />
+    <End Role="fault_tbl" Type="Self.fault_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="building_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="fault_tbl">
+        <PropertyRef Name="building_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_fault_tbl_user_tbl">
+    <End Role="user_tbl" Type="Self.user_tbl" Multiplicity="1" />
+    <End Role="fault_tbl" Type="Self.fault_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="fault_tbl">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_message_tbl_building_tbl">
+    <End Role="building_tbl" Type="Self.building_tbl" Multiplicity="0..1" />
+    <End Role="message_tbl" Type="Self.message_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="building_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="message_tbl">
+        <PropertyRef Name="building_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_payment_tbl_building_tbl">
+    <End Role="building_tbl" Type="Self.building_tbl" Multiplicity="1" />
+    <End Role="payment_tbl" Type="Self.payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="building_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="payment_tbl">
+        <PropertyRef Name="building_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_session_tbl_building_tbl">
+    <End Role="building_tbl" Type="Self.building_tbl" Multiplicity="0..1" />
+    <End Role="session_tbl" Type="Self.session_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="building_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="session_tbl">
+        <PropertyRef Name="building_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_survey_tbl_building_tbl">
+    <End Role="building_tbl" Type="Self.building_tbl" Multiplicity="0..1" />
+    <End Role="survey_tbl" Type="Self.survey_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="building_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="survey_tbl">
+        <PropertyRef Name="building_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SurveyDetails_SurveyHedear">
+    <End Role="SurveyHedear" Type="Self.SurveyHedear" Multiplicity="1" />
+    <End Role="SurveyDetails" Type="Self.SurveyDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyHedear">
+        <PropertyRef Name="SurveyHedearId" />
+      </Principal>
+      <Dependent Role="SurveyDetails">
+        <PropertyRef Name="SurveyHedearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SurveyHedear_building_tbl">
+    <End Role="building_tbl" Type="Self.building_tbl" Multiplicity="1" />
+    <End Role="SurveyHedear" Type="Self.SurveyHedear" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="building_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SurveyHedear">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tenant_payment_tbl_payment_tbl">
+    <End Role="payment_tbl" Type="Self.payment_tbl" Multiplicity="1" />
+    <End Role="tenant_payment_tbl" Type="Self.tenant_payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="payment_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tenant_payment_tbl">
+        <PropertyRef Name="payment_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tenant_payment_tbl_user_tbl">
+    <End Role="user_tbl" Type="Self.user_tbl" Multiplicity="1" />
+    <End Role="tenant_payment_tbl" Type="Self.tenant_payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tenant_payment_tbl">
+        <PropertyRef Name="tenant_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tenant_tbl_building_tbl">
+    <End Role="building_tbl" Type="Self.building_tbl" Multiplicity="1" />
+    <End Role="tenant_tbl" Type="Self.tenant_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="building_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tenant_tbl">
+        <PropertyRef Name="building_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tenant_tbl_user_tbl">
+    <End Role="user_tbl" Type="Self.user_tbl" Multiplicity="1" />
+    <End Role="tenant_tbl" Type="Self.tenant_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tenant_tbl">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_notification_tbl_notification_tbl">
+    <End Role="notification_tbl" Type="Self.notification_tbl" Multiplicity="0..1" />
+    <End Role="user_notification_tbl" Type="Self.user_notification_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="notification_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user_notification_tbl">
+        <PropertyRef Name="notification_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_notification_tbl_user_tbl">
+    <End Role="user_tbl" Type="Self.user_tbl" Multiplicity="0..1" />
+    <End Role="user_notification_tbl" Type="Self.user_notification_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user_notification_tbl">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_permissions_tbl_permission_tbl">
+    <End Role="permission_tbl" Type="Self.permission_tbl" Multiplicity="1" />
+    <End Role="user_permissions_tbl" Type="Self.user_permissions_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="permission_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user_permissions_tbl">
+        <PropertyRef Name="permission_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_permissions_tbl_user_tbl">
+    <End Role="user_tbl" Type="Self.user_tbl" Multiplicity="1" />
+    <End Role="user_permissions_tbl" Type="Self.user_permissions_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user_permissions_tbl">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vote_tbl_survey_tbl">
+    <End Role="survey_tbl" Type="Self.survey_tbl" Multiplicity="0..1" />
+    <End Role="vote_tbl" Type="Self.vote_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="survey_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vote_tbl">
+        <PropertyRef Name="survey_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vote_tbl_user_tbl">
+    <End Role="user_tbl" Type="Self.user_tbl" Multiplicity="0..1" />
+    <End Role="vote_tbl" Type="Self.vote_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vote_tbl">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HomeCommitteeDBModelStoreContainer">
+    <EntitySet Name="building_tbl" EntityType="Self.building_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="expenditure_tbl" EntityType="Self.expenditure_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fault_tbl" EntityType="Self.fault_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="message_tbl" EntityType="Self.message_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="notification_tbl" EntityType="Self.notification_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="payment_tbl" EntityType="Self.payment_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="permission_tbl" EntityType="Self.permission_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="session_tbl" EntityType="Self.session_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="survey_tbl" EntityType="Self.survey_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SurveyDetails" EntityType="Self.SurveyDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SurveyHedear" EntityType="Self.SurveyHedear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tenant_payment_tbl" EntityType="Self.tenant_payment_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tenant_tbl" EntityType="Self.tenant_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_notification_tbl" EntityType="Self.user_notification_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_permissions_tbl" EntityType="Self.user_permissions_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_tbl" EntityType="Self.user_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vote_tbl" EntityType="Self.vote_tbl" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_fault_tbl_fault_tbl" Association="Self.FK_fault_tbl_fault_tbl">
+      <End Role="building_tbl" EntitySet="building_tbl" />
+      <End Role="fault_tbl" EntitySet="fault_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_fault_tbl_user_tbl" Association="Self.FK_fault_tbl_user_tbl">
+      <End Role="user_tbl" EntitySet="user_tbl" />
+      <End Role="fault_tbl" EntitySet="fault_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_message_tbl_building_tbl" Association="Self.FK_message_tbl_building_tbl">
+      <End Role="building_tbl" EntitySet="building_tbl" />
+      <End Role="message_tbl" EntitySet="message_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_payment_tbl_building_tbl" Association="Self.FK_payment_tbl_building_tbl">
+      <End Role="building_tbl" EntitySet="building_tbl" />
+      <End Role="payment_tbl" EntitySet="payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_session_tbl_building_tbl" Association="Self.FK_session_tbl_building_tbl">
+      <End Role="building_tbl" EntitySet="building_tbl" />
+      <End Role="session_tbl" EntitySet="session_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_survey_tbl_building_tbl" Association="Self.FK_survey_tbl_building_tbl">
+      <End Role="building_tbl" EntitySet="building_tbl" />
+      <End Role="survey_tbl" EntitySet="survey_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SurveyDetails_SurveyHedear" Association="Self.FK_SurveyDetails_SurveyHedear">
+      <End Role="SurveyHedear" EntitySet="SurveyHedear" />
+      <End Role="SurveyDetails" EntitySet="SurveyDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SurveyHedear_building_tbl" Association="Self.FK_SurveyHedear_building_tbl">
+      <End Role="building_tbl" EntitySet="building_tbl" />
+      <End Role="SurveyHedear" EntitySet="SurveyHedear" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tenant_payment_tbl_payment_tbl" Association="Self.FK_tenant_payment_tbl_payment_tbl">
+      <End Role="payment_tbl" EntitySet="payment_tbl" />
+      <End Role="tenant_payment_tbl" EntitySet="tenant_payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tenant_payment_tbl_user_tbl" Association="Self.FK_tenant_payment_tbl_user_tbl">
+      <End Role="user_tbl" EntitySet="user_tbl" />
+      <End Role="tenant_payment_tbl" EntitySet="tenant_payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tenant_tbl_building_tbl" Association="Self.FK_tenant_tbl_building_tbl">
+      <End Role="building_tbl" EntitySet="building_tbl" />
+      <End Role="tenant_tbl" EntitySet="tenant_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tenant_tbl_user_tbl" Association="Self.FK_tenant_tbl_user_tbl">
+      <End Role="user_tbl" EntitySet="user_tbl" />
+      <End Role="tenant_tbl" EntitySet="tenant_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_notification_tbl_notification_tbl" Association="Self.FK_user_notification_tbl_notification_tbl">
+      <End Role="notification_tbl" EntitySet="notification_tbl" />
+      <End Role="user_notification_tbl" EntitySet="user_notification_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_notification_tbl_user_tbl" Association="Self.FK_user_notification_tbl_user_tbl">
+      <End Role="user_tbl" EntitySet="user_tbl" />
+      <End Role="user_notification_tbl" EntitySet="user_notification_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_permissions_tbl_permission_tbl" Association="Self.FK_user_permissions_tbl_permission_tbl">
+      <End Role="permission_tbl" EntitySet="permission_tbl" />
+      <End Role="user_permissions_tbl" EntitySet="user_permissions_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_permissions_tbl_user_tbl" Association="Self.FK_user_permissions_tbl_user_tbl">
+      <End Role="user_tbl" EntitySet="user_tbl" />
+      <End Role="user_permissions_tbl" EntitySet="user_permissions_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vote_tbl_survey_tbl" Association="Self.FK_vote_tbl_survey_tbl">
+      <End Role="survey_tbl" EntitySet="survey_tbl" />
+      <End Role="vote_tbl" EntitySet="vote_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vote_tbl_user_tbl" Association="Self.FK_vote_tbl_user_tbl">
+      <End Role="user_tbl" EntitySet="user_tbl" />
+      <End Role="vote_tbl" EntitySet="vote_tbl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

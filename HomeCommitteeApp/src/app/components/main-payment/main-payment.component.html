@@ -1,0 +1,30 @@
+
+
+  
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+  <li [ngbNavItem]="1">
+    <a ngbNavLink  class=routerHeader routerLink="payment" routerLinkActive="active">צפיה בתשלומים </a>
+    <ng-template ngbNavContent>
+   
+      <router-outlet></router-outlet>
+    </ng-template>
+  </li>
+
+  <li [ngbNavItem]="1" *ngIf="isCommittee==true">
+    <a ngbNavLink  class=routerHeader routerLink="tenantPayment" routerLinkActive="active">צפיה בתשלומי דיירים </a>
+    <ng-template ngbNavContent>
+   
+      <router-outlet></router-outlet>
+    </ng-template>
+  </li>
+
+  <li [ngbNavItem]="2">
+    <a ngbNavLink class=routerHeader routerLink="payCommittee" routerLinkActive="active">תשלום לוועד</a>
+    <ng-template ngbNavContent>
+      <router-outlet></router-outlet>
+    </ng-template>
+  </li>
+
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

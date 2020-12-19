@@ -1,0 +1,36 @@
+<!-- <div class='wrap-side-nav'>
+
+  
+<a  *ngFor="let m of menu" [routerLink]="m.link">
+    <mat-icon>{{m.icon}}</mat-icon>
+    <span>{{m.name}}</span>
+ 
+</a>
+
+</div> -->
+
+
+<div [class.open-menu]="open" [class.close-nav]="!show" class="wrap-side-nav">
+    <button [matTooltip]="open ? 'סגור' : 'הרחב'"
+            matTooltipClass="blue-tooltip tooltip"
+            mat-icon-button
+            (click)="open_menu($event)">
+        <mat-icon>add</mat-icon>
+    </button>
+    <div class="nav-content">
+        <div class="side-nav-items">
+            <a [class.close-menu-item]="!open" class="side-nav-item" *ngFor="let m of menu"
+            [routerLink]="m.link">
+                <mat-icon>{{m.icon}}</mat-icon>
+                <p>{{m.name}}</p>
+            </a>
+        </div>
+    </div>
+    <div [class.open-nav]="!show">
+        <button [matTooltip]="show ? 'הסתר תפריט' : 'הצג תפריט'"
+            matTooltipClass="blue-tooltip tooltip" mat-icon-button
+            (click)="close_nav($event)" [class.open-nav-button]="!show">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </div>
+</div>

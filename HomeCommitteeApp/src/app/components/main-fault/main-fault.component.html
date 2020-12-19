@@ -1,0 +1,19 @@
+
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink  class=routerHeader routerLink="fault" routerLinkActive="active">צפיה בתקלות </a>
+      <ng-template ngbNavContent>
+     
+        <router-outlet></router-outlet>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink class=routerHeader routerLink="addFault" routerLinkActive="active">הוספת תקלה</a>
+      <ng-template ngbNavContent>
+        <router-outlet></router-outlet>
+      </ng-template>
+    </li>
+  
+  </ul>
+  
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>

@@ -1,0 +1,31 @@
+<div class="header">
+  <button mat-raised-button color="warn" id="login" (click)="openDialog()">התחבר</button>
+  <img class="logo" src="/assets/logo.png" alt="" class="logo">
+</div>
+<div class="under_header"> </div>
+
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+  <li [ngbNavItem]="1">
+    <a ngbNavLink class=routerHeader routerLink="logIn" routerLinkActive="active" class="nav">כניסה </a>
+    <ng-template ngbNavContent>
+      <router-outlet></router-outlet>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink class=routerHeader routerLink="enrollment" routerLinkActive="active">הרשמה</a>
+    <ng-template ngbNavContent>
+      <router-outlet></router-outlet>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="3">
+    <a ngbNavLink class=routerHeader routerLink="informition" routerLinkActive="active">אודותינו</a>
+    <ng-template ngbNavContent>
+      <router-outlet></router-outlet>
+    </ng-template>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+
+‏

@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HomeCommitteeDBModelStoreContainer" CdmEntityContainer="HomeCommitteeDBEntities">
+    <EntitySetMapping Name="building_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.building_tbl">
+        <MappingFragment StoreEntitySet="building_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="num" ColumnName="num" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="entrance" ColumnName="entrance" />
+          <ScalarProperty Name="zip_code" ColumnName="zip_code" />
+          <ScalarProperty Name="num_apartments" ColumnName="num_apartments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expenditure_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.expenditure_tbl">
+        <MappingFragment StoreEntitySet="expenditure_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sum" ColumnName="sum" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="building_id" ColumnName="building_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fault_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.fault_tbl">
+        <MappingFragment StoreEntitySet="fault_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="building_id" ColumnName="building_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="message_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.message_tbl">
+        <MappingFragment StoreEntitySet="message_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="building_id" ColumnName="building_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notification_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.notification_tbl">
+        <MappingFragment StoreEntitySet="notification_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="messege" ColumnName="messege" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payment_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.payment_tbl">
+        <MappingFragment StoreEntitySet="payment_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="building_id" ColumnName="building_id" />
+          <ScalarProperty Name="sum" ColumnName="sum" />
+          <ScalarProperty Name="pay_for_date" ColumnName="pay_for_date" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permission_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.permission_tbl">
+        <MappingFragment StoreEntitySet="permission_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="session_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.session_tbl">
+        <MappingFragment StoreEntitySet="session_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="issue" ColumnName="issue" />
+          <ScalarProperty Name="building_id" ColumnName="building_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="survey_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.survey_tbl">
+        <MappingFragment StoreEntitySet="survey_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="issue" ColumnName="issue" />
+          <ScalarProperty Name="option" ColumnName="option" />
+          <ScalarProperty Name="is_open" ColumnName="is_open" />
+          <ScalarProperty Name="open_date" ColumnName="open_date" />
+          <ScalarProperty Name="building_id" ColumnName="building_id" />
+          <ScalarProperty Name="num_answard" ColumnName="num_answard" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SurveyDetails">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.SurveyDetails">
+        <MappingFragment StoreEntitySet="SurveyDetails">
+          <ScalarProperty Name="SurveyDetailsId" ColumnName="SurveyDetailsId" />
+          <ScalarProperty Name="SurveyHedearId" ColumnName="SurveyHedearId" />
+          <ScalarProperty Name="QuestionSubject" ColumnName="QuestionSubject" />
+          <ScalarProperty Name="ExtrnalNum1" ColumnName="ExtrnalNum1" />
+          <ScalarProperty Name="ExtrnalNum2" ColumnName="ExtrnalNum2" />
+          <ScalarProperty Name="ExtrnalNum3" ColumnName="ExtrnalNum3" />
+          <ScalarProperty Name="ExtrnalNum4" ColumnName="ExtrnalNum4" />
+          <ScalarProperty Name="ExtrnalNum5" ColumnName="ExtrnalNum5" />
+          <ScalarProperty Name="ExtrnalChar1" ColumnName="ExtrnalChar1" />
+          <ScalarProperty Name="ExtrnalChar2" ColumnName="ExtrnalChar2" />
+          <ScalarProperty Name="ExtrnalChar3" ColumnName="ExtrnalChar3" />
+          <ScalarProperty Name="ExtrnalChar4" ColumnName="ExtrnalChar4" />
+          <ScalarProperty Name="ExtrnalChar5" ColumnName="ExtrnalChar5" />
+          <ScalarProperty Name="ExtrnalCount1" ColumnName="ExtrnalCount1" />
+          <ScalarProperty Name="ExtrnalCount2" ColumnName="ExtrnalCount2" />
+          <ScalarProperty Name="ExtrnalCount3" ColumnName="ExtrnalCount3" />
+          <ScalarProperty Name="ExtrnalCount4" ColumnName="ExtrnalCount4" />
+          <ScalarProperty Name="ExtrnalCount5" ColumnName="ExtrnalCount5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SurveyHedear">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.SurveyHedear">
+        <MappingFragment StoreEntitySet="SurveyHedear">
+          <ScalarProperty Name="SurveyHedearId" ColumnName="SurveyHedearId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CountAnswers" ColumnName="CountAnswers" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="BuildingId" ColumnName="BuildingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tenant_payment_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.tenant_payment_tbl">
+        <MappingFragment StoreEntitySet="tenant_payment_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenant_id" ColumnName="tenant_id" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tenant_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.tenant_tbl">
+        <MappingFragment StoreEntitySet="tenant_tbl">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="floor" ColumnName="floor" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="house_num" ColumnName="house_num" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="building_id" ColumnName="building_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_notification_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.user_notification_tbl">
+        <MappingFragment StoreEntitySet="user_notification_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="notification_id" ColumnName="notification_id" />
+          <ScalarProperty Name="is_read" ColumnName="is_read" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_permissions_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.user_permissions_tbl">
+        <MappingFragment StoreEntitySet="user_permissions_tbl">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="permission_id" ColumnName="permission_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.user_tbl">
+        <MappingFragment StoreEntitySet="user_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vote_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.vote_tbl">
+        <MappingFragment StoreEntitySet="vote_tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="survey_id" ColumnName="survey_id" />
+          <ScalarProperty Name="voting" ColumnName="voting" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

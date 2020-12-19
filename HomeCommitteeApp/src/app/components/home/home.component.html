@@ -1,0 +1,129 @@
+<div class="header"> 
+
+  <button mat-raised-button color="warn" id="exit" (click)="Exit()">התנתק</button>
+  <img class="logo" src="/assets/logo.png" alt="">
+  
+  <p id="user-name">שלום,{{tenantName}}</p>
+  <button mat-button [matMenuTriggerFor]="menu"> 
+     <div  id="icon-notifications" >
+    <mat-icon  matBadge="10" matBadgeColor="warn">notifications</mat-icon>
+       <!-- <span class="cdk-visually-hidden">
+        Example with a home icon with overlaid badge showing the number 15
+      </span> -->
+    </div>
+  </button>
+
+<mat-menu #menu="matMenu">
+    <app-notification></app-notification>
+
+</mat-menu>
+  </div>
+ 
+  <div class="under_header"> </div>
+ 
+   <app-user-area></app-user-area>
+   <app-notification></app-notification>
+
+   <!-- <div class="row">
+    <div class="col-3">
+    
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a  routerLink="mainExpenditure" class="nav-link" data-toggle="pill" role="tab" aria-controls="_ngcontent-ioh-c52" aria-selected="true">הוצאות</a>
+        <a  routerLink="mainFault" class="nav-link"    data-toggle="pill"  role="tab" aria-controls="v-pills-profile" aria-selected="true" >תקלות</a>
+        <a routerLink="mainPayment" class="nav-link"  data-toggle="pill"  role="tab" aria-controls="v-pills-messages" aria-selected="false">תשלומים</a>
+        <a routerLink="manageTenant" class="nav-link"  [ngClass]= "permission=='1' ? 'committee' : 'tenant' "  data-toggle="pill" role="tab" aria-controls="v-pills-settings" aria-selected="false">ניהול דיירים</a>
+        <a  routerLink="dashboard" class="nav-link" data-toggle="pill"  role="tab" aria-controls="v-pills-messages" aria-selected="false">דשבורד</a>
+        <a  routerLink="chatTenant" class="nav-link"  data-toggle="pill"  role="tab" aria-controls="v-pills-profile" aria-selected="false">שיח דיירים</a>
+        <a routerLink="messageBoard" class="nav-link"  data-toggle="pill"  role="tab" aria-controls="v-pills-messages" aria-selected="false">לוח הודעות</a>
+        <a routerLink="survey" class="nav-link"  data-toggle="pill"  role="tab" aria-controls="v-pills-profile" aria-selected="false">סקרים </a>
+        <a routerLink="reports" class="nav-link"  data-toggle="pill"  role="tab" aria-controls="v-pills-messages" aria-selected="false">דוחות </a>
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+      </div>
+    </div>
+    <div id="_ngcontent-ioh-c52" class="col-9">
+ 
+      <router-outlet></router-outlet>
+    </div>
+
+    [ngClass]= "permission=='1' ? 'committee' : 'tenant' "
+</div> -->
+
+
+
+ <!-- <p>
+  You should use <code>class="nav-pills"</code> if you need pills and the <code>[orientation]</code> input
+  to change nav orientation
+</p> -->
+<!-- 
+ <div class="d-flex">
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
+    <li ngbNavItem="top">
+      <a ngbNavLink class=routerHeader routerLink="expenditure" routerLinkActive="active">הוצאות</a>
+      <ng-template ngbNavContent>
+       
+      </ng-template>
+    </li>
+    <li ngbNavItem="middle">
+      <a ngbNavLink class=routerHeader routerLink="fault" routerLinkActive="active">תקלות</a>
+      <ng-template ngbNavContent>
+       
+      </ng-template>
+    </li>
+    <li ngbNavItem="bottom">
+      <a ngbNavLink class=routerHeader routerLink="payment" routerLinkActive="active">תשלומים</a>
+      <ng-template ngbNavContent>
+   
+      </ng-template>
+    </li>
+
+    <li ngbNavItem="bottom">
+  
+      <a class=routerHeader routerLink="manageTenant" routerLinkActive="active">ניהול דיירים</a>
+      <ng-template ngbNavContent>
+   
+      </ng-template>
+    </li>
+    <li ngbNavItem="bottom">
+    
+      <a class=routerHeader routerLink="http://www.hamoked.co.il/" routerLinkActive="active"> קישור לאתר חיצוני</a>
+      <ng-template ngbNavContent>
+   
+      </ng-template>
+    </li>
+
+    <li ngbNavItem="bottom">
+
+      <a class=routerHeader routerLink="dashboard" routerLinkActive="active">דשבורד </a>
+      <ng-template ngbNavContent>
+   
+      </ng-template>
+    </li>
+    <li ngbNavItem="bottom">
+   
+      <a class=routerHeader routerLink="chatTenant" routerLinkActive="active">שיח דיירים</a>
+      <ng-template ngbNavContent>
+   
+      </ng-template>
+    </li>
+    <li ngbNavItem="bottom">
+      <a class=routerHeader routerLink="messageBoard" routerLinkActive="active">לוח הודעות</a>
+      <ng-template ngbNavContent>
+   
+      </ng-template>
+    </li>
+    <li ngbNavItem="bottom">
+      <a class=routerHeader routerLink="survey" routerLinkActive="active">סקרים </a>
+      <ng-template ngbNavContent> </ng-template>
+    </li>
+    <li ngbNavItem="bottom">
+      <a class=routerHeader routerLink="reports" routerLinkActive="active">דוחות</a>
+      <ng-template ngbNavContent>
+      </ng-template>
+    </li>
+
+
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="ml-4"></div>
+</div>  -->
+

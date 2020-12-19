@@ -1,0 +1,23 @@
+
+
+
+<mat-drawer-container class="example-container" autosize>
+  
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <a class='wrap-side-nav' *ngFor="let m of menu" [routerLink]="m.link">
+            <span>
+                <mat-icon>{{m.icon}}</mat-icon> {{m.name}}
+            </span>
+        </a>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <button [class.open]="isOpen" type="button" mat-icon-button (click)="drawer.toggle();isOpen=!isOpen;" matTooltip="תפריט">
+            <mat-icon >chevron_left</mat-icon>
+        </button>
+        <div id="container">
+        <router-outlet></router-outlet>
+    </div>
+    </div>
+
+</mat-drawer-container>

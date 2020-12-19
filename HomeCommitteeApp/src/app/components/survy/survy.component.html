@@ -1,0 +1,29 @@
+<button mat-flat-button color="warn" (click)="openDialog()">
+    <mat-icon>add</mat-icon> יצירת סקר חדש
+</button>
+<!-- <app-create-survey></app-create-survey> -->
+<div class="warp_table">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="line-th" scope="col">שם הסקר</th>
+                <th class="line-th" scope="col">אנשים שענו </th>
+                <th class="line-th" scope="col">תוצאת הסקר</th>
+                <th class="line-th" scope="col">כניסה לסקר</th>
+                <th class="line-th" scope="col">תאריך</th>
+                <th class="line-th" scope="col">מחק</th>
+                <th class="line-th" scope="col">יצירת הזמנה</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of survey index as i">
+                 <td class="line-td">{{ s.issue}} </td>
+                <td class="line-td">{{ s.num_answard }}</td>
+                <td class="line-td">{{ s.option}}</td>
+                <td class="line-td">{{ s.open_date}}</td>
+                <td class="line-td"><button>מחק</button></td>
+                <td class="line-td"><button>יצירת הזמנה</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,26 @@
+
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink  class=routerHeader routerLink="expenditure" routerLinkActive="active">צפיה הוצאות </a>
+      <ng-template ngbNavContent>
+      
+            <!-- <app-expenditure></app-expenditure> -->
+        <router-outlet></router-outlet>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink class=routerHeader routerLink="addExpenditure" routerLinkActive="active">הוספת הוצאה</a>
+      <ng-template ngbNavContent>
+        <router-outlet></router-outlet>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="3">
+      <a ngbNavLink class=routerHeader routerLink="payExpenditure" routerLinkActive="active">תשלום הוצאה</a>
+      <ng-template ngbNavContent>
+        <router-outlet></router-outlet>
+      </ng-template>
+    </li>
+  </ul>
+  
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  

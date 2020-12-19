@@ -1,0 +1,31 @@
+
+
+<table class="table table-striped">
+ <tbody>
+<div>
+            <thead>
+              <tr>
+                <th class="line-th" scope="col">מספר תשלום</th>
+                <th class="line-th" scope="col">תיאור</th>
+                <th class="line-th" scope="col">מזהה דייר</th>
+                <th class="line-th" scope="col">סכום לתשלום</th>
+                <th class="line-th" scope="col">תאריך תשלום</th>
+                <th class="line-th" scope="col">תאריך עבור חודש</th>
+              </tr>
+              </thead>
+
+            <tr  *ngFor="let p of payments"  >
+             <td class="line-td">{{p.paymentId }}</td>
+             <td class="line-td" scope="row">{{p.description}}</td>
+            
+              <td class="line-td">{{p.tenantId }}</td>
+              <td class="line-td">{{ p.sum }}</td>
+              <td class="line-td">{{ p.paymentDate }}</td>
+              <td  class="line-td">{{ p.payForDate }}</td>
+           
+
+            </tr>
+
+              </div> 
+            </tbody>
+        </table> 

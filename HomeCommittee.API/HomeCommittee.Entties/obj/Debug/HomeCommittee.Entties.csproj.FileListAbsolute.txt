@@ -1,0 +1,26 @@
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.pdb
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csprojResolveAssemblyReference.cache
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.pdb
+C:\Users\User\Documents\GitHub\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.dll
+C:\Users\User\Documents\GitHub\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.pdb
+C:\Users\User\Documents\GitHub\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.dll
+C:\Users\User\Documents\GitHub\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.pdb
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.pdb
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.pdb
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csprojResolveAssemblyReference.cache
+H:\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.dll
+H:\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.pdb
+H:\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csprojAssemblyReference.cache
+H:\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csproj.CoreCompileInputs.cache
+H:\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.dll
+H:\HomeCommittee\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.pdb
+I:\projrct\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.dll
+I:\projrct\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.pdb
+I:\projrct\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.dll
+I:\projrct\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.pdb

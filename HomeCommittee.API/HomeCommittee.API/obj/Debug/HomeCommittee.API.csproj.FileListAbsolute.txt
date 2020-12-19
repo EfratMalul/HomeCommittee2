@@ -1,0 +1,163 @@
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\ApplicationInsights.config
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\csc.exe
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\csc.exe.config
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\csc.rsp
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\csi.exe
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\csi.rsp
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.CodeAnalysis.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.CSharp.Core.targets
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\System.AppContext.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\System.Collections.Immutable.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\System.Diagnostics.StackTrace.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\System.IO.FileSystem.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\System.Reflection.Metadata.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\vbc.exe
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\vbc.exe.config
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\vbc.rsp
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\VBCSCompiler.exe
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\roslyn\VBCSCompiler.exe.config
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.API.dll.config
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.API.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.API.pdb
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Antlr3.Runtime.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\EntityFramework.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\EntityFramework.SqlServer.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.BL.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.DAL.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.Entties.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.Agent.Intercept.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.DependencyCollector.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.PerfCounterCollector.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.ServerTelemetryChannel.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.Web.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.WindowsServer.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.ApplicationInsights.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.Web.Infrastructure.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Newtonsoft.Json.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Net.Http.Formatting.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Helpers.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Http.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Http.WebHost.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Mvc.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Optimization.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Razor.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.WebPages.Deployment.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.WebPages.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.WebPages.Razor.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\WebGrease.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.BL.pdb
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.DAL.pdb
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.DAL.dll.config
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.Entties.pdb
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Newtonsoft.Json.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Net.Http.Formatting.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Helpers.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Http.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Http.WebHost.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Mvc.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Optimization.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Razor.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.WebPages.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.WebPages.Deployment.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\System.Web.WebPages.Razor.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Antlr3.Runtime.pdb
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.ApplicationInsights.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.DependencyCollector.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.ServerTelemetryChannel.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.WindowsServer.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.Web.xml
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\obj\Debug\HomeCommittee.API.csprojResolveAssemblyReference.cache
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\obj\Debug\HomeCommittee.API.dll
+W:\כתות ו\התמחויות\הנדסאות\אפרת מלול\שנה ב\project\HomeCommittee.API\HomeCommittee.API\obj\Debug\HomeCommittee.API.pdb
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\obj\Debug\HomeCommittee.API.csprojResolveAssemblyReference.cache
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\obj\Debug\HomeCommittee.API.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\obj\Debug\HomeCommittee.API.pdb
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\ApplicationInsights.config
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\csc.exe
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\csc.exe.config
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\csc.rsp
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\csi.exe
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\csi.rsp
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.CodeAnalysis.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.CSharp.Core.targets
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\System.AppContext.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\System.Collections.Immutable.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\System.Diagnostics.StackTrace.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\System.IO.FileSystem.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\System.Reflection.Metadata.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\vbc.exe
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\vbc.exe.config
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\vbc.rsp
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\VBCSCompiler.exe
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\roslyn\VBCSCompiler.exe.config
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.API.dll.config
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.API.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.API.pdb
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Antlr3.Runtime.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.BL.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.DAL.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.Entties.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.Agent.Intercept.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.DependencyCollector.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.PerfCounterCollector.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.ServerTelemetryChannel.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.Web.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.WindowsServer.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.ApplicationInsights.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.Web.Infrastructure.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Newtonsoft.Json.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Net.Http.Formatting.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Helpers.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Http.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Http.WebHost.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Mvc.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Optimization.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Razor.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.WebPages.Deployment.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.WebPages.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.WebPages.Razor.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\WebGrease.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.BL.pdb
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.DAL.pdb
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.DAL.dll.config
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\HomeCommittee.Entties.pdb
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Newtonsoft.Json.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Net.Http.Formatting.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Helpers.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Http.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Http.WebHost.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Mvc.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Optimization.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.Razor.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.WebPages.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.WebPages.Deployment.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\System.Web.WebPages.Razor.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Antlr3.Runtime.pdb
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.ApplicationInsights.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.DependencyCollector.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.ServerTelemetryChannel.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.WindowsServer.xml
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.API\bin\Microsoft.AI.Web.xml
+I:\projrct\HomeCommittee.API\HomeCommittee.API\obj\Debug\HomeCommittee.API.csprojResolveAssemblyReference.cache

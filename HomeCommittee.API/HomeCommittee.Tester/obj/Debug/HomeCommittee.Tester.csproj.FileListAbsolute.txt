@@ -1,0 +1,8 @@
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.Tester\bin\Debug\HomeCommittee.Tester.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.Tester\bin\Debug\HomeCommittee.Tester.pdb
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.dll
+I:\HomeCommittee\HomeCommittee\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.pdb
+I:\projrct\HomeCommittee.API\HomeCommittee.Tester\bin\Debug\HomeCommittee.Tester.dll
+I:\projrct\HomeCommittee.API\HomeCommittee.Tester\bin\Debug\HomeCommittee.Tester.pdb
+I:\projrct\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.dll
+I:\projrct\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.pdb

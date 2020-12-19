@@ -1,0 +1,22 @@
+
+
+<div class="container login-container">
+    <div class="row">
+        <div class="col-md-6 login-form-1" >
+            <h3>הוספת תקלה</h3>
+            <form [formGroup]="formAddFault" (ngSubmit)="onSubmit()">
+                <div class="form-group" >
+                    <input type="text"  formControlName="description" class="form-control" placeholder="תאור התקלה" value="" />
+                </div>
+               
+                <div class="form-group">
+                    <input required="required" type="submit" class="btnSubmit" value="דווח">
+                </div>
+                <div class="form-group">
+                   
+                </div>
+            </form>
+        </div>
+    </div> 
+
+</div>  

@@ -1,0 +1,35 @@
+<div>
+<label for="typeahead-basic" id="search_label">Search for a state:</label>
+<input id="typeahead-basic"  type="text" [(ngModel)]="myserch"/>
+
+</div>
+
+<div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th class="line-th" scope="col">id</th>
+          <th class="line-th" scope="col">building id</th>
+          <th class="line-th" scope="col">sum</th>
+          <th class="line-th" scope="col">date payment</th>
+          <th class="line-th" scope="col">תאור</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+        <tr *ngFor="let p of paymentsForTenant" >
+        
+         <td class="line-td" scope="row">{{p.id}}</td>
+        
+          <td class="line-td">{{p.building_id }}</td>
+          <td class="line-td">{{ p.sum }}</td>
+          <td class="line-td">{{ p.date_payment }}</td>
+          <td class="line-td">{{ p.description }}</td>
+          
+        </tr>
+        </tbody>
+      </table>
+      <a icon="arrow-clockwise" class=reTenant routerLink="reTenant" routerLinkActive="active">חזור</a>
+    </div>
+    

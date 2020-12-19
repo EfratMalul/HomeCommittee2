@@ -1,0 +1,152 @@
+html,body{
+    height: 100%;
+    width: 100%;
+  
+}
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    display: inline-block;
+    position: relative;
+    right: 234%;
+    top: 42%;
+}
+
+.div_img_logo{
+    width: 8%;
+    height: 16%;
+    position: relative;
+    left: 31%;
+    display: inline-block;
+    
+}
+.routerHeader{
+
+    color:red;
+    font-family: cursive;
+    font-size: 30px;
+   padding: 2%;
+   position: relative;
+   top:10%;
+   
+}
+
+#header{
+    height: 20%;
+    position: relative;
+    left:7%;
+    width: 60%;
+    display: inline-block;
+    
+}
+#logo{
+    width:100% ;
+    height:100%;
+    // position: relative;
+    // bottom: 50px;
+}
+.div_img_menu{
+    height: 27%;
+    width: 13%;
+    position: relative;
+    left: 33%;
+    bottom: 10%;
+    margin: 2%;
+   display:inline-block;
+}
+.manu_img{
+    height: 100%;
+    width: 100%;
+}
+
+._nghost-ifm-c51{
+    display: inline-block;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: 0px;
+    width: 50%;
+}
+.row{
+   position: relative;
+   bottom: 15%;
+}
+.nav-link active{
+    background-color: #007bff;
+
+}
+.committee{
+//    visibility: visible;
+display:block;
+}
+.tenant{
+    //  visibility: hidden;
+    display:none;   
+}
+.header {
+    height: 8%;
+    width: 100%;
+    border-bottom: solid;
+    border-width:2px ;
+    color: #dc2a26;
+    display: flex;
+    align-items: center;
+    
+}
+.logo {
+    height: 95%;
+    width: 7%;
+    position: relative;
+    right: 3%;
+}
+#icon-notifications{
+    color: black;
+    position: absolute;
+    right: 88%;
+}
+#exit{
+    position: absolute;
+    right: 91.5%;
+    height: 3.5%;
+    width: 4%;
+    top: 2.4%;
+}
+#user-name{
+    position: absolute;
+    right: 85;
+    color: black;
+    right: 79%;
+    font-size: 1.2vw;
+    top: 3%;
+}
+.under_header{
+    height: 0.75%;
+    width: 100%;
+    background-color: black;
+    margin-top: 0.25%;
+}
+a{
+    color: black;
+    font-size: 1vw;
+    text-align: center;
+ 
+}
+a:hover{
+    color: red;
+    font-size: 1vw;
+    text-align: center;
+}
+#_ngcontent-ioh-c52{
+    position: relative;
+    right: 36%;
+}
+#login{
+    margin-left: auto !important;
+}
+.example-container{
+    display: flex;
+}

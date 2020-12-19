@@ -1,0 +1,23 @@
+
+<div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th class="line-th"  scope="col">id</th>
+          <th class="line-th" scope="col">descreption</th>
+          <th class="line-th" scope="col">status</th>
+          <th class="line-th" scope="col">user id</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let e of faults index as i">
+          <td class="line-td" scope="row">{{ i + 1 }}</td>
+          <td class="line-td">{{ e.description}}</td> 
+          <td class="line-td">{{ e.status }}</td>
+          <td class="line-td">{{ e.user_id }}</td>
+        </tr>
+        </tbody>
+      </table>
+      <a icon="arrow-clockwise" class=reTenant routerLink="reTenant" routerLinkActive="active">חזור</a>
+    </div>
+   

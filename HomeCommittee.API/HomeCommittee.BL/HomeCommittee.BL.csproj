@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9429CDA4-D7D4-41E5-88C2-0F8C26A09FF1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HomeCommittee.BL</RootNamespace>
+    <AssemblyName>HomeCommittee.BL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuildingBL.cs" />
+    <Compile Include="Converters\BuildingConverter.cs" />
+    <Compile Include="Converters\ExpenditureConverter.cs" />
+    <Compile Include="Converters\FaultConverter.cs" />
+    <Compile Include="Converters\MessageConverter.cs" />
+    <Compile Include="Converters\NotificationConverter.cs" />
+    <Compile Include="Converters\PaymentConverter.cs" />
+    <Compile Include="Converters\SessionConverter.cs" />
+    <Compile Include="Converters\SurveyConverter.cs" />
+    <Compile Include="Converters\TenantConverter.cs" />
+    <Compile Include="Converters\UserConverter.cs" />
+    <Compile Include="Converters\UserNotificationConverter.cs" />
+    <Compile Include="Converters\VoteConverter.cs" />
+    <Compile Include="ExpenditureBL.cs" />
+    <Compile Include="FaultBL.cs" />
+    <Compile Include="MessageBL.cs" />
+    <Compile Include="NotificationBL.cs" />
+    <Compile Include="PaymentBL.cs" />
+    <Compile Include="SessionBL.cs" />
+    <Compile Include="SurveyBL.cs" />
+    <Compile Include="TenantBL.cs" />
+    <Compile Include="UserBL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserNotificationBL.cs" />
+    <Compile Include="VoteBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HomeCommittee.DAL\HomeCommittee.DAL.csproj">
+      <Project>{1f24cfe1-d895-4e16-923d-7f0f69a13029}</Project>
+      <Name>HomeCommittee.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HomeCommittee.Entties\HomeCommittee.Entties.csproj">
+      <Project>{174422ee-7632-40ff-b5ba-7120e5641005}</Project>
+      <Name>HomeCommittee.Entties</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

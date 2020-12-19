@@ -1,0 +1,26 @@
+body{
+    text-align: center;
+}
+.header{
+    height: 10%;
+    width: 100%;
+    border-bottom: solid;
+    color: red;
+}
+.logo{
+    height: 100%;
+    width: 9%;
+    position: relative;
+}
+.under_header{
+    height: 0.75%;
+    width: 100%;
+    background-color: black;
+    margin-top: 0.25%;
+}
+
+a{
+    color: red;
+    font-size: 1.2vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

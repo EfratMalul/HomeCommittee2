@@ -1,0 +1,38 @@
+
+<div>
+    <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+        <div class="example-container">
+
+            <p id="title-log-in">התחברות</p>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your email</mat-label>
+                <input formControlName="name" matInput placeholder="pat@example.com" [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <button type="submit"  mat-flat-button color="warn">התחבר</button>
+            <button mat-stroked-button color="warn">בטל</button>
+        </div>
+
+    </form>
+</div>
+
+<!-- <p>
+    <ngb-alert>
+     הנתונים שהכנסתם שגויים לא קיים משתמש זה במערכת  
+    </ngb-alert>
+  </p> -->
+<!-- <div *ngIf="building_id==-1" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>שגיאה</strong>  הנתונים שהכנסתם שגויים לא קיים משתמש זה במערכת  
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div> -->
