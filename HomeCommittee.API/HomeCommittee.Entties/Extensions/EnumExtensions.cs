@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeCommittee.Entties.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -11,37 +12,80 @@ namespace HomeCommittee.Entties.Extensions
     public static class EnumExtensions
 
     {
-        public static string GetDescription(this Enum @enum)
-
+        public static string GetDescription<T>(this T value)
+     where T : struct
         {
-            string value;
+            FieldInfo field;
+            DescriptionAttribute attribute;
+            string result;
 
-            if (!DescriptionCache.TryGetValue(@enum, out value))
+            field = value.GetType().GetField(value.ToString());
+            attribute = (DescriptionAttribute)Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute));
+            result = attribute != null ? attribute.Description : string.Empty;
 
-                RegisterEnum(@enum.GetType());
-
-            return DescriptionCache[@enum];
-
+            return result;
         }
-        private static void RegisterEnum(Type enumType)
 
+        public static T GetValue<T>(string value, T defaultValue)
         {
+            T result;
 
-            foreach (Enum value in Enum.GetValues(enumType))
+            result = defaultValue;
 
+            foreach (T id in Enum.GetValues(typeof(T)))
             {
+                FieldInfo field;
+                DescriptionAttribute attribute;
 
-                // Get the Description attribute value for the enum value
+                field = id.GetType().GetField(id.ToString());
+                attribute = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) as DescriptionAttribute;
 
-                FieldInfo fi = value.GetType().GetField(value.ToString());
-
-                DescriptionAttribute attribute = fi.GetCustomAttributes(typeof(DescriptionAttribute), false).FirstOrDefault() as DescriptionAttribute;
-
-                DescriptionCache[value] = (null != attribute) ? attribute.Description : value.ToString();
-
+                if (attribute != null && attribute.Description == value)
+                {
+                    result = id;
+                    break;
+                }
             }
 
+            return result;
         }
 
+
+
+
+
+        //    public static string GetDescription(this Enum @enum)
+
+        //    {
+        //        string value;
+
+        //        if (!DescriptionCache.TryGetValue(@enum, out value))
+
+        //            RegisterEnum(@enum.GetType());
+
+        //        return DescriptionCache[@enum];
+
+        //    }
+        //    private static void RegisterEnum(Type enumType)
+
+        //    {
+
+        //        foreach (Enum value in Enum.GetValues(enumType))
+
+        //        {
+
+        //            // Get the Description attribute value for the enum value
+
+        //            FieldInfo fi = value.GetType().GetField(value.ToString());
+
+        //            DescriptionAttribute attribute = fi.GetCustomAttributes(typeof(DescriptionAttribute), false).FirstOrDefault() as DescriptionAttribute;
+
+        //            DescriptionCache[value] = (null != attribute) ? attribute.Description : value.ToString();
+
+        //        }
+
+        //    }
+
+        //}
     }
 }

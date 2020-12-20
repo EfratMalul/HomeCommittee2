@@ -11,7 +11,7 @@
     <RootNamespace>HomeCommittee.DAL</RootNamespace>
     <AssemblyName>HomeCommittee.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

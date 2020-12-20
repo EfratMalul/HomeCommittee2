@@ -19,8 +19,8 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="sum" Type="float" Nullable="false" />
     <Property Name="date" Type="date" Nullable="false" />
-    <Property Name="destination" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="description" Type="int" Nullable="false" />
+    <Property Name="destination" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="building_id" Type="int" Nullable="false" />
     <Property Name="type" Type="int" />
   </EntityType>

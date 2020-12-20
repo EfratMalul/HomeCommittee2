@@ -9,7 +9,7 @@
 
 
 
-<div class="warp_table">
+<div class="warp_table" *ngIf="exppenditure_arr!=null">
 
    
      
@@ -35,10 +35,10 @@
         <tbody>
         <tr *ngFor="let e of exppenditure_arr|search:myserch:1 index as i">
           <!-- <th scope="row">{{ i + 1 }}</th> -->
-          <td class="line-td">{{ e.id }} </td>
+          <td class="line-td">{{ e.id}} </td>
           <td class="line-td">{{ e.sum }}</td>
           <td class="line-td">{{ e.date }}</td>
-          <td class="line-td">{{ e.destination}}</td>
+          <td class="line-td">{{ expenditureService.category[e.destination].value }}</td>
           <td class="line-td">{{ e.description}}</td>
           <td class="line-td">{{ e.building_id}}</td>
         </tr>

@@ -14,15 +14,15 @@ export class AddExpenditureComponent implements OnInit {
   expenditure: Expenditure;
   formAddExpenditure = new FormGroup({
 
-    sum: new FormControl(''),
+    sum: new FormControl(),
     date: new FormControl(''),
-    destination: new FormControl(''),
+    destination: new FormControl(),
     description: new FormControl(''),
     // building_id:new FormControl('')
   });
 
 
-  constructor(private expenditureService: ExpenditureService, private userService: UserService) { }
+  constructor(public expenditureService: ExpenditureService, private userService: UserService) { }
   onSubmit() {
     this.expenditure = new Expenditure();
     this.expenditure.sum = this.formAddExpenditure.get("sum").value;

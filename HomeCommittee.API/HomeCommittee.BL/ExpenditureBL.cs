@@ -28,16 +28,16 @@ namespace HomeCommittee.BL
         {
              ExpenditureDAL.Add(ExpenditureConverter.ToDAL(expenditure));
         }
+
         public static Dictionary<int, string> GetCategory()
         {
             Dictionary<int, string> category = new Dictionary<int, string>();
 
             for (int i = 1; i < Enum.GetNames(typeof(ExpenditureCategory)).Length; i++)
             {
-                //var x= Enum.GetNames(typeof(ExpenditureCategory))[0];
 
-               category.Add(i, ((ExpenditureCategory)i).GetDescription());
-        
+                category.Add(i, ((ExpenditureCategory)i).GetDescription());
+
             }
             return category;
         }

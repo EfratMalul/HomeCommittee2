@@ -17,4 +17,4 @@ namespace HomeCommittee.Entties.Enums
         Committee = 1,
     }
 }
-}
+

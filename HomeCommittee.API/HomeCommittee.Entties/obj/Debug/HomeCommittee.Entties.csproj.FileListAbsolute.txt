@@ -26,6 +26,6 @@ I:\projrct\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entti
 I:\projrct\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.pdb
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.dll
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.pdb
-I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csprojResolveAssemblyReference.cache
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.dll
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.pdb
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csprojResolveAssemblyReference.cache

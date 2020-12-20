@@ -40,11 +40,12 @@ namespace HomeCommittee.Controllers
 
         [HttpGet]
         [Route("GetAllExpenditureCategory")]
-        public Dictionary<int, string> GetAllExpenditureCategory()
+        public HttpResponseMessage GetAllExpenditureCategory()
         {
-            return ExpenditureBL.GetCategory();
+            Dictionary < int, string> cods = ExpenditureBL.GetCategory();
+            return Request.CreateResponse(HttpStatusCode.OK, cods);
         }
 
 
-
+    }
     }

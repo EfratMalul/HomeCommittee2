@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Category } from '../classes/Category';
 import { Expenditure } from '../classes/expenditure';
 import { BaseService } from './base.service';
 
@@ -10,7 +11,7 @@ import { BaseService } from './base.service';
 })
 export class ExpenditureService {
 
-
+  public category: Array<Category>;
   apiClientURL = environment.BaseClientApiUrl;
   constructor(private baseServise:BaseService,private http: HttpClient) { 
 
@@ -32,9 +33,14 @@ export class ExpenditureService {
   
      };
 
-     getAllCategory():Observable<any> {
+     getAllCategory() {
+      this.category = new Array<Category>();
+       return this.baseServise.getData("Expenditure","GetAllExpenditureCategory").subscribe(x=>{
+        for (let i = 1; i < 12; i++) {
+          this.category.push({ key: i, value: x[i] })
+        }
+       });
 
-       return this.baseServise.getData("Expenditure","GetAllExpenditureCategory");
      } 
   
  

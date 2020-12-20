@@ -46,6 +46,7 @@
     <Compile Include="Enums\Payments.cs" />
     <Compile Include="Enums\PermissionType.cs" />
     <Compile Include="Expenditure.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Fault.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Notification.cs" />

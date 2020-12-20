@@ -40,7 +40,8 @@ export class BaseService {
 
 
   getData(controllerName:string,methodName: string, urlParameters?: string): Observable<any> {
-    const url = urlParameters ? `${this.apiClientURL}${controllerName}/${methodName}/${urlParameters}`: `${this.apiClientURL}${methodName}`;
+    const url = urlParameters ? `${this.apiClientURL}${controllerName}/${methodName}/${urlParameters}`:
+     `${this.apiClientURL}${controllerName}/${methodName}`;
     return this.http.get(url)
       .pipe(
         catchError(this.handleError)

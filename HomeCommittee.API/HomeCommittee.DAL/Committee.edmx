@@ -24,8 +24,8 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="sum" Type="float" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
-          <Property Name="destination" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="description" Type="int" Nullable="false" />
+          <Property Name="destination" Type="int" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="building_id" Type="int" Nullable="false" />
           <Property Name="type" Type="int" />
         </EntityType>
@@ -1042,8 +1042,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="sum" Type="Double" Nullable="false" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="destination" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="description" Type="Int32" Nullable="false" />
+          <Property Name="destination" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="building_id" Type="Int32" Nullable="false" />
           <Property Name="type" Type="Int32" />
         </EntityType>
