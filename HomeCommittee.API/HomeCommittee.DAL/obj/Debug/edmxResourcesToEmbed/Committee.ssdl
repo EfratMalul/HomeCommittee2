@@ -20,8 +20,9 @@
     <Property Name="sum" Type="float" Nullable="false" />
     <Property Name="date" Type="date" Nullable="false" />
     <Property Name="destination" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="description" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="description" Type="int" Nullable="false" />
     <Property Name="building_id" Type="int" Nullable="false" />
+    <Property Name="type" Type="int" />
   </EntityType>
   <EntityType Name="fault_tbl">
     <Key>

@@ -29,7 +29,9 @@ export class PaymentService {
     return this.baseService.getData("Payment","GetPaymentsByUser",`${buildingId}/${userId}`)
     .pipe(
      map((x: any) => {
+      
        let result = <TenantPayment[]>formatters(x);
+        console.log(result);
        return result;
      })
    )

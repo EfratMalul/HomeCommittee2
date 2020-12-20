@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Building.cs" />
+    <Compile Include="Enums\ExpenditureCategory.cs" />
+    <Compile Include="Enums\ExpenditureType.cs" />
+    <Compile Include="Enums\Payments.cs" />
     <Compile Include="Enums\PermissionType.cs" />
     <Compile Include="Expenditure.cs" />
     <Compile Include="Fault.cs" />

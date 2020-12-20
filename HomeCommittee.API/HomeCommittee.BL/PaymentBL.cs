@@ -44,7 +44,7 @@ namespace HomeCommittee.BL
             {
                 z.Status = y.Select(t => t.payment_id).Contains(z.PaymentId) ? true : false;
                 z.TenantId = userId;
-                z.PaymentDate = y.FirstOrDefault(u => u.payment_id == z.PaymentId)?.paymentDate ?? default(DateTime);
+                z.PaymentDate = y.FirstOrDefault(u => ..u.payment_id == z.PaymentId)?.paymentDate ?? default(DateTime);
             });
             return x;
         }

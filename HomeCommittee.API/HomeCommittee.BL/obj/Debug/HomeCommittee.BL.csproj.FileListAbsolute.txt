@@ -46,3 +46,14 @@ I:\projrct\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.Entties.pd
 I:\projrct\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.csprojResolveAssemblyReference.cache
 I:\projrct\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.dll
 I:\projrct\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.pdb
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.BL.dll
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.BL.pdb
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.DAL.dll
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.Entties.dll
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\EntityFramework.dll
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.DAL.pdb
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.DAL.dll.config
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.Entties.pdb
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.csprojResolveAssemblyReference.cache
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.dll
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.pdb

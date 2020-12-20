@@ -12,8 +12,8 @@ namespace HomeCommittee.Entties
         public double  sum { get; set; }
         public DateTime  date { get; set; }
         public string destination { get; set; }
-        public string description { get; set; }
+        public int description { get; set; }
         public int  building_id { get; set; }
-
+        public int type { get; set; }
     }
 }

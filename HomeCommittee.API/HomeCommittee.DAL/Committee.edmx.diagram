@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="afc82efeb71c41d4a80ff80aa70db83c" Name="Diagram1">
         <EntityTypeShape EntityType="HomeCommitteeDBModel.building_tbl" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="HomeCommitteeDBModel.expenditure_tbl" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HomeCommitteeDBModel.fault_tbl" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HomeCommitteeDBModel.message_tbl" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HomeCommitteeDBModel.notification_tbl" Width="1.5" PointX="5.75" PointY="3.5" IsExpanded="true" />
@@ -41,6 +40,7 @@
         <AssociationConnector Association="HomeCommitteeDBModel.FK_user_notification_tbl_user_tbl" ManuallyRouted="false" />
         <AssociationConnector Association="HomeCommitteeDBModel.FK_user_permissions_tbl_user_tbl" ManuallyRouted="false" />
         <AssociationConnector Association="HomeCommitteeDBModel.FK_vote_tbl_user_tbl" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HomeCommitteeDBModel.expenditure_tbl" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

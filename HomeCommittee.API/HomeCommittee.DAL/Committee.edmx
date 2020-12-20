@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HomeCommitteeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="HomeCommitteeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="building_tbl">
           <Key>
             <PropertyRef Name="id" />
@@ -25,8 +25,9 @@
           <Property Name="sum" Type="float" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
           <Property Name="destination" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="description" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="description" Type="int" Nullable="false" />
           <Property Name="building_id" Type="int" Nullable="false" />
+          <Property Name="type" Type="int" />
         </EntityType>
         <EntityType Name="fault_tbl">
           <Key>
@@ -505,8 +506,7 @@
             <End Role="vote_tbl" EntitySet="vote_tbl" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HomeCommitteeDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -528,17 +528,6 @@
           <NavigationProperty Name="survey_tbl" Relationship="Self.FK_survey_tbl_building_tbl" FromRole="building_tbl" ToRole="survey_tbl" />
           <NavigationProperty Name="SurveyHedear" Relationship="Self.FK_SurveyHedear_building_tbl" FromRole="building_tbl" ToRole="SurveyHedear" />
           <NavigationProperty Name="tenant_tbl" Relationship="Self.FK_tenant_tbl_building_tbl" FromRole="building_tbl" ToRole="tenant_tbl" />
-        </EntityType>
-        <EntityType Name="expenditure_tbl">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="sum" Type="Double" Nullable="false" />
-          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="destination" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="description" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="building_id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="fault_tbl">
           <Key>
@@ -956,7 +945,6 @@
         </Association>
         <EntityContainer Name="HomeCommitteeDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="building_tbl" EntityType="Self.building_tbl" />
-          <EntitySet Name="expenditure_tbl" EntityType="Self.expenditure_tbl" />
           <EntitySet Name="fault_tbl" EntityType="Self.fault_tbl" />
           <EntitySet Name="message_tbl" EntityType="Self.message_tbl" />
           <EntitySet Name="notification_tbl" EntityType="Self.notification_tbl" />
@@ -1045,7 +1033,20 @@
             <End Role="user_tbl" EntitySet="user_tbl" />
             <End Role="vote_tbl" EntitySet="vote_tbl" />
           </AssociationSet>
+          <EntitySet Name="expenditure_tbl" EntityType="HomeCommitteeDBModel.expenditure_tbl" />
         </EntityContainer>
+        <EntityType Name="expenditure_tbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sum" Type="Double" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="destination" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="description" Type="Int32" Nullable="false" />
+          <Property Name="building_id" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1062,18 +1063,6 @@
                 <ScalarProperty Name="entrance" ColumnName="entrance" />
                 <ScalarProperty Name="zip_code" ColumnName="zip_code" />
                 <ScalarProperty Name="num_apartments" ColumnName="num_apartments" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="expenditure_tbl">
-            <EntityTypeMapping TypeName="HomeCommitteeDBModel.expenditure_tbl">
-              <MappingFragment StoreEntitySet="expenditure_tbl">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="sum" ColumnName="sum" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="destination" ColumnName="destination" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="building_id" ColumnName="building_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1259,6 +1248,19 @@
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="survey_id" ColumnName="survey_id" />
                 <ScalarProperty Name="voting" ColumnName="voting" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="expenditure_tbl">
+            <EntityTypeMapping TypeName="HomeCommitteeDBModel.expenditure_tbl">
+              <MappingFragment StoreEntitySet="expenditure_tbl">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="building_id" ColumnName="building_id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="destination" ColumnName="destination" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="sum" ColumnName="sum" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

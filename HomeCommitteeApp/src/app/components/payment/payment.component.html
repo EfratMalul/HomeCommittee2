@@ -3,30 +3,35 @@
 <input id="typeahead-basic"  type="text" [(ngModel)]="myserch"/>
 
 </div>
+<label >חיפוש לפי חודש</label>
+<input   type="text" [(ngModel)]="myserch"/>
 
 <div>
 
     <table class="table table-striped">
         <thead>
         <tr>
-          <th class="line-th" scope="col">id</th>
-          <th class="line-th" scope="col">building id</th>
-          <th class="line-th" scope="col">sum</th>
-          <th class="line-th" scope="col">date payment</th>
+          <th class="line-th" scope="col">מזהה תשלום</th>
+          <!-- <th class="line-th" scope="col">building id</th> -->
+          <th class="line-th" scope="col">סכום</th>
+          <th class="line-th" scope="col">תשלום עבור חודש</th>
           <th class="line-th" scope="col">תאור</th>
+          <th class="line-th" scope="col">תאריך תשלום</th>
         </tr>
         </thead>
         <tbody>
     
-        <tr *ngFor="let p of paymentsForTenant" >
+        <tr *ngFor="let p of paymentsForTenant|search:myserch:0 index as i" [ngStyle]="{'backgroundColor':p.status==true?'green':'red'}" >
         
          <td class="line-td" scope="row">{{p.id}}</td>
         
-          <td class="line-td">{{p.building_id }}</td>
+          <!-- <td class="line-td">{{p.building_id }}</td> -->
           <td class="line-td">{{ p.sum }}</td>
-          <td class="line-td">{{ p.date_payment }}</td>
+          <td class="line-td">{{ p.payForDate }}</td>
           <td class="line-td">{{ p.description }}</td>
-          
+          <td class="line-td" *ngIf="p.status==true" >{{ p.paymentDate }}</td>
+          <td class="line-td"  *ngIf="p.status==false"><button>לתשלום</button></td>
+  
         </tr>
         </tbody>
       </table>

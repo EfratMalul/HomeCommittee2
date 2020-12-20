@@ -18,7 +18,8 @@ namespace HomeCommittee.DAL
         public double sum { get; set; }
         public System.DateTime date { get; set; }
         public string destination { get; set; }
-        public string description { get; set; }
+        public int description { get; set; }
         public int building_id { get; set; }
+        public Nullable<int> type { get; set; }
     }
 }

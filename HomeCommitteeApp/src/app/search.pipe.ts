@@ -14,9 +14,11 @@ export class SearchPipe implements PipeTransform {
   // DATE
     if (args[0] != undefined && args[0] !="") {
       if (args[1] == 0)
-        return payments.filter(payment => payment.date_payment.getMonth() == (args[0]));
+      //payment-0
+        return payments.filter(payment =>(new Date(payment.payForDate).getMonth()+1)  == (args[0]));
       else
-        return payments.filter(payment => (new Date(payment.date).getMonth()+1) == (args[0]));
+      //expendiure-1
+        return payments.filter(expendiure => (new Date(expendiure.date).getMonth()+1) == (args[0]));
 
     }
     return payments;

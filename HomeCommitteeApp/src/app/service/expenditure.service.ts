@@ -25,12 +25,17 @@ export class ExpenditureService {
   }
   addExpenditure(expenditure:Expenditure):Observable<Object>{
 
+
     const url = `${this.apiClientURL}Expenditure/AddExpenditure`;
  
     return this.http.post(url, expenditure) ;
   
      };
 
+     getAllCategory():Observable<any> {
+
+       return this.baseServise.getData("Expenditure","GetAllExpenditureCategory");
+     } 
   
  
 

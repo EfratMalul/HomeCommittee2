@@ -19,17 +19,6 @@
     <NavigationProperty Name="SurveyHedear" Relationship="Self.FK_SurveyHedear_building_tbl" FromRole="building_tbl" ToRole="SurveyHedear" />
     <NavigationProperty Name="tenant_tbl" Relationship="Self.FK_tenant_tbl_building_tbl" FromRole="building_tbl" ToRole="tenant_tbl" />
   </EntityType>
-  <EntityType Name="expenditure_tbl">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="sum" Type="Double" Nullable="false" />
-    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="destination" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="description" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="building_id" Type="Int32" Nullable="false" />
-  </EntityType>
   <EntityType Name="fault_tbl">
     <Key>
       <PropertyRef Name="id" />
@@ -446,7 +435,6 @@
   </Association>
   <EntityContainer Name="HomeCommitteeDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="building_tbl" EntityType="Self.building_tbl" />
-    <EntitySet Name="expenditure_tbl" EntityType="Self.expenditure_tbl" />
     <EntitySet Name="fault_tbl" EntityType="Self.fault_tbl" />
     <EntitySet Name="message_tbl" EntityType="Self.message_tbl" />
     <EntitySet Name="notification_tbl" EntityType="Self.notification_tbl" />
@@ -535,5 +523,18 @@
       <End Role="user_tbl" EntitySet="user_tbl" />
       <End Role="vote_tbl" EntitySet="vote_tbl" />
     </AssociationSet>
+    <EntitySet Name="expenditure_tbl" EntityType="HomeCommitteeDBModel.expenditure_tbl" />
   </EntityContainer>
+  <EntityType Name="expenditure_tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sum" Type="Double" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="destination" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="description" Type="Int32" Nullable="false" />
+    <Property Name="building_id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" />
+  </EntityType>
 </Schema>

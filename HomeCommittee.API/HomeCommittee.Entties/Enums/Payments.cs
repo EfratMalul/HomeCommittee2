@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace HomeCommittee.Entties.Enums
 {
-    public enum PermissionType
+    public enum Payments
     {
-        [Description("דייר")]
-        Tenant = 0,
-        [Description("וועד")]
-        Committee = 1
+        [Description("הוצאה חריגה")]
+
+       Expenditure = 0,
+        [Description("וועד בית")]
+
+        Committee = 1,
     }
+}
 }
