@@ -16,5 +16,9 @@ export class NotificationService {
   {
     return this.baseServise.getData("Notification","GetNotificationByUserId",`${userId}`);
   }
+  AddNotification()
+  {
+
+  }
  
 }

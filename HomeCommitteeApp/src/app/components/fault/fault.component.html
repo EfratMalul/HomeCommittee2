@@ -3,21 +3,26 @@
     <table class="table table-striped">
         <thead>
         <tr>
-          <th class="line-th"  scope="col">id</th>
-          <th class="line-th" scope="col">descreption</th>
-          <th class="line-th" scope="col">status</th>
-          <th class="line-th" scope="col">user id</th>
+          <th class="line-th"  scope="col">מזהה תקלה</th>
+          <th class="line-th" scope="col">תאור</th>
+          <th class="line-th" scope="col">סטטוס</th>
+          <th class="line-th" scope="col">דווח ע"י</th>
+          <th class="line-th" scope="col">עדכון סטטוס</th>
+          <th class="line-th" scope="col">שלית הודעה על טיפול</th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let e of faults index as i">
-          <td class="line-td" scope="row">{{ i + 1 }}</td>
+        <tr *ngFor="let e of faults ;let t of tenantName; let i = index">
+          <td class="line-td" scope="row">{{e.id}}</td>
           <td class="line-td">{{ e.description}}</td> 
-          <td class="line-td">{{ e.status }}</td>
-          <td class="line-td">{{ e.user_id }}</td>
+          <td class="line-td" *ngIf="e.status==false"> לא טופל </td>
+          <td class="line-td" *ngIf="e.status==true"></td>
+          <td class="line-td">{{tenantName[i] }}</td>
+
+          <td class="line-td"><button  mat-flat-button color="warn" (click)="updateStatus($event, e)" >עדכן סטטוס</button></td>
+          <td class="line-td"><button  mat-flat-button color="warn"  (click)="sendNotification($event, e)">שלח הודעה</button></td>
         </tr>
         </tbody>
       </table>
-      <a icon="arrow-clockwise" class=reTenant routerLink="reTenant" routerLinkActive="active">חזור</a>
+    
     </div>
-   

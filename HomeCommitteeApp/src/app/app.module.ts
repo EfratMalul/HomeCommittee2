@@ -53,6 +53,8 @@ import { NotificationComponent } from './components/notification/notification.co
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenuModule} from '@angular/material/menu';
 import { TenantPaymentComponent } from './components/tenant-payment/tenant-payment.component';
+import { NotificationDialogComponent } from './components/notification-dialog/notification-dialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,7 +86,8 @@ import { TenantPaymentComponent } from './components/tenant-payment/tenant-payme
     HomeSideNavComponent,
     UserAreaComponent,
     NotificationComponent,
-    TenantPaymentComponent
+    TenantPaymentComponent,
+    NotificationDialogComponent
   ],
   imports: [
     BrowserModule,

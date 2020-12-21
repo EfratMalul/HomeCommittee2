@@ -30,15 +30,10 @@ namespace HomeCommittee.BL
         //}
         public static List<Notification> GetByUsetId(int userId)
         {
-            //SurveyHedear surveyHedear = Converters.SurveyConverter.ToDAL(sekerCotert);
-            //long surveyHedearId = SurveyDAL.AddNewSurveyHeader(surveyHedear);
-            //surveyHedear.SurveyDetails.ToList().ForEach(x => x.SurveyHedearId = surveyHedearId);
-            //SurveyDAL.AddNewSurveyDetails(surveyHedear.SurveyDetails);
             List<UserNotification> notifications = UserNotificationConverter.ListToDTO(UserNotificationDAL.GetByUserId(userId));
-            //return Converters.NotificationConverter.ListToDTO(NotificationDAL.GetByUserId(notifications));
             return NotificationDAL.GetByUserId(notifications);
         }
     }
 
- 
+
 }

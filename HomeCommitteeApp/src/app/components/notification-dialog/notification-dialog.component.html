@@ -1,0 +1,18 @@
+<div>
+    <form [formGroup]="formNotification" (ngSubmit)="onSubmit()" >
+
+        <div class="example-container">
+
+            <p id="title-log-in">שליחת הודעה לדייר המדווח</p>
+          
+            <mat-form-field appearance="fill">
+                <mat-label>הודעה</mat-label>
+                <textarea formControlName="messege" matInput></textarea>
+              </mat-form-field>
+
+            <button type="submit"  mat-stroked-button  color="warn">שלח</button>
+            <button mat-stroked-button color="warn" (click)="onNoClick()">בטל</button>
+        </div>
+
+    </form>
+</div>

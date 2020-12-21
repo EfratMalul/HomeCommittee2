@@ -44,3 +44,13 @@ I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\bin\Debug\Ho
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\obj\Debug\HomeCommittee.DAL.csprojResolveAssemblyReference.cache
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\obj\Debug\HomeCommittee.DAL.dll
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\obj\Debug\HomeCommittee.DAL.pdb
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\bin\Debug\HomeCommittee.DAL.dll.config
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\bin\Debug\HomeCommittee.DAL.dll
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\bin\Debug\HomeCommittee.DAL.pdb
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\bin\Debug\HomeCommittee.Entties.dll
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\bin\Debug\HomeCommittee.Entties.pdb
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\obj\Debug\HomeCommittee.DAL.csprojAssemblyReference.cache
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\obj\Debug\HomeCommittee.DAL.csproj.CoreCompileInputs.cache
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\obj\Debug\HomeCommittee.DAL.csproj.CopyComplete
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\obj\Debug\HomeCommittee.DAL.dll
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.DAL\obj\Debug\HomeCommittee.DAL.pdb

@@ -14,6 +14,7 @@ namespace HomeCommittee.BL.Converters
         {
             return new tenant_tbl()
             {
+                id = t.id,
                 first_name = t.first_name,
                 last_name = t.last_name,
                 floor = t.floor,
@@ -39,7 +40,8 @@ namespace HomeCommittee.BL.Converters
                 mail = t.email,
                 type = t.type,
                 house_num = t.house_num,
-                building_id = t.building_id
+                building_id = t.building_id,
+                 user_id = t.user_id
             };
         }
 

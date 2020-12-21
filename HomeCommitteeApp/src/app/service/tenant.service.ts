@@ -38,9 +38,19 @@ export class TenantService {
         })
       );
   }
+<<<<<<< HEAD
      GetNumTenant(buildingId:Number): Observable<number> {
       
        return this.baseService.getData("Tenant","GetNumTenant");
 
     }
+=======
+
+  GetAllTenantByBuildingId(buildingId:number): Observable<Tenant[]>
+  {
+    const url = `${this.apiClientURL}Tenant/GetAllTenantByBuildingId`;
+    return this.baseService.getData("Tenant", "GetAllTenantByBuildingId", `${buildingId}`);
+    
+  }
+>>>>>>> 6a498b05e7cad8e17ccf85414d6fd647521fb633
 }
