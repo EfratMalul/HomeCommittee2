@@ -19,13 +19,20 @@ export class FaultService {
   getAllFault(buildingId:number):Observable<Fault []>{
    return  this.baseServise.getData("Fault", "GetAllFaults", `${buildingId}`);
   }
+
   addFault(fault:Fault):Observable<Object>{
 
     const url = `${this.apiClientURL}Fault/AddFault`;
  
     return this.http.post(url, fault);
+  }
 
-
+  updateStatus(fault:Fault):Observable<Fault>
+  {
+ 
+     return this.http.put<Fault>("http://localhost:52732/Api/Fault/UpdateStatus/" + fault.id,fault);
   }
   
 }
+
+  

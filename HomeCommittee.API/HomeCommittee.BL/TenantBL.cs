@@ -21,6 +21,11 @@ namespace HomeCommittee.BL
         {
             return TenantConverter.ToDTO(TenantDAL.GetByUserId(userId));
         }
+        public static List<Tenant> GetAllTenantByBuildingId(int buildingId)
+        {
+            return TenantConverter.ListToDTO(TenantDAL.GetByBuildingId(buildingId));
+        }
+        
 
         public static List<Tenant> GetAll()
         {

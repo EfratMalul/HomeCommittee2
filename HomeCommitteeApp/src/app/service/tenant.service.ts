@@ -38,4 +38,11 @@ export class TenantService {
         })
       );
   }
+
+  GetAllTenantByBuildingId(buildingId:number): Observable<Tenant[]>
+  {
+    const url = `${this.apiClientURL}Tenant/GetAllTenantByBuildingId`;
+    return this.baseService.getData("Tenant", "GetAllTenantByBuildingId", `${buildingId}`);
+    
+  }
 }

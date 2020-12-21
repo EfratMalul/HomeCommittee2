@@ -20,9 +20,14 @@ namespace HomeCommittee.Controllers
            Tenant t = TenantBL.GetTenantByUserId(userId);
             return Request.CreateResponse(HttpStatusCode.OK, t);
         }
-        public Tenant Get(int id)
+
+        [HttpGet]
+        [Route("GetAllTenantByBuildingId/{buildingId}")]
+
+        public HttpResponseMessage GetAllTenantByBuildingId(int buildingId)
         {
-            return TenantBL.GetById(id);
+            List<Tenant> t = TenantBL.GetAllTenantByBuildingId(buildingId);
+            return Request.CreateResponse(HttpStatusCode.OK, t);
         }
 
         //post - הוספת דייר
