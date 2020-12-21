@@ -17,7 +17,7 @@ namespace HomeCommittee.Controllers
         [Route("GetTenant/{userId}")]
         public HttpResponseMessage GetTenant(int userId)
         {
-           Tenant t = TenantBL.GetTenantByUserId(userId);
+            Tenant t = TenantBL.GetTenantByUserId(userId);
             return Request.CreateResponse(HttpStatusCode.OK, t);
         }
         public Tenant Get(int id)
@@ -32,7 +32,7 @@ namespace HomeCommittee.Controllers
         {
             try
             {
-                t.user_id= UserBL.AddUser(new User() { password = t.password, user_name = t.mail });
+                t.user_id = UserBL.AddUser(new User() { password = t.password, user_name = t.mail });
                 TenantBL.AddTenant(t);
                 return Request.CreateResponse(HttpStatusCode.OK, true);
             }
@@ -41,8 +41,23 @@ namespace HomeCommittee.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.ExpectationFailed, ex);
             }
         }
+        [HttpGet]
+        [Route("GetNumTenant/{buildingId}")]
+
+        public HttpResponseMessage GetNumTenant(int buildingId)
+        {
+            try
+            {
+                int numTenant = TenantBL.GetAllTenantByBuilding(buildingId).Count;
+                return Request.CreateResponse(HttpStatusCode.OK, numTenant);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.ExpectationFailed, ex);
+            }
 
 
+        }
 
 
         // PUT api/User/5

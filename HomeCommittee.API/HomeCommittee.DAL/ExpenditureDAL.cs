@@ -37,9 +37,9 @@ namespace HomeCommittee.DAL
                     db.SaveChanges();
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

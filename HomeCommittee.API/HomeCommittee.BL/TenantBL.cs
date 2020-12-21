@@ -10,7 +10,7 @@ using HomeCommittee.BL.Converters;
 
 namespace HomeCommittee.BL
 {
-   public class TenantBL
+    public class TenantBL
     {
 
         public static void AddTenant(Tenant t)
@@ -29,9 +29,12 @@ namespace HomeCommittee.BL
 
         public static Tenant GetById(int id)
         {
-          return  TenantConverter.ToDTO(TenantDAL.GetById(id));
+            return TenantConverter.ToDTO(TenantDAL.GetById(id));
         }
-   
-        
+        public static List<tenant_tbl> GetAllTenantByBuilding(int buildingId)
+        {
+            return TenantDAL.GetAllTenantByBuilding(buildingId);
+        }
+
     }
 }

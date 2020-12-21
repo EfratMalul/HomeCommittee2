@@ -38,4 +38,9 @@ export class TenantService {
         })
       );
   }
+     GetNumTenant(buildingId:Number): Observable<number> {
+      
+       return this.baseService.getData("Tenant","GetNumTenant");
+
+    }
 }

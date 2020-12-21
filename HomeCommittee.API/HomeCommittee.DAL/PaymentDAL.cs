@@ -41,7 +41,6 @@ namespace HomeCommittee.DAL
                     db.SaveChanges();
                 }
             }
-
             catch
             {
                 throw;

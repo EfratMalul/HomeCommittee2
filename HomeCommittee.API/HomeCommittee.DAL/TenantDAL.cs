@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HomeCommittee.DAL
 {
-   public class TenantDAL
+    public class TenantDAL
     {
-        
+
         //update
         //delete
 
@@ -46,17 +46,30 @@ namespace HomeCommittee.DAL
                     db.SaveChanges();
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw e;
             }
         }
-
+        public static List<tenant_tbl> GetAllTenantByBuilding(int building_id)
+        {
+            try
+            {
+                using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+                {
+                    return db.tenant_tbl.Where(t => t.building_id == building_id).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
         public static void Delete(int id)
         {
             using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
             {
-             //   db.tenant_tbl.Find(id).remove();
+                //   db.tenant_tbl.Find(id).remove();
             }
         }
 

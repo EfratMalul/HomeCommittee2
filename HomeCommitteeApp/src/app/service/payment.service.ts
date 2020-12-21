@@ -37,5 +37,20 @@ export class PaymentService {
    )
      
  }
+ AddPayment(payment:Payment):Observable<Object>{
+  return this.baseService.getData("Payment","AddPayment");
+
+ }
+
+
+
+
+
+
+
+
+
+
+
 
 }

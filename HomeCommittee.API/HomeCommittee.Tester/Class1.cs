@@ -8,5 +8,6 @@ namespace HomeCommittee.Tester
 {
     public class Class1
     {
+
     }
 }

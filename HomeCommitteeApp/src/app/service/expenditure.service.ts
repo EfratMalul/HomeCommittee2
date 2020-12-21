@@ -25,10 +25,7 @@ export class ExpenditureService {
    
   }
   addExpenditure(expenditure:Expenditure):Observable<Object>{
-
-
     const url = `${this.apiClientURL}Expenditure/AddExpenditure`;
- 
     return this.http.post(url, expenditure) ;
   
      };
@@ -36,7 +33,7 @@ export class ExpenditureService {
      getAllCategory() {
       this.category = new Array<Category>();
        return this.baseServise.getData("Expenditure","GetAllExpenditureCategory").subscribe(x=>{
-        for (let i = 1; i < 12; i++) {
+        for (let i = 0; i < 12; i++) {
           this.category.push({ key: i, value: x[i] })
         }
        });
