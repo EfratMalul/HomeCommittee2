@@ -74,7 +74,7 @@ namespace HomeCommittee.DAL
             }
         }
 
-        public static void Add(notification_tbl notification)
+        public static int Add(notification_tbl notification)
         {
             try
             {
@@ -82,11 +82,31 @@ namespace HomeCommittee.DAL
                 {
                     db.notification_tbl.Add(notification);
                     db.SaveChanges();
+                    return notification.id;
                 }
+                return -1;
             }
+            
             catch (Exception e)
             {
+                throw e;
+            }
+        }
+        public static void Add(user_notification_tbl notification)
+        {
+            try
+            {
+                using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+                {
+                    db.user_notification_tbl.Add(notification);
+                    db.SaveChanges();
+                    
+                }
+            }
 
+            catch (Exception e)
+            {
+                throw e;
             }
         }
     }

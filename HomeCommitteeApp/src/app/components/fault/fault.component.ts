@@ -56,8 +56,9 @@ export class FaultComponent implements OnInit {
 
   }
   sendNotification(event, e) {
-    this.dialog.open(NotificationDialogComponent, {
-      width: '400px'
+    this.dialog.open(NotificationDialogComponent ,{
+      width: '400px',
+      data:{userId:e.user_id}
     });
     // this.notificationService.AddNotificationByUserId(e.user_id)
   }

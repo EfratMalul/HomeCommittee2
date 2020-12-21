@@ -28,4 +28,3 @@ I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\bin\Debu
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.pdb
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.dll
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.pdb
-I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csprojResolveAssemblyReference.cache

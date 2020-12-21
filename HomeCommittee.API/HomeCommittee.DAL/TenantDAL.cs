@@ -20,6 +20,14 @@ namespace HomeCommittee.DAL
             }
         }
 
+        public static List<tenant_tbl> GetByBuildingId(int buidingId)
+        {
+            using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+            {
+                return db.tenant_tbl.Where(b => b.building_id == buidingId).ToList();
+            }
+        }
+
         public static tenant_tbl GetById(int id)
         {
             using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())

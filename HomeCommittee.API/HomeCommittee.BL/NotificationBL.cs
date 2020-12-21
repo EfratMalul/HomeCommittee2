@@ -11,11 +11,14 @@ namespace HomeCommittee.BL
 {
     public class NotificationBL
     {
-        public static void AddNotification(Notification notification)
+        public static int AddNotification(string message)
         {
-            NotificationDAL.Add(Converters.NotificationConverter.ToDAL(notification));
+            return NotificationDAL.Add(new notification_tbl { messege= message });
         }
-
+        public static void AddNotificationForUser(int userId,int notificationId)
+        {
+            NotificationDAL.Add(new user_notification_tbl { user_id=userId,notification_id=notificationId,is_read=false });
+        }
         public static List<Notification> GetAll()
         {
             return Converters.NotificationConverter.ListToDTO(NotificationDAL.Get());

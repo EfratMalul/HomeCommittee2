@@ -48,9 +48,10 @@ export class BaseService {
       );
   }
 
-  postData(controllerName:string,methodName: string, body: any): Observable<any> {
+  postData(controllerName:string,methodName: string, body: any, urlParameters?: string): Observable<any> {
 
-    const url = `${this.apiClientURL}${controllerName}/${methodName}`;
+    const url = urlParameters ? `${this.apiClientURL}${controllerName}/${methodName}/${urlParameters}`:
+    `${this.apiClientURL}${controllerName}/${methodName}`;
     return this.http.post(url, body)
       .pipe(
         catchError(this.handleError)

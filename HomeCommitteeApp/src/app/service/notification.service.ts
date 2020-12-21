@@ -16,9 +16,11 @@ export class NotificationService {
   {
     return this.baseServise.getData("Notification","GetNotificationByUserId",`${userId}`);
   }
-  AddNotification()
-  {
+  
 
+  AddNotification(userId:number,message:string): Observable<boolean> {
+  
+    return this.baseServise.postData("Notification","AddNotificationToSpesficUser",message,`${userId}`);
   }
  
 }
