@@ -15,7 +15,7 @@ namespace HomeCommittee.BL
         {
             return UserDAL.Add(UserConverter.ToDAL(user));
         }
-
+      
         public static List<User> GetAll()
         {
             return UserConverter.ListToDTO(UserDAL.Get());

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationForUser } from 'src/app/classes/NotificationForUser';
 import { User } from 'src/app/classes/user';
 import { NotificationService } from 'src/app/service/notification.service';
 import { UserService } from 'src/app/service/user.service';
@@ -11,6 +12,7 @@ import { UserService } from 'src/app/service/user.service';
 export class NotificationComponent implements OnInit {
 
   notifications:Notification[];
+  userNotificatin:NotificationForUser=new NotificationForUser();
   constructor(private notificationService:NotificationService,private userService:UserService) { }
 
   ngOnInit(): void {
@@ -22,6 +24,17 @@ export class NotificationComponent implements OnInit {
     
    });
 
+  }
+  removeUserNotification(event,n)
+  {
+    alert("click me!");
+    this.userNotificatin.userId=this.userService.user.id;
+    this.userNotificatin.message="";
+    this.userNotificatin.notificationId=n.id;
+   
+    this.notificationService.removeUserNotification(this.userNotificatin).subscribe(u=>{
+      alert("removed sucssesfully!")
+    });
   }
 
 }

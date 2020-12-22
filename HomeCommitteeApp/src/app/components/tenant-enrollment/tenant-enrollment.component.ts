@@ -49,7 +49,7 @@ export class TenantEnrollmentComponent implements OnInit {
       t.type=this.formEnrollment.get("type").value;
       t.house_num=this.formEnrollment.get("house_num").value;
       t.building_id = parseInt(this.route.snapshot.paramMap.get('id'));
-      t.password=this.formEnrollment.get("password").value;
+      // t.password=this.formEnrollment.get("password").value;
 
 
       this.tenantServise.AddTenant(t).subscribe((c)=>{

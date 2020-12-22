@@ -50,6 +50,7 @@
     <Compile Include="Fault.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Notification.cs" />
+    <Compile Include="NotificationForUser.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="Seker.cs" />
     <Compile Include="SekerPerut.cs" />

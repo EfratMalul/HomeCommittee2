@@ -10,7 +10,7 @@ export class Tenant {
     type: number;
     house_num: number;
     building_id: number;
-    password: string;
+    // password: string;
     user_id:number;
  
    

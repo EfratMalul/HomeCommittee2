@@ -33,18 +33,28 @@ namespace HomeCommittee.Controllers
             }
             return Request.CreateResponse(HttpStatusCode.ExpectationFailed, true);
         }
-        //TODO
-        //[HttpPost]
-        //[Route("AddNotificationToSpesficUser/{buildingId}")]
-        //public HttpResponseMessage AddNotificationForAllUsers( int buildingId,string message)
-        //{
-        //    int id = NotificationBL.AddNotification(message);
-        //    if (id != -1)
-        //    {
-        //        NotificationBL.AddNotificationForUser(userId, id);
-        //        return Request.CreateResponse(HttpStatusCode.OK, true);
-        //    }
-        //    return Request.CreateResponse(HttpStatusCode.ExpectationFailed, true);
-        //}
+       
+        [HttpPost]
+        [Route("AddNotificationToSpesficUser")]
+        public HttpResponseMessage AddNotificationForAllUsers(NotificationForUser userNotification)
+        {
+            int id = NotificationBL.AddNotification(userNotification.message);
+            if (id != -1)
+            {
+                NotificationBL.AddNotificationForUser(userNotification.userId, id);
+                return Request.CreateResponse(HttpStatusCode.OK, true);
+            }
+            return Request.CreateResponse(HttpStatusCode.ExpectationFailed, true);
+        }
+
+        [HttpPost]
+        [Route("RemoveUserNotification")]
+        public HttpResponseMessage RemoveUserNotification(NotificationForUser userNotificatin)
+        {
+            UserNotificationBL.GetByUsetIdAndNotificationId(userNotificatin);
+
+            //NotificationBL.GetByUsetIdAndNotificationId(userNotificatin);
+            return Request.CreateResponse(HttpStatusCode.OK, true);
+        }
     }
 }

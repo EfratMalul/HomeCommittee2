@@ -11,6 +11,7 @@ using System.Web.Http;
 namespace HomeCommittee.Controllers
 {
     [RoutePrefix("api/Tenant")]
+    
     public class TenantController : ApiController
     {
         [HttpGet]
@@ -65,10 +66,16 @@ namespace HomeCommittee.Controllers
         }
 
 
-        // PUT api/User/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPost]
+        [Route("RemoveTenant")]
+        public HttpResponseMessage RemoveTenant(Tenant t)
         {
+           
+                TenantBL.RemoveTenant(t);
+                return Request.CreateResponse(HttpStatusCode.OK, true);
+
         }
+
 
     }
 }

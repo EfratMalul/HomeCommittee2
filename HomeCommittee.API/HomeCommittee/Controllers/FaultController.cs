@@ -32,20 +32,20 @@ namespace HomeCommittee.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, true);
         }
 
-        [HttpPut]
-        [Route("UpdateStatus/{id}/{fault}")]
-        public IHttpActionResult UpdateStatus(int id, Fault fault)
-        {
-            if (!ModelState.IsValid)//האם האובייקט לא תקין
-                return BadRequest(ModelState);//נחזיר תשובה עם ערך שגוי
+        //[HttpPut]
+        //[Route("UpdateStatus/{id}/{fault}")]
+        //public IHttpActionResult UpdateStatus(int id, Fault fault)
+        //{
+        //    if (!ModelState.IsValid)//האם האובייקט לא תקין
+        //        return BadRequest(ModelState);//נחזיר תשובה עם ערך שגוי
 
-            if (id != fault.id)
-                return Conflict(); //שגיאה שמצביעה על בעיה בהתאמה
+        //    if (id != fault.id)
+        //        return Conflict(); //שגיאה שמצביעה על בעיה בהתאמה
 
-            db.Entry(fault).State = System.Data.Entity.EntityState.Modified;// האובייקט הנשלח אמור להתעדכן
-            db.SaveChanges();
-            //מספר 201 מסמן הצלחה בפונקציות של put, post
-            return CreatedAtRoute("DefaultApi", new { id = fault.id }, fault);
-        }
+        //    db.Entry(fault).State = System.Data.Entity.EntityState.Modified;// האובייקט הנשלח אמור להתעדכן
+        //    db.SaveChanges();
+        //    //מספר 201 מסמן הצלחה בפונקציות של put, post
+        //    return CreatedAtRoute("DefaultApi", new { id = fault.id }, fault);
+        //}
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,19 @@ namespace HomeCommittee.DAL
                 return db.tenant_tbl.ToList();
             }
         }
+        public static void RemoveTenant(tenant_tbl tenant)
+        {
+            using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+            {
+                //int id = tenant.id;
+                //tenant_tbl te = db.tenant_tbl.Where(t => t.id == id).FirstOrDefault();
+                //db.tenant_tbl.Remove(te);
+                db.Entry(tenant).State = EntityState.Deleted;
+                db.SaveChanges();
+
+            }
+        }
+
 
         public static List<tenant_tbl> GetByBuildingId(int buidingId)
         {

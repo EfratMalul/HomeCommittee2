@@ -36,6 +36,9 @@ namespace HomeCommittee.BL
             List<UserNotification> notifications = UserNotificationConverter.ListToDTO(UserNotificationDAL.GetByUserId(userId));
             return NotificationDAL.GetByUserId(notifications);
         }
+
+    
+        
     }
 
 

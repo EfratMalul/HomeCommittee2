@@ -28,3 +28,9 @@ I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\bin\Debu
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.pdb
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.dll
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.pdb
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.dll
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.pdb
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csprojAssemblyReference.cache
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csproj.CoreCompileInputs.cache
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.dll
+G:\final Project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.pdb

@@ -39,18 +39,21 @@ export class TenantService {
       );
   }
 
-     GetNumTenant(buildingId:Number): Observable<number> {
-      
-       return this.baseService.getData("Tenant","GetNumTenant");
+  GetNumTenant(buildingId: Number): Observable<number> {
 
-    }
+    return this.baseService.getData("Tenant", "GetNumTenant");
+
+  }
 
 
 
-  GetAllTenantByBuildingId(buildingId:number): Observable<Tenant[]>
-  {
+  GetAllTenantByBuildingId(buildingId: number): Observable<Tenant[]> {
     const url = `${this.apiClientURL}Tenant/GetAllTenantByBuildingId`;
     return this.baseService.getData("Tenant", "GetAllTenantByBuildingId", `${buildingId}`);
-    
+
+  }
+  removeTenant(t: Tenant): Observable<Object> {
+    const url = `${this.apiClientURL}Tenant/RemoveTenant`;
+    return this.http.post(url, t);
   }
 }

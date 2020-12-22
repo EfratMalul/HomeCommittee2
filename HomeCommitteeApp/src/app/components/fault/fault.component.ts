@@ -25,6 +25,7 @@ export class FaultComponent implements OnInit {
     , private notificationService: NotificationService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+
     forkJoin({
       res1: this.faultService.getAllFault(this.userService.user.buildingId),
       res2: this.tenantService.GetAllTenantByBuildingId(this.userService.user.buildingId)
@@ -60,7 +61,7 @@ export class FaultComponent implements OnInit {
       width: '400px',
       data:{userId:e.user_id}
     });
-    // this.notificationService.AddNotificationByUserId(e.user_id)
+  
   }
 
   updateStatus(event, e) {

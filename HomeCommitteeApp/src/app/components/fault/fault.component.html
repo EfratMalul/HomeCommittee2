@@ -13,7 +13,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let e of faults ;let t of tenantName; let i = index">
-          <td class="line-td" scope="row">{{e.id}}</td>
+          <td class="line-td" scope="row">{{e.user_id}}</td>
           <td class="line-td">{{ e.description}}</td> 
           <td class="line-td" *ngIf="e.status==false"> לא טופל </td>
           <td class="line-td" *ngIf="e.status==true"></td>

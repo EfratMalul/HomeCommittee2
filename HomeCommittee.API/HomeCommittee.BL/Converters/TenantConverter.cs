@@ -14,7 +14,8 @@ namespace HomeCommittee.BL.Converters
         {
             return new tenant_tbl()
             {
-                id = t.id,
+
+                user_id = t.user_id,
                 first_name = t.first_name,
                 last_name = t.last_name,
                 floor = t.floor,
@@ -22,8 +23,9 @@ namespace HomeCommittee.BL.Converters
                 email = t.mail,
                 type = t.type,
                 house_num = t.house_num,
+                id = t.id,
                 building_id = t.building_id,
-                user_id = t.user_id
+
             };
         }
 
@@ -41,7 +43,7 @@ namespace HomeCommittee.BL.Converters
                 type = t.type,
                 house_num = t.house_num,
                 building_id = t.building_id,
-                 user_id = t.user_id
+                user_id = t.user_id
             };
         }
 
@@ -53,6 +55,6 @@ namespace HomeCommittee.BL.Converters
         {
             return list.Select(t => ToDTO(t)).ToList();
         }
-     
+
     }
 }

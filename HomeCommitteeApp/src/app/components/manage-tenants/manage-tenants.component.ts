@@ -12,17 +12,21 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class ManageTenantsComponent implements OnInit {
 
-  tenant_arr:Tenant[];
+  tenant_arr: Tenant[];
   myserch: any = '';
-  constructor(private router:Router,private tenantService:TenantService,private userService:UserService) { }
+  constructor(private router: Router, private tenantService: TenantService, private userService: UserService) { }
 
   ngOnInit(): void {
-    this.tenantService.GetAllTenantByBuildingId(this.userService.user.buildingId).subscribe( t=>{
-     this.tenant_arr=t;
+    this.tenantService.GetAllTenantByBuildingId(this.userService.user.buildingId).subscribe(t => {
+      this.tenant_arr = t;
     });
   }
- 
-
-
+  removeTenant(event, t) {
+    this.tenantService.removeTenant(t).subscribe(t => {
+      console.log(t);
+    });
   }
+
+
+}
 

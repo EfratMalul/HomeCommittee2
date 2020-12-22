@@ -22,6 +22,15 @@ namespace HomeCommittee.DAL
                 return db.notification_tbl.ToList();
             }
         }
+        public static user_notification_tbl GetByUsetIdAndNotificationId(NotificationForUser n)
+        {
+            using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+            {
+                return db.user_notification_tbl.Where(u=>u.notification_id==n.notificationId&&u.user_id==n.userId)
+                    .FirstOrDefault();
+            }
+        }
+        
         public static List<Notification> GetByUserId(List<UserNotification> notifications)
         {
             using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())

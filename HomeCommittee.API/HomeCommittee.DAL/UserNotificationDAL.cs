@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeCommittee.Entties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,34 @@ namespace HomeCommittee.DAL
             }
 
         }
+
+        public static user_notification_tbl GetByUsetIdAndNotificationId(NotificationForUser n)
+        {
+            using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+            {
+                return db.user_notification_tbl.Where(u=> u.user_id == n.userId&&u.notification_id==n.notificationId).
+                    FirstOrDefault();
+            }
+
+        }
+        public static void RemoveUserNotification(user_notification_tbl u)
+        {
+            using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+            {
+                db.user_notification_tbl.Remove(u);
+                db.SaveChanges();
+            }
+
+        }
+        
+
+
+
+
+
+
+
+
 
         //public static List<expenditure_tbl> GetByBuildingId(int buildingId)
         //{
