@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeCommittee.DAL
 {
-   public class FaultDAL
+    public class FaultDAL
     {
         public static fault_tbl GetById(int id)
         {
@@ -20,7 +20,7 @@ namespace HomeCommittee.DAL
         {
             using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
             {
-                return db.fault_tbl.Where(f=>f.building_id==buildingId).ToList();
+                return db.fault_tbl.Where(f => f.building_id == buildingId).ToList();
             }
         }
 
@@ -41,5 +41,21 @@ namespace HomeCommittee.DAL
             }
         }
 
+        public static void UpdateStatus(fault_tbl fault)
+        {
+            try
+            {
+                using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+                {
+                    db.Entry(fault).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

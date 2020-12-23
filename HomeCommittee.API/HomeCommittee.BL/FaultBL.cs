@@ -10,22 +10,23 @@ using System.Threading.Tasks;
 
 namespace HomeCommittee.BL
 {
-   public class FaultBL
+    public class FaultBL
     {
         public static void AddFault(Fault fault)
         {
             FaultDAL.Add(FaultConverter.ToDAL(fault));
         }
+
         public static List<Fault> GetFaultByBuilding(int buildingId)
         {
             return FaultConverter.ListToDTO(FaultDAL.GetFaultByBuilding(buildingId));
         }
-        //public static Fault GetById(int id, int per)
 
-        //{
-        //    if (per == (int)PermissionType.Committee)
-        //        return FaultConverter.ToDTO(FaultDAL.GetById(id));
-        //}
+        public static void UpdateFaultStatus(Fault f)
+        {
+            FaultDAL.UpdateStatus(FaultConverter.ToDAL(f));
+
+        }
 
     }
 }

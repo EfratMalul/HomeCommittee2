@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatStepper } from '@angular/material/stepper';
+import { MatTableDataSource } from '@angular/material/table';
 import { forkJoin } from 'rxjs';
 import { Fault } from 'src/app/classes/fault';
 import { Tenant } from 'src/app/classes/tenant';
@@ -10,6 +12,25 @@ import { UserService } from 'src/app/service/user.service';
 import { LogInComponent } from '../log-in/log-in.component';
 import { NotificationDialogComponent } from '../notification-dialog/notification-dialog.component';
 
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
+  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
+  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
+  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
+  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+];
 
 @Component({
   selector: 'app-fault',
@@ -17,6 +38,14 @@ import { NotificationDialogComponent } from '../notification-dialog/notification
   styleUrls: ['./fault.component.scss']
 })
 export class FaultComponent implements OnInit {
+
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   faults: Fault[];
   tenants: Tenant[];
@@ -38,7 +67,7 @@ export class FaultComponent implements OnInit {
         this.faults.forEach(f => {
           this.tenants.forEach(t => {
             if (f.user_id == t.user_id) {
-              this.tenantName.push(t.first_name+ ''+t.last_name);
+              this.tenantName.push(t.first_name + '' + t.last_name);
             }
           });
         });
@@ -57,26 +86,31 @@ export class FaultComponent implements OnInit {
 
   }
   sendNotification(event, e) {
-    this.dialog.open(NotificationDialogComponent ,{
+    this.dialog.open(NotificationDialogComponent, {
       width: '400px',
-      data:{userId:e.user_id}
+      data: { userId: e.user_id }
     });
+
+  }
+
   
-  }
-
   updateStatus(event, e) {
+    if (e.status == false) {
+      let fault: Fault = new Fault();
+      fault.id = e.id;
+      fault.description = e.description;
+      fault.building_id = e.building_id;
+      fault.status = true;
+      fault.user_id = e.user_id;
 
-    let fault: Fault = new Fault();
-    fault.id = e.id;
-    fault.description = e.description;
-    fault.building_id = e.building_id;
-    fault.status = true;
-    fault.user_id = e.user_id;
+      this.faultService.updateStatus(fault).subscribe((e => {
+        console.log(e);
 
-    this.faultService.updateStatus(fault).subscribe((e => {
-      console.log(e);
+      }));
 
-    }));
+    }
+    else {
+      alert(' "התקלה כבר עודכנה ל -"טופל')
+    }
   }
-
 }

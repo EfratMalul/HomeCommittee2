@@ -17,6 +17,11 @@ namespace HomeCommittee.BL
         {
             TenantDAL.Add(TenantConverter.ToDAL(t));
         }
+        public static void UpdateTenantDetails(Tenant t)
+        {
+            TenantDAL.UpdateTenantDetails(TenantConverter.ToDAL(t));
+        }
+        
         public static Tenant GetTenantByUserId(int userId)
         {
             return TenantConverter.ToDTO(TenantDAL.GetByUserId(userId));

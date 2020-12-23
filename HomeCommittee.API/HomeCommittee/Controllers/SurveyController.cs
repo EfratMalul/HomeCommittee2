@@ -22,14 +22,14 @@ namespace HomeCommittee.Controllers
                 SurveyBL.AddNewSurvey(seker);
                 return Request.CreateResponse(HttpStatusCode.OK, true);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.ExpectationFailed, ex);
             }
         }
 
 
-              [HttpGet]
+        [HttpGet]
         [Route("GetAllSurvey/{buildingId}")]
         public HttpResponseMessage GetAllSurvey(int buildingId)
         {

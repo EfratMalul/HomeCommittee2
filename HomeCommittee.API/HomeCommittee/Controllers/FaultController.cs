@@ -47,5 +47,16 @@ namespace HomeCommittee.Controllers
         //    //מספר 201 מסמן הצלחה בפונקציות של put, post
         //    return CreatedAtRoute("DefaultApi", new { id = fault.id }, fault);
         //}
+
+
+        [HttpPost]
+        [Route("UpdateStatus")]
+        public HttpResponseMessage UpdateStatus(Fault fault)
+        {
+            FaultBL.UpdateFaultStatus(fault);
+
+            //NotificationBL.GetByUsetIdAndNotificationId(userNotificatin);
+            return Request.CreateResponse(HttpStatusCode.OK, true);
+        }
     }
 }

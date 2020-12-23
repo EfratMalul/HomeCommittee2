@@ -38,7 +38,7 @@ namespace HomeCommittee.Controllers
         {
             try
             {
-                t.user_id = UserBL.AddUser(new User() { password = t.password, user_name = t.mail });
+                //t.user_id = UserBL.AddUser(new User() { password = t.password, user_name = t.mail });
                 TenantBL.AddTenant(t);
                 return Request.CreateResponse(HttpStatusCode.OK, true);
             }
@@ -75,6 +75,23 @@ namespace HomeCommittee.Controllers
                 return Request.CreateResponse(HttpStatusCode.OK, true);
 
         }
+
+        [HttpPost]
+        [Route("UpdateTenantDetails")]
+        public HttpResponseMessage UpdateTenantDetails(Tenant tenant)
+        {
+            try
+            {
+               
+                TenantBL.UpdateTenantDetails(tenant);
+                return Request.CreateResponse(HttpStatusCode.OK, true);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.ExpectationFailed, ex);
+            }
+        }
+        
 
 
     }

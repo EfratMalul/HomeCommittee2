@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
+import { MatStepper } from '@angular/material/stepper';
 import { Router } from '@angular/router';
 import { Building } from 'src/app/classes/building';
 
@@ -14,6 +15,12 @@ import { BuildingService } from 'src/app/service/building.service';
 })
 export class EnrollmentComponent implements OnInit {
 
+  // @ViewChild('stepper') stepper;
+
+  
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  isEditable = false;
 
 
   formEnrollment = new FormGroup({
@@ -27,13 +34,16 @@ export class EnrollmentComponent implements OnInit {
 
   });
 
-  constructor(private buildingService: BuildingService, private router: Router, private baseServise: BaseService) { }
-  onSubmit() {
+  constructor(private buildingService: BuildingService, private router: Router, private baseServise: BaseService,
+    private _formBuilder: FormBuilder) { }
+  onSubmit(stepper:MatStepper) {
 
     console.log(this.formEnrollment.invalid)
     if (this.formEnrollment.get("building").value && this.formEnrollment.get("address").value && this.formEnrollment.get("number").value && this.formEnrollment.get("city").value
       && this.formEnrollment.get("entrance").value && this.formEnrollment.get("zipCode").value && this.formEnrollment.get("numApartments").value) {
-
+        
+         
+   
 
       let b: Building = new Building();
       b.address = this.formEnrollment.get("address").value;
@@ -45,7 +55,10 @@ export class EnrollmentComponent implements OnInit {
 
       console.log(this.formEnrollment.get("building").value);
       this.buildingService.AddBuildung(b).subscribe((c) => {
-        this.router.navigate(["main/tenantEnrollment",c]);
+        // this.router.navigate(["main/tenantEnrollment",c]);
+        // this.stepper.next();
+        stepper.next();
+
       });
 
 
@@ -64,10 +77,20 @@ export class EnrollmentComponent implements OnInit {
     // this.buildingService.AddBuildung(new Building(this.formEnrollment.get("building").value,this.formEnrollment.get("building").value,this.formEnrollment.get("building").value)
     // this.formEnrollment.get("building").value,this.formEnrollment.get("building").value,,this.formEnrollment.get("building").value,this.formEnrollment.get("building").value)
   }
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+  }
+  
+  }
+  
 
 
 
 
 
-}
+

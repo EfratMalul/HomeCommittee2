@@ -56,4 +56,10 @@ export class TenantService {
     const url = `${this.apiClientURL}Tenant/RemoveTenant`;
     return this.http.post(url, t);
   }
+
+  updateTenantDetails(tenant:Tenant):Observable<Object>
+  {
+    const url = `${this.apiClientURL}Tenant/UpdateTenantDetails`;
+    return this.http.post(url, tenant);
+  }
 }

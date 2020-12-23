@@ -27,10 +27,12 @@ export class FaultService {
     return this.http.post(url, fault);
   }
 
-  updateStatus(fault:Fault):Observable<Fault>
+  updateStatus(fault:Fault):Observable<Object>
   {
- 
-     return this.http.put<Fault>("http://localhost:52732/Api/Fault/UpdateStatus/" + fault.id,fault);
+    const url = `${this.apiClientURL}Fault/UpdateStatus`;
+     return this.http.post(url, fault);
+
+    //  return this.http.put<Fault>("http://localhost:52732/Api/Fault/UpdateStatus/" + fault.id,fault);
   }
   
 }

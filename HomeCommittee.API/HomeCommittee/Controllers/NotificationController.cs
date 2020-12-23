@@ -21,6 +21,7 @@ namespace HomeCommittee.Controllers
             List<Notification> notifications = NotificationBL.GetByUsetId(userId);
             return Request.CreateResponse(HttpStatusCode.OK, notifications);
         }
+
         [HttpPost]
         [Route("AddNotificationToSpesficUser/{userId}")]
         public HttpResponseMessage AddNotificationToSpesficUser(int userId,string message)
@@ -34,6 +35,7 @@ namespace HomeCommittee.Controllers
             return Request.CreateResponse(HttpStatusCode.ExpectationFailed, true);
         }
        
+        //TODO
         [HttpPost]
         [Route("AddNotificationToSpesficUser")]
         public HttpResponseMessage AddNotificationForAllUsers(NotificationForUser userNotification)
@@ -56,5 +58,7 @@ namespace HomeCommittee.Controllers
             //NotificationBL.GetByUsetIdAndNotificationId(userNotificatin);
             return Request.CreateResponse(HttpStatusCode.OK, true);
         }
+
+      
     }
 }

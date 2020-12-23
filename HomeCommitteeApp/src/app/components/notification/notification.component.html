@@ -3,16 +3,12 @@
    <!-- <p>{{n.message}}</p> -->
    <td>
       <div>
-      <button mat-menu-item> {{n.message}} </button>
-      <button mat-icon-button color="red" (click)="removeUserNotification($event,n)" aria-label="Example icon button with a home icon" matTooltip="מחיקה">
+      <button mat-menu-item> {{n.message}}   <button mat-icon-button color="red" (click)="removeUserNotification($event,n)" aria-label="Example icon button with a home icon" matTooltip="מחיקה">
          <mat-icon>delete</mat-icon>
-      </button>
+      </button></button>
+    
    </div>
    </td>
 
 
 </div>
-<!-- <mat-menu #menu="matMenu" *ngFor="let n of notifications index as i" >
-   <button mat-menu-item>{{n.message}}</button>
-  
- </mat-menu> -->

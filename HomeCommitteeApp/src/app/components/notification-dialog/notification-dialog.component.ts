@@ -37,8 +37,9 @@ export class NotificationDialogComponent implements OnInit {
     this.userNotification.userId=this.userId;
     this.userNotification.message=this.formNotification.get("messege").value;
     this.notificationService.AddNotification(this.userNotification).subscribe(x => {
+      this.onNoClick();
       alert("ההודעה נשלחה בהצלחה")
-      this.dialogRef.close();
+ 
     })
   }
 

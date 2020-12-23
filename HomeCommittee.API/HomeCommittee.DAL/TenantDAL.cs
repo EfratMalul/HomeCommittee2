@@ -24,15 +24,28 @@ namespace HomeCommittee.DAL
         {
             using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
             {
-                //int id = tenant.id;
-                //tenant_tbl te = db.tenant_tbl.Where(t => t.id == id).FirstOrDefault();
-                //db.tenant_tbl.Remove(te);
+
                 db.Entry(tenant).State = EntityState.Deleted;
                 db.SaveChanges();
 
             }
         }
 
+        public static void UpdateTenantDetails(tenant_tbl tenant)
+        {
+            try
+            {
+                using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+                {
+                    db.Entry(tenant).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
         public static List<tenant_tbl> GetByBuildingId(int buidingId)
         {

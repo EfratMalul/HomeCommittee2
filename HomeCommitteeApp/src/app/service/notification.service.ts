@@ -24,10 +24,12 @@ export class NotificationService {
     return this.http.post(url, userNotification);
     // return this.baseServise.postData("Notification","AddNotificationToSpesficUser",userNotification);
   }
-  removeUserNotification(userNotification:NotificationForUser):Observable<Object>
-  {
+
+  removeUserNotification(userNotification: NotificationForUser): Observable<Object> {
     const url = `${this.apiClientURL}Notification/RemoveUserNotification`;
     return this.http.post(url, userNotification);
   }
+
+
 
 }

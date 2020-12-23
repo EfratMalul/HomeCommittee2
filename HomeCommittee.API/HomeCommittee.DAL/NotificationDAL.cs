@@ -26,25 +26,22 @@ namespace HomeCommittee.DAL
         {
             using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
             {
-                return db.user_notification_tbl.Where(u=>u.notification_id==n.notificationId&&u.user_id==n.userId)
+                return db.user_notification_tbl.Where(u => u.notification_id == n.notificationId && u.user_id == n.userId)
                     .FirstOrDefault();
             }
         }
-        
+
         public static List<Notification> GetByUserId(List<UserNotification> notifications)
         {
             using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
             {
                 List<Notification> notificationList = new List<Notification>();
-                //List<notification_tbl> Usernotification = new List<notification_tbl>();
+
                 foreach (UserNotification not in notifications)
                 {
-                    //var x = db.notification_tbl.Where(n => n.id == not.notification_id) ;
-                    //Usernotification.Add((notification_tbl)(x));
 
-                  
                     var query = from u in db.notification_tbl
-                                where u.id==not.notification_id
+                                where u.id == not.notification_id
                                 select u;
 
                     foreach (var item in query)
@@ -55,25 +52,15 @@ namespace HomeCommittee.DAL
 
                         notificationList.Add(notification);
                     }
-                   
                 }
 
-
-
-
                 return notificationList;
-                //Usernotification.Add(db.notification_tbl.Where(n => n.id = not.notification_id));
-                //lista.Where(a => listb.Any(b => a.ToLower() == b.ToLower())).ToList();
 
-                //.Where(a => listb.Any(b => a.ToLower() == b.ToLower())).ToList();
             }
-            //            var persons = db.Favorites
-            //.Where(f => f.userId == userId)
-            //            var result = db.notification_tbl.Where(a => notifications.Any(b => a.id == b.notification_id)).ToList();
-           
+
         }
 
-        
+
 
         public static notification_tbl GetById(int id)
         {
@@ -95,7 +82,7 @@ namespace HomeCommittee.DAL
                 }
                 return -1;
             }
-            
+
             catch (Exception e)
             {
                 throw e;
@@ -109,7 +96,7 @@ namespace HomeCommittee.DAL
                 {
                     db.user_notification_tbl.Add(notification);
                     db.SaveChanges();
-                    
+
                 }
             }
 

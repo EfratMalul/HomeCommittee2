@@ -58,7 +58,7 @@ namespace HomeCommittee.BL.Converters
                 CountAnswers = s.CountAnswers,
                 Status = s.Status,
                 BuildingId = s.BuildingId,
-                SekerPeruts = s.SurveyDetails.Select(x => ToDTO(x)).ToList()
+                //SekerPeruts = s.SurveyDetails.Select(x => ToDTO(x)).ToList()
 
             };
 

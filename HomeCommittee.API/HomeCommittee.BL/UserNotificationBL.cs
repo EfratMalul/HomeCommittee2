@@ -27,6 +27,8 @@ namespace HomeCommittee.BL
             UserNotificationDAL.RemoveUserNotification(u);
            
         }
+     
         
+
     }
 }

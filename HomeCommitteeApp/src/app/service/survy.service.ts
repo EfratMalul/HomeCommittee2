@@ -25,6 +25,17 @@ getSurvy (buildingId:number):Observable<SekerCotert []>
   })
 );
 }
+getAllSurvy(buildingId:number):Observable<SekerCotert[]>
+{
+  return this.baseService.getData("Survey","GetAllSurvey",`${buildingId}`)
+  .pipe(
+    map((x: any) => {
+      let result = <SekerCotert[]>formatters(x);
+      this.survey = result;
+      return result;
+    })
+  );
+}
 
 addNewSurvey(sekerCotert:SekerCotert):Observable<Object>
 {

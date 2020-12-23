@@ -54,7 +54,9 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenuModule} from '@angular/material/menu';
 import { TenantPaymentComponent } from './components/tenant-payment/tenant-payment.component';
 import { NotificationDialogComponent } from './components/notification-dialog/notification-dialog.component';
-
+import { UpdateTenantComponent } from './components/update-tenant/update-tenant.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,7 +89,8 @@ import { NotificationDialogComponent } from './components/notification-dialog/no
     UserAreaComponent,
     NotificationComponent,
     TenantPaymentComponent,
-    NotificationDialogComponent
+    NotificationDialogComponent,
+    UpdateTenantComponent
   ],
   imports: [
     BrowserModule,
@@ -106,7 +109,9 @@ import { NotificationDialogComponent } from './components/notification-dialog/no
     MatTooltipModule,
     MatSidenavModule,
     MatBadgeModule,
-    MatMenuModule
+    MatMenuModule,
+    MatStepperModule,
+    MatTableModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

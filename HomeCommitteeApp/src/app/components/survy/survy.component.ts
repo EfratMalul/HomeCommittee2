@@ -18,6 +18,9 @@ export class SurvyComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.survyServise.getAllSurvy(this.userService.user.buildingId).subscribe(e => {
+      this.survey = e;
+    });
     // this.survyServise.getSurvy(this.userService.user.buildingId).subscribe(e => {
     //   this.survey = e;
     // });
@@ -30,4 +33,29 @@ export class SurvyComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  activeSurvy: boolean = false; 
+  clickEvent(event, s) {
+    this.activeSurvy = !this.activeSurvy;
+    if( this.activeSurvy==false )
+    {
+      this.openSurvey(event, s);
+    }
+    else{
+      this.closeSurvey(event, s);
+    }
+  }
+  removeSurvey(event, s) {
+
+  }
+  openSurvey(event, s) {
+alert("now open the surevy");
+  }
+  closeSurvey(event, s) {
+    alert("now close the surevy");
+  }
+  enterceSurvey(event, s) {
+
+  }
+
 }
