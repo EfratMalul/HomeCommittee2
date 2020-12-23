@@ -16,6 +16,9 @@ export class NotificationComponent implements OnInit {
   notifications: Notification[];
   numNotification: number;
   userNotificatin: NotificationForUser = new NotificationForUser();
+
+  @Output() numOfNotification = new EventEmitter<number>();
+
   constructor(private notificationService: NotificationService, private userService: UserService) { }
 
   ngOnInit(): void {
@@ -24,6 +27,7 @@ export class NotificationComponent implements OnInit {
     this.notificationService.getAllNotifications(this.userService.user.id).subscribe(n => {
       this.notifications = n;
       this.numNotification = this.notifications.length;
+      this.numOfNotification.emit(this.numNotification);
       console.log(this.numNotification);
     });
 

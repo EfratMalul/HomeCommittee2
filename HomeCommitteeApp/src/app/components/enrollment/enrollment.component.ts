@@ -17,7 +17,7 @@ export class EnrollmentComponent implements OnInit {
 
   // @ViewChild('stepper') stepper;
 
-  
+
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   isEditable = false;
@@ -36,48 +36,76 @@ export class EnrollmentComponent implements OnInit {
 
   constructor(private buildingService: BuildingService, private router: Router, private baseServise: BaseService,
     private _formBuilder: FormBuilder) { }
-  onSubmit(stepper:MatStepper) {
 
-    console.log(this.formEnrollment.invalid)
-    if (this.formEnrollment.get("building").value && this.formEnrollment.get("address").value && this.formEnrollment.get("number").value && this.formEnrollment.get("city").value
-      && this.formEnrollment.get("entrance").value && this.formEnrollment.get("zipCode").value && this.formEnrollment.get("numApartments").value) {
+  public onStepChange(event: any): void {
+    switch (event.previouslySelectedIndex) {
+      case 0:
+        if (event.selectedIndex = event.previouslySelectedIndex + 1)
+          alert("save 0")
+          // let b: Building = new Building();
+          //     b.address = this.formEnrollment.get("address").value;
+          //     b.city = this.formEnrollment.get("city").value;
+          //     b.id = 3;
+          //     b.number = this.formEnrollment.get("number").value;
+          //     b.numApartments = this.formEnrollment.get("numApartments").value;
+          //     b.zipCode == this.formEnrollment.get("zipCode").value;
         
-         
-   
-
-      let b: Building = new Building();
-      b.address = this.formEnrollment.get("address").value;
-      b.city = this.formEnrollment.get("city").value;
-      b.id = 3;
-      b.number = this.formEnrollment.get("number").value;
-      b.numApartments = this.formEnrollment.get("numApartments").value;
-      b.zipCode == this.formEnrollment.get("zipCode").value;
-
-      console.log(this.formEnrollment.get("building").value);
-      this.buildingService.AddBuildung(b).subscribe((c) => {
-        // this.router.navigate(["main/tenantEnrollment",c]);
-        // this.stepper.next();
-        stepper.next();
-
-      });
-
-
-
-
-
+          //     console.log(this.formEnrollment.get("building").value);
+          //     this.buildingService.AddBuildung(b).subscribe((c) => {
+          //       // this.router.navigate(["main/tenantEnrollment",c]);
+          //       // this.stepper.next();       
+          //     });
+        break;
+      case 1:
+        if (event.selectedIndex = event.previouslySelectedIndex + 1)
+          alert("save 1")
+        break;
     }
-
-    else {
-      alert("עליך למלא את כל הפרטים!")
-    }
-
-
-
-    //   Building b=new Building((this.formEnrollment.get("building").value))
-    // this.buildingService.AddBuildung(new Building(this.formEnrollment.get("building").value,this.formEnrollment.get("building").value,this.formEnrollment.get("building").value)
-    // this.formEnrollment.get("building").value,this.formEnrollment.get("building").value,,this.formEnrollment.get("building").value,this.formEnrollment.get("building").value)
+    console.log(event.selectedIndex);
   }
-  ngOnInit(): void { 
+
+  // onSubmit(stepper: MatStepper) {
+
+  //   console.log(this.formEnrollment.invalid)
+  //   if (this.formEnrollment.get("building").value && this.formEnrollment.get("address").value && this.formEnrollment.get("number").value && this.formEnrollment.get("city").value
+  //     && this.formEnrollment.get("entrance").value && this.formEnrollment.get("zipCode").value && this.formEnrollment.get("numApartments").value) {
+
+
+
+
+  //     let b: Building = new Building();
+  //     b.address = this.formEnrollment.get("address").value;
+  //     b.city = this.formEnrollment.get("city").value;
+  //     b.id = 3;
+  //     b.number = this.formEnrollment.get("number").value;
+  //     b.numApartments = this.formEnrollment.get("numApartments").value;
+  //     b.zipCode == this.formEnrollment.get("zipCode").value;
+
+  //     console.log(this.formEnrollment.get("building").value);
+  //     this.buildingService.AddBuildung(b).subscribe((c) => {
+  //       // this.router.navigate(["main/tenantEnrollment",c]);
+  //       // this.stepper.next();
+  //       stepper.next();
+
+  //     });
+
+
+
+
+
+  //   }
+
+  //   else {
+  //     alert("עליך למלא את כל הפרטים!")
+  //   }
+
+
+
+  //   //   Building b=new Building((this.formEnrollment.get("building").value))
+  //   // this.buildingService.AddBuildung(new Building(this.formEnrollment.get("building").value,this.formEnrollment.get("building").value,this.formEnrollment.get("building").value)
+  //   // this.formEnrollment.get("building").value,this.formEnrollment.get("building").value,,this.formEnrollment.get("building").value,this.formEnrollment.get("building").value)
+  // }
+  ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
@@ -85,9 +113,9 @@ export class EnrollmentComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
   }
-  
-  }
-  
+
+}
+
 
 
 

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Tenant } from '../classes/tenant';
@@ -13,7 +13,7 @@ import { BaseService } from './base.service';
 export class TenantService {
 
   apiClientURL = environment.BaseClientApiUrl;
-
+  public isUpdateUser: Subject<boolean>;
   tenant: Tenant = new Tenant();
 
   constructor(private baseService: BaseService, private http: HttpClient) { }
@@ -57,8 +57,7 @@ export class TenantService {
     return this.http.post(url, t);
   }
 
-  updateTenantDetails(tenant:Tenant):Observable<Object>
-  {
+  updateTenantDetails(tenant: Tenant): Observable<Object> {
     const url = `${this.apiClientURL}Tenant/UpdateTenantDetails`;
     return this.http.post(url, tenant);
   }

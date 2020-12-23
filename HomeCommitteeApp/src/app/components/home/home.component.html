@@ -14,7 +14,7 @@
   </button>
 
 <mat-menu #menu="matMenu">
-    <app-notification></app-notification>
+    <app-notification (numOfNotification)="numNotification=$event" ></app-notification>
 
 </mat-menu>
   </div>

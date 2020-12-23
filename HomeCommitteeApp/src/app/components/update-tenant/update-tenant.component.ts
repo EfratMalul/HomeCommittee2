@@ -84,6 +84,7 @@ export class UpdateTenantComponent implements OnInit {
     this.tenantService.updateTenantDetails(this.newTenant).subscribe(x => {
       this.onNoClick();
       alert("  עודכן בהצלחה!")
+      this.tenantService.isUpdateUser.next(true);
 
     })
   }

@@ -1,5 +1,5 @@
 import { Route } from '@angular/compiler/src/core';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TenantService } from 'src/app/service/tenant.service';
 import { UserService } from 'src/app/service/user.service';
@@ -10,11 +10,11 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  @Input() numNotification: number;
 
   showFiller = false;
   permission: number;
   tenantName: string;
+  numNotification:number;
 
   constructor(private route: ActivatedRoute, private userServise: UserService, private tenantService: TenantService,
     private router: Router) { }
