@@ -53,7 +53,14 @@ namespace HomeCommittee.Controllers
             var x = PaymentBL.GetPaymentsByUser(buildingId, userId);
             return Request.CreateResponse(HttpStatusCode.OK, x);
         }
-
+        
+             [HttpGet]
+        [Route("GetAllPaymentsFromAllTenants/{buildingId}")]
+        public HttpResponseMessage GetAllPaymentsFromAllTenants(int buildingId)
+        {
+            var x = PaymentBL.GetAllPaymentsFromAllTenants(buildingId);
+            return Request.CreateResponse(HttpStatusCode.OK, x);
+        }
 
 
     }

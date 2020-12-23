@@ -63,6 +63,17 @@ namespace HomeCommittee.BL
             });
             return x;
         }
+        public static List<TenantPayment> GetAllPaymentsFromAllTenants(int buildingId)
+        {
+            //var x= PaymentConverter.ListToDTOTenantPayment(PaymentDAL.GetPaymentsByBuilding(buildingId));
+           List<TenantPayment>tenantPayment=new List<TenantPayment>();
+            var y = TenantBL.GetAllTenantByBuildingId(buildingId);
+            y.ForEach(z =>  {
+                tenantPayment.AddRange(GetPaymentsByUser(buildingId,z.user_id));
+            });
+            return tenantPayment;
+        }
+
 
         //public static List<Payment> GetAlltenantPayment(int buildingId)
         //{
