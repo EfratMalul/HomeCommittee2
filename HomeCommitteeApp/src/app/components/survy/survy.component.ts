@@ -21,9 +21,7 @@ export class SurvyComponent implements OnInit {
     this.survyServise.getAllSurvy(this.userService.user.buildingId).subscribe(e => {
       this.survey = e;
     });
-    // this.survyServise.getSurvy(this.userService.user.buildingId).subscribe(e => {
-    //   this.survey = e;
-    // });
+
 
   }
   openDialog() {

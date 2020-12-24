@@ -9,7 +9,7 @@ export class SekerCotert {
         countAnswers:number;
         status:boolean;
         BuildingId:number;
-        sekerPeruts :Array<SekerPerut>;
+    
 
 
 

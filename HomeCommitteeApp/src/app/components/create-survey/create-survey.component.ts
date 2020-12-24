@@ -75,7 +75,8 @@ export class CreateSurveyComponent implements OnInit {
     this.sekerCotert.countAnswers = 0;
     this.sekerCotert.createDate = new Date();
     this.addQuession();
-    this.sekerCotert.sekerPeruts = this.sekerPeruts;
+    //not working
+    // this.sekerCotert.sekerPeruts = this.sekerPeruts;
 
     //   questionSubject: this.formSurvey.get("quession").value,
     //   extrnalChar1: this.formSurvey.get("ansswer1").value,

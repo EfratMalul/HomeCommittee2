@@ -16,7 +16,7 @@ export class ManageTenantsComponent implements OnInit {
 
   tenant_arr: Tenant[];
   myserch: any = '';
-  constructor(private router: Router, public tenantService: TenantService, private userService: UserService,
+  constructor(private router: Router, private tenantService: TenantService, private userService: UserService,
     public dialog: MatDialog) {
     this.tenantService.isUpdateUser.subscribe(x => {
       if (x == true) {
