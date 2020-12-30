@@ -27,9 +27,9 @@
         
           <!-- <td class="line-td">{{p.building_id }}</td> -->
           <td class="line-td">{{ p.sum }}</td>
-          <td class="line-td">{{ p.payForDate }}</td>
+          <td class="line-td">{{ p.payForDate| date:'shortDate' }}</td>
           <td class="line-td">{{ p.description }}</td>
-          <td class="line-td" *ngIf="p.status==true" >{{ p.paymentDate }}</td>
+          <td class="line-td" *ngIf="p.status==true" >{{ p.paymentDate| date:'shortDate' }}</td>
           <td class="line-td"  *ngIf="p.status==false"><button>לתשלום</button></td>
   
         </tr>

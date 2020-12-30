@@ -53,6 +53,8 @@ export class FaultComponent implements OnInit {
   constructor(private faultService: FaultService, private userService: UserService, private tenantService: TenantService
     , private notificationService: NotificationService, public dialog: MatDialog) { }
 
+    permission= this.userService.user.permission;
+
   ngOnInit(): void {
 
     forkJoin({

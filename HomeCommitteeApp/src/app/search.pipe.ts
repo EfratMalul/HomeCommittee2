@@ -32,7 +32,7 @@ export class SearchPipe implements PipeTransform {
       }
 
         //tenant-2
-        else
+        else  if(args[0]== 2)
         return payments.filter(tenant => tenant.tenantId==args[0]);
 
         // return payments.filter(tenant =>{if(typeof(tenant.first_name)=="string")tenant.first_name.includes(args[0])});

@@ -1,10 +1,10 @@
-
+<!-- 
 <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
     <li [ngbNavItem]="1">
       <a ngbNavLink  class=routerHeader routerLink="expenditure" routerLinkActive="active">צפיה הוצאות </a>
       <ng-template ngbNavContent>
       
-            <!-- <app-expenditure></app-expenditure> -->
+            
         <router-outlet></router-outlet>
       </ng-template>
     </li>
@@ -23,4 +23,8 @@
   </ul>
   
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
-  
+   -->
+   <p>צפיה בהוצאות</p>
+   <button *ngIf="permission==1" mat-flat-button color="warn" (click)="openDialog()">
+    <mat-icon>add</mat-icon> הוספת הוצאה</button>
+   <app-expenditure></app-expenditure>

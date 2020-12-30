@@ -57,21 +57,21 @@
           <th class="line-th" scope="col">תאור</th>
           <th class="line-th" scope="col">סטטוס</th>
           <th class="line-th" scope="col">דווח ע"י</th>
-          <th class="line-th" scope="col">עדכון סטטוס</th>
-          <th class="line-th" scope="col">שלית הודעה על טיפול</th>
+          <th *ngIf="permission==1" class="line-th" scope="col">עדכון סטטוס</th>
+          <th *ngIf="permission==1" class="line-th" scope="col">שליחת הודעה על טיפול</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let e of faults ;let t of tenantName; let i = index" 
-        [ngStyle]="{'backgroundColor':e.status==true?'#d9f3d9':'#f1a3a3'}">
+      >
           <td class="line-td" scope="row">{{e.id}}</td>
           <td class="line-td">{{ e.description}}</td> 
-          <td class="line-td" *ngIf="e.status==false"> לא טופל </td>
-          <td class="line-td" *ngIf="e.status==true">טופל</td>
+          <td class="line-td"  [ngStyle]="{'color':' red'}"  *ngIf="e.status==false"> לא טופל </td>
+          <td class="line-td"  [ngStyle]="{'color':' green'}" *ngIf="e.status==true">טופל</td>
           <td class="line-td">{{tenantName[i] }}</td>
 
-          <td class="line-td"><button  mat-flat-button color="warn" (click)="updateStatus($event, e)" >עדכן סטטוס</button></td>
-          <td class="line-td"><button  mat-flat-button color="warn"  (click)="sendNotification($event, e)">שלח הודעה</button></td>
+          <td *ngIf="permission==1" class="line-td"><button  mat-flat-button color="warn" (click)="updateStatus($event, e)" >עדכן סטטוס</button></td>
+          <td *ngIf="permission==1" class="line-td"><button  mat-flat-button color="warn"  (click)="sendNotification($event, e)">שלח הודעה</button></td>
         </tr>
         </tbody>
       </table>

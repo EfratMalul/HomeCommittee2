@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { SekerCotert } from 'src/app/classes/seker-cotert';
 import { Survey } from 'src/app/classes/survey';
 import { SurvyService } from 'src/app/service/survy.service';
@@ -13,9 +14,10 @@ import { CreateSurveyComponent } from '../create-survey/create-survey.component'
 })
 export class SurvyComponent implements OnInit {
   survey: SekerCotert[];
-
-  constructor(public dialog: MatDialog, private survyServise: SurvyService, private userService: UserService) { }
-
+  permission=this.userService.user.permission;
+  constructor(public dialog: MatDialog, private survyServise: SurvyService, private userService: UserService,
+    private router: Router) { }
+   
   ngOnInit(): void {
 
     this.survyServise.getAllSurvy(this.userService.user.buildingId).subscribe(e => {
@@ -32,14 +34,13 @@ export class SurvyComponent implements OnInit {
     });
   }
 
-  activeSurvy: boolean = false; 
+  activeSurvy: boolean = false;
   clickEvent(event, s) {
     this.activeSurvy = !this.activeSurvy;
-    if( this.activeSurvy==false )
-    {
+    if (this.activeSurvy == false) {
       this.openSurvey(event, s);
     }
-    else{
+    else {
       this.closeSurvey(event, s);
     }
   }
@@ -47,13 +48,18 @@ export class SurvyComponent implements OnInit {
 
   }
   openSurvey(event, s) {
-alert("now open the surevy");
+    alert("now open the surevy");
   }
   closeSurvey(event, s) {
     alert("now close the surevy");
   }
   enterceSurvey(event, s) {
-
+    if (s.status == true) {
+      this.router.navigate(['/answerSurvey/'])
+    }
+    else {
+      alert("לא ניתן להיכנס לסקר, הסקר אינו פעיל כעת!");
+    }
   }
 
 }

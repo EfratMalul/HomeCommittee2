@@ -58,6 +58,8 @@ import { UpdateTenantComponent } from './components/update-tenant/update-tenant.
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatTableModule} from '@angular/material/table';
 import { EnterceSurveyComponent } from './components/enterce-survey/enterce-survey.component';
+import { AnswerSurveyComponent } from './components/answer-survey/answer-survey.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,7 +94,8 @@ import { EnterceSurveyComponent } from './components/enterce-survey/enterce-surv
     TenantPaymentComponent,
     NotificationDialogComponent,
     UpdateTenantComponent,
-    EnterceSurveyComponent
+    EnterceSurveyComponent,
+    AnswerSurveyComponent
   ],
   imports: [
     BrowserModule,

@@ -34,7 +34,7 @@
         <td class="line-td">{{ t.mail}}</td>
         <td class="line-td">{{ t.type}}</td>
         <td class="line-td">
-           <button mat-icon-button color="primary"  (click)="updateTenant($event, t)"  aria-label="Example icon button with a home icon" matTooltip="עריכה">
+           <button *ngIf="permission==1"  mat-icon-button color="primary"  (click)="updateTenant($event, t)"  aria-label="Example icon button with a home icon" matTooltip="עריכה">
           <mat-icon>edit</mat-icon>
         </button>
       </td>
