@@ -39,18 +39,7 @@ export class CreateSurveyComponent implements OnInit {
       alert("לא ניתן להוסיף יותר מ5  אפשרויות")
       // this.openDialog();
     }
-    //   let row = document.createElement('div');   
-    //     row.className = 'row'; 
 
-    //     row.innerHTML = ` 
-    //     <br> 
-    //     <br> 
-    //     <mat-form-field class="example-full-width">
-    //     <mat-label>תשובה</mat-label>
-    //     <input matInput placeholder="הוסף תשובה" value="">
-    // </mat-form-field>
-    //     `; 
-    //     document.querySelector('.showInputField').appendChild(row); 
   }
 
   addQuession() {
@@ -60,12 +49,27 @@ export class CreateSurveyComponent implements OnInit {
     s.extrnalChar2 = this.formSurvey.get("ansswer2").value;
     s.extrnalChar3 = this.formSurvey.get("ansswer3").value;
     s.extrnalChar4 = this.formSurvey.get("ansswer4").value;
-    s.extrnalChar5 = this.formSurvey.get("ansswer5").value,
-      s.extrnalCount1 = 0
+    s.extrnalChar5 = this.formSurvey.get("ansswer5").value;
+    s.extrnalNum1 = 1;
+    s.extrnalNum2 = 2;
+    s.extrnalNum3 = 3;
+    s.extrnalNum4 = 4;
+    s.extrnalNum5 = 5;
+    s.extrnalCount1 = 0;
+    s.extrnalCount2 = 0;
+    s.extrnalCount3 = 0;
+    s.extrnalCount4 = 0;
+    s.extrnalCount5 = 0;
+    s.extrnalCount1 = 0
     this.sekerPeruts.push(s);
     this.formSurvey.get("quession").reset();
+    this.formSurvey.get("ansswer1").reset();
+    this.formSurvey.get("ansswer2").reset();
+    this.formSurvey.get("ansswer3").reset();
+    this.formSurvey.get("ansswer4").reset();
+    this.formSurvey.get("ansswer5").reset();
   }
-  onSubmit() {
+  createSurvy() {
     console.log(this.formSurvey.value);
     // this.survyService.addNewSurvey(this.formSurvey.get('quession').value, this.formSurvey.get('ansswer1').value,
     // this.formSurvey.get('ansswer2').value).
@@ -76,7 +80,7 @@ export class CreateSurveyComponent implements OnInit {
     this.sekerCotert.createDate = new Date();
     this.addQuession();
     //not working
-    // this.sekerCotert.sekerPeruts = this.sekerPeruts;
+    this.sekerCotert.sekerPeruts = this.sekerPeruts;
 
     //   questionSubject: this.formSurvey.get("quession").value,
     //   extrnalChar1: this.formSurvey.get("ansswer1").value,

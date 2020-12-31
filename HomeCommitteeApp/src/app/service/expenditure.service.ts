@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Category } from '../classes/Category';
 import { Expenditure } from '../classes/expenditure';
@@ -12,9 +12,11 @@ import { BaseService } from './base.service';
 export class ExpenditureService {
 
   public category: Array<Category>;
-  apiClientURL = environment.BaseClientApiUrl;
-  constructor(private baseServise:BaseService,private http: HttpClient) { 
+  isAddExpenditure = new BehaviorSubject(false);
 
+  apiClientURL = environment.BaseClientApiUrl;
+  constructor(private baseServise:BaseService,private http: HttpClient ) { 
+   
   
 
   }

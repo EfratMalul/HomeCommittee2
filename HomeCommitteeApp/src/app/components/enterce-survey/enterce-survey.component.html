@@ -1,1 +1,32 @@
-<p>enterce-survey works!</p>
+<h1>סקר {{survey.subject}}</h1>
+<form>
+    <div *ngFor="let s of sekerPeruts; index as i">
+        <span> שאלה {{i+1}}</span>
+        <p id="example-radio-group-label">{{s.questionSubject}}</p>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+            [(ngModel)]="favoriteSeason">
+            <mat-radio-button *ngIf='s.extrnalChar1!=null&&s.extrnalChar1!=""' class="example-radio-button"
+                [value]="s.extrnalChar1">
+                {{s.extrnalChar1}}
+            </mat-radio-button>
+            <mat-radio-button *ngIf='s.extrnalChar2!=null&&s.extrnalChar2!=""' class="example-radio-button"
+                [value]="s.extrnalChar2">
+                {{s.extrnalChar2}}
+            </mat-radio-button>
+            <mat-radio-button *ngIf='s.extrnalChar3!=null&&s.extrnalChar3!=""' class="example-radio-button"
+                [value]="s.extrnalChar3">
+                {{s.extrnalChar3}}
+            </mat-radio-button>
+            <mat-radio-button *ngIf='s.extrnalChar4!=null&&s.extrnalChar4!=""' class="example-radio-button"
+                [value]="s.extrnalChar4">
+                {{s.extrnalChar4}}
+            </mat-radio-button>
+            <mat-radio-button *ngIf='s.extrnalChar5!=null&&s.extrnalChar5!=""' class="example-radio-button"
+                [value]="s.extrnalChar5">
+                {{s.extrnalChar5}}
+            </mat-radio-button>
+        </mat-radio-group>
+
+    </div>
+    <button mat-raised-button color="warn">שלח סקר</button>
+</form>

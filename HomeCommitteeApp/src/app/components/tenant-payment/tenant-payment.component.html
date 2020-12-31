@@ -1,7 +1,9 @@
 
 <label >חיפוש לפי מזהה דייר</label>
 <input   type="text" [(ngModel)]="myserch" />
-
+<button mat-raised-button color="warn" (click)="openDialog()">
+  <mat-icon>access_alarms</mat-icon>
+   תזכורת תשלום לדירים</button>
 <!-- <select [(ngModel)]='nrSelect' (change)="changePayment($event.target.value)">
   <option  [value]="NoOrder" selected="selected" >ללא סינון</option>
   <option   [value]="TenantsPaid">דיירים ששילמו</option>

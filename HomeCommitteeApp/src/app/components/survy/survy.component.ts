@@ -6,6 +6,7 @@ import { Survey } from 'src/app/classes/survey';
 import { SurvyService } from 'src/app/service/survy.service';
 import { UserService } from 'src/app/service/user.service';
 import { CreateSurveyComponent } from '../create-survey/create-survey.component';
+import { EnterceSurveyComponent } from '../enterce-survey/enterce-survey.component';
 
 @Component({
   selector: 'app-survy',
@@ -13,8 +14,10 @@ import { CreateSurveyComponent } from '../create-survey/create-survey.component'
   styleUrls: ['./survy.component.scss']
 })
 export class SurvyComponent implements OnInit {
+
   survey: SekerCotert[];
   permission=this.userService.user.permission;
+
   constructor(public dialog: MatDialog, private survyServise: SurvyService, private userService: UserService,
     private router: Router) { }
    
@@ -22,6 +25,8 @@ export class SurvyComponent implements OnInit {
 
     this.survyServise.getAllSurvy(this.userService.user.buildingId).subscribe(e => {
       this.survey = e;
+      console.log(e);
+      console.log(this.survey);
     });
 
 
@@ -55,7 +60,18 @@ export class SurvyComponent implements OnInit {
   }
   enterceSurvey(event, s) {
     if (s.status == true) {
-      this.router.navigate(['/answerSurvey/'])
+     // this.router.navigate(['/answerSurvey/'])
+    
+   
+      this.dialog.open(EnterceSurveyComponent, {
+        width: '600px',
+        height:'700px',
+        data: { survey: s }
+      });
+     
+ 
+  
+
     }
     else {
       alert("לא ניתן להיכנס לסקר, הסקר אינו פעיל כעת!");

@@ -13,7 +13,8 @@ namespace HomeCommittee.Entties
         public DateTime CreateDate { get; set; }
         public int? CountAnswers { get; set; }
         public bool Status { get; set; }
-        public int BuildingId { get; set; } 
+        public int BuildingId { get; set; }
+        public bool UserStatus { get; set; }
 
 
 

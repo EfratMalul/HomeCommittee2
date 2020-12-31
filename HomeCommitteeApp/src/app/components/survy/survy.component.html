@@ -10,8 +10,8 @@
                 <th class="line-th" scope="col">אנשים שענו </th>
                 <th class="line-th" scope="col">תוצאת הסקר</th>
                 <th class="line-th" scope="col">תאריך</th>
-                <th class="line-th" scope="col">כניסה לסקר</th>
-                <th class="line-th" scope="col" *ngIf="permission==1">יצירת הזמנה</th>
+                <th class="line-th" scope="col"></th>
+                <th class="line-th" scope="col" *ngIf="permission==1"> </th>
          
                 
             </tr>
@@ -25,7 +25,7 @@
                  </td>
                 <td class="line-td">{{ s.countAnswers }}</td>
                 <td class="line-td"></td>
-                <td class="line-td">{{ s.createDate}}</td>
+                <td class="line-td">{{ s.createDate | date:'shortDate'}}</td>
                 
                 <td class="line-td"><button  mat-flat-button color="warn" (click)="enterceSurvey($event, s)" > כניסה לסקר </button></td>
                 <td class="line-td">
