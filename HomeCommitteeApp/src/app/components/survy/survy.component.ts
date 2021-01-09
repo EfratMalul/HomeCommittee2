@@ -20,6 +20,7 @@ export class SurvyComponent implements OnInit {
 
     this.survyServise.getAllSurvy(this.userService.user.buildingId).subscribe(e => {
       this.survey = e;
+      
     });
     // this.survyServise.getSurvy(this.userService.user.buildingId).subscribe(e => {
     //   this.survey = e;
@@ -34,26 +35,45 @@ export class SurvyComponent implements OnInit {
     });
   }
 
-  activeSurvy: boolean = false; 
-  clickEvent(event, s) {
-    this.activeSurvy = !this.activeSurvy;
-    if( this.activeSurvy==false )
-    {
-      this.openSurvey(event, s);
-    }
-    else{
-      this.closeSurvey(event, s);
-    }
-  }
+   changeStatus(event, s){
+      if(s.status=="true"){
+        event.innerHtml="סגור סקר"
+        s.status="false";
+      }
+      else{
+        event.innerHtml="פתח סקר"
+        s.status=="true"
+      }
+      this.survyServise.changeStatusSurvy(s).subscribe(r=>console.log(r));
+   
+     
+   }
+  // activeSurvy: boolean=false; 
+  // clickEvent(event, s) {
+  //   // this.activeSurvy==s.status;
+  //   // this.activeSurvy = !this.activeSurvy;
+  //   if(s.status==true)
+  //   {
+  //     this.closeSurvey(event, s);
+  //   }
+  //   else{
+  //     this.closeSurvey(event, s);
+  //   }
+  // }
   removeSurvey(event, s) {
 
+
+    // this.survyServise.removeSurvey(s);
+
   }
-  openSurvey(event, s) {
-alert("now open the surevy");
-  }
-  closeSurvey(event, s) {
-    alert("now close the surevy");
-  }
+  // openSurvey(event, s) {
+  //  this.survyServise.changeStatusSurvy(s);
+  //    //alert("now open the surevy");
+  // }
+
+  // closeSurvey(event, s) {
+  //   alert("now close the surevy");
+  // }
   enterceSurvey(event, s) {
 
   }

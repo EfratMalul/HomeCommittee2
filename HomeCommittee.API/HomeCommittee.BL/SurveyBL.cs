@@ -1,4 +1,5 @@
-﻿using HomeCommittee.DAL;
+﻿using HomeCommittee.BL.Converters;
+using HomeCommittee.DAL;
 using HomeCommittee.Entties;
 using System;
 using System.Collections.Generic;
@@ -12,14 +13,14 @@ namespace HomeCommittee.BL
     {
         public static void AddNewSurvey(SekerCotert sekerCotert)
         {
-            SurveyHedear surveyHedear = Converters.SurveyConverter.ToDAL(sekerCotert);
+            SurveyHedear surveyHedear = SurveyConverter.ToDAL(sekerCotert);
             long surveyHedearId = SurveyDAL.AddNewSurveyHeader(surveyHedear);
             surveyHedear.SurveyDetails.ToList().ForEach(x => x.SurveyHedearId = surveyHedearId);
             SurveyDAL.AddNewSurveyDetails(surveyHedear.SurveyDetails);
         }
         public static List<SekerCotert> GetSurveyByBuildingId(int buildingId)
         {
-            return Converters.SurveyConverter.ListToDTO(SurveyDAL.GetSurveyByBuildingId(buildingId));
+            return SurveyConverter.ListToDTO(SurveyDAL.GetSurveyByBuildingId(buildingId));
         }
         //public static List<Survey> GetAll()
         //{
@@ -29,5 +30,18 @@ namespace HomeCommittee.BL
         //{
         //    return Converters.SurveyConverter.ToDTO(SurveyDAL.GetById(id));
         //}
+
+        public static void ChangeStatus(SekerCotert s)
+        {
+            //return  Converters.SurveyConverter.ToDTO(SurveyDAL.ChangeStatus(Converters.SurveyConverter.ToDAL(s)));
+
+            SurveyDAL.ChangeStatus(SurveyConverter.ToDAL(s));
+      
+
+        }
+        public static void RemoveSurvey(SekerCotert s)
+        {
+            SurveyDAL.DeleteSurvey(SurveyConverter.ToDAL(s));
+        }
     }
 }

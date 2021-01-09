@@ -36,7 +36,21 @@ namespace HomeCommittee.Controllers
             List<SekerCotert> surveys = SurveyBL.GetSurveyByBuildingId(buildingId);
             return Request.CreateResponse(HttpStatusCode.OK, surveys);
         }
-
+        [HttpPost]
+        [Route("ChangeStatus")]
+        public HttpResponseMessage ChangeStatus(SekerCotert survey)
+         {
+            SurveyBL.ChangeStatus(survey);
+         
+            return Request.CreateResponse(HttpStatusCode.OK,true);
+        }
+        [HttpDelete]
+        [Route("RemoveSurvey")]
+        public HttpResponseMessage RemoveSurvey(SekerCotert survey)
+        {
+            SurveyBL.RemoveSurvey(survey);
+            return Request.CreateResponse(HttpStatusCode.OK, true);
+                }
 
     }
 }

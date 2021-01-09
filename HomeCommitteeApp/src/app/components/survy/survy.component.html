@@ -29,8 +29,8 @@
                 
                 <td class="line-td"><button  mat-flat-button color="warn" (click)="enterceSurvey($event, s)" > כניסה לסקר </button></td>
                 <td class="line-td">
-                    <button *ngIf="activeSurvy==false"  mat-flat-button color="warn" (click)="clickEvent($event, s)"  >  הפעל סקר</button>
-                    <button *ngIf="activeSurvy==true"   mat-flat-button color="warn" (click)="clickEvent($event, s)"  >  סגור סקר</button>
+                    <button *ngIf="s.status==false" name="1"  mat-flat-button color="warn" (click)="changeStatus($event, s)"  >  הפעל סקר</button>
+                    <button *ngIf="s.status==true" name="2"   mat-flat-button color="warn" (click)="changeStatus($event, s)"  >  סגור סקר</button>
                 </td>
 
             

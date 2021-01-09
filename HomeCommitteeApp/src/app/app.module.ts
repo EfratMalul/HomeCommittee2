@@ -57,6 +57,7 @@ import { NotificationDialogComponent } from './components/notification-dialog/no
 import { UpdateTenantComponent } from './components/update-tenant/update-tenant.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatTableModule} from '@angular/material/table';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,7 +91,8 @@ import {MatTableModule} from '@angular/material/table';
     NotificationComponent,
     TenantPaymentComponent,
     NotificationDialogComponent,
-    UpdateTenantComponent
+    UpdateTenantComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,8 @@ namespace HomeCommittee.DAL
         //add
         //update
         //delete
-        
-            //todo
+
+        //todo
         //public static long GetSurvey(int id)
         //{
         //    using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
@@ -73,5 +74,43 @@ namespace HomeCommittee.DAL
             }
 
         }
+        public static void ChangeStatus(SurveyHedear survey)
+        {
+            try
+            {
+                using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+                {
+
+                    db.Entry(survey).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public static void DeleteSurvey(SurveyHedear survey)
+        {
+            try
+            {
+                using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+                {
+                    
+                    db.Entry(survey).State = EntityState.Deleted;
+                    db.SaveChanges();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+
     }
+
 }
+

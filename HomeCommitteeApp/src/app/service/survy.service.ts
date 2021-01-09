@@ -43,5 +43,17 @@ addNewSurvey(sekerCotert:SekerCotert):Observable<Object>
   return this.http.post(url, sekerCotert) ;
 }
 
+changeStatusSurvy(s:SekerCotert):Observable<Object>{
+  // return this.baseService.postData("Survey","ChangeStatus",s);
+  
+  const url = `${this.apiClientURL}Survey/ChangeStatus`;
+  return this.http.post(url, s) ;
+}
+// sekerCotert:SekerCotert
+//  removeSurvey(surveyId:Number):Observable<Object>{
 
+//    const url=`${this.apiClientURL}Survey/RemoveSurvey`;
+
+//     return this.http.delete(url,surveyId) ;
+// }
 }

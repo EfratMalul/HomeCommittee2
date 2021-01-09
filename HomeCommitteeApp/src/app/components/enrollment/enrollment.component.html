@@ -3,12 +3,44 @@
         <form [formGroup]="firstFormGroup">
           <ng-template matStepLabel>Fill out your name</ng-template>
           <mat-form-field>
+            <div class="col-md-6 login-form-1" >
+                <h3>הרשם</h3>
+                <form [formGroup]="formEnrollment" (ngSubmit)="onSubmit()">
+                    <div class="form-group" >
+                        <input type="text"  formControlName="building" class="form-control" placeholder="building name *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="address" class="form-control" placeholder="Your address building *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="number" formControlName="number" class="form-control" placeholder="Your number building *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="city" class="form-control" placeholder="Your city building *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="number" formControlName="entrance" class="form-control" placeholder="Your entrance building *" value="" />
+                    </div>     
+                    <div class="form-group">
+                        <input type="number" formControlName="zipCode" class="form-control" placeholder="Your zip_code building *" value="" />
+                    </div>    
+                    <div class="form-group">
+                        <input type="number" formControlName="numApartments" class="form-control" placeholder="Your number apartments in building *" value="" />
+                    </div>    
+                       <div class="form-group">
+                        <input required="required" type="submit" class="btnSubmit" value="הרשם">
+                    </div>
+             
+                </form>
+            </div>
             <mat-label>Name</mat-label>
             <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
           </mat-form-field>
           <div>
             <button mat-button matStepperNext>Next</button>
           </div>
+   
+
         </form>
       </mat-step>
 

@@ -19,7 +19,8 @@ namespace HomeCommittee.BL.Converters
                 CreateDate = s.CreateDate,
                 Status = s.Status,
                 Subject = s.Subject,
-                SurveyDetails = s.SekerPeruts.Select(x => ToDAL(x)).ToList()
+               SurveyDetails = {new SurveyDetails() { ExtrnalChar1="1",ExtrnalChar2="2",ExtrnalCount1=1,ExtrnalNum1=2} }
+               //s.SekerPeruts.Select(x => ToDAL(x)).ToList()
             };
         }
 
