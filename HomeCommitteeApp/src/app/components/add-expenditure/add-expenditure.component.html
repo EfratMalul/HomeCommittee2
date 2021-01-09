@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container login-container">
     <div class="row">
         <div class="col-md-6 login-form-1">
@@ -41,3 +42,93 @@
         </div>
     </div>
 </div>
+=======
+<h3>הוספת הוצאה</h3>
+<form [formGroup]="formAddExpenditure" (ngSubmit)="onSubmit()">
+    <div class="example-container">
+
+        <mat-form-field appearance="fill">
+            <mat-label>סכום</mat-label>
+            <input formControlName="sum" type="number" matInput #input placeholder="סכום">
+        </mat-form-field>
+<br/>
+        <mat-form-field appearance="fill">
+            <mat-label>תאריך</mat-label>
+            <input formControlName="date" type="date" matInput #input maxlength="10" placeholder="תאריך">
+            </mat-form-field>
+            <br/>
+            <mat-form-field appearance="fill">
+                <mat-label>תאור</mat-label>
+                <input formControlName="description" matInput #input placeholder="תאור">
+            </mat-form-field>
+            <br/>
+            <!-- //select
+        <mat-form-field appearance="fill">
+            <mat-label>Select me</mat-label>
+            <mat-select>
+              <mat-option value="option">Option</mat-option>
+            </mat-select>
+         
+          </mat-form-field> -->
+            <!-- *ngFor="let option of expenditureService.category" formControlName="destination" -->
+            <!-- [value]="option.value" -->
+
+            <label>
+                <input id="irregular" type="checkbox" data-toggle="toggle"> הוצאה חריגה
+            </label>
+            <label>
+                <input id="regular" type="checkbox" data-toggle="toggle">הוצאה רגילה
+            </label>
+
+            <button type="submit"  mat-flat-button color="warn">הוספה</button>
+            <button mat-stroked-button color="warn" (click)="onNoClick()">בטל</button>
+            <!-- <input required="required" type="submit" class="btnSubmit" value="הוספה"> -->
+
+            <!-- //radio -->
+            <!-- <label>Float label: </label>
+        <mat-radio-group [formControl]="floatLabelControl">
+            <mat-radio-button value="auto">Auto</mat-radio-button>
+            <mat-radio-button value="always">Always</mat-radio-button>
+        </mat-radio-group> -->
+
+
+    </div>
+</form>
+
+<!-- 
+    <div class="form-group">
+        <input type="text" formControlName="sum" class="form-control" placeholder="סכום" value="" />
+    </div>
+    <div class="form-group">
+        <input type="date" formControlName="date" class="form-control" placeholder="תאריך" value="" />
+    </div>
+    <div class="form-group">
+        <select>
+            <option *ngFor="let option of expenditureService.category" formControlName="destination"
+                [value]="option.value">
+            </option>
+        </select>
+        
+    </div>
+    <div class="form-group">
+        <input type="text" formControlName="description" class="form-control" placeholder="תיאור" value="" />
+    </div>
+
+    <label>
+        <input id="irregular" type="checkbox" data-toggle="toggle"> הוצאה חריגה
+    </label>
+    <label>
+        <input id="regular" type="checkbox" data-toggle="toggle">הוצאה רגילה
+    </label>
+
+    <div class="form-group">
+        <input required="required" type="submit" class="btnSubmit" value="הוספה">
+    </div>
+
+
+</form>
+</div>
+</div>
+
+</div> -->
+>>>>>>> 2733f61162e44c18399902cac97aaa5942229762

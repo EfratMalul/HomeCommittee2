@@ -51,7 +51,21 @@ export class FaultComponent implements OnInit {
   tenants: Tenant[];
   tenantName: string[] = [];
   constructor(private faultService: FaultService, private userService: UserService, private tenantService: TenantService
-    , private notificationService: NotificationService, public dialog: MatDialog) { }
+    , private notificationService: NotificationService, public dialog: MatDialog) {
+
+      this.faultService.isUpdateStatus.subscribe((success) => {
+
+        this.faultService.getAllFault(this.userService.user.buildingId).subscribe(x=>{  
+        this.faults=x;
+        })
+  
+  
+  })
+
+
+     }
+
+    permission= this.userService.user.permission;
 
   ngOnInit(): void {
 

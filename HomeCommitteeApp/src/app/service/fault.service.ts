@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Fault } from '../classes/fault';
 import { UserPermission } from '../classes/user-permission';
@@ -11,6 +11,7 @@ import { BaseService } from './base.service';
 })
 export class FaultService {
 
+  isUpdateStatus = new BehaviorSubject(false);
   apiClientURL = environment.BaseClientApiUrl;
   constructor(private baseServise:BaseService,private http: HttpClient) { }
 

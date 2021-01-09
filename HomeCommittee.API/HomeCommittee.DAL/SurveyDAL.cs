@@ -64,13 +64,9 @@ namespace HomeCommittee.DAL
         {
             using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
             {
-                //var x=db.SurveyHedears.Include() .Include(x=>x.SurveyDetails)
-
-                //var survy = db.SurveyHedears
-                //  .Include(p => p.SurveyDetails);
-
-
-                return db.SurveyHedear.Where(b => b.BuildingId == buildingId).ToList();
+                List<SurveyHedear>sh = db.SurveyHedear.Include(e => e.SurveyDetails).Where(b => b.BuildingId == buildingId).ToList();
+                return sh;
+               
             }
 
         }
@@ -113,4 +109,70 @@ namespace HomeCommittee.DAL
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+ 
+
+//מצרפת עוד דגומה מקוד שלי:
+
+ 
+
+//            using (ClearingHouseEntities clearingHouse = new ClearingHouseEntities())
+
+//{
+
+//    clearingHouse.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+
+
+
+//    TransferMain =
+
+//        clearingHouse.Set<TransferMain>()
+
+//            .Include(x => x.Balances)
+
+//            .Include(x => x.Covers)
+
+//            .Include(x => x.Debts)
+
+//            .Include(x => x.Deposits)
+
+//           .Include(x => x.DepositTaxes)
+
+//            .Include(x => x.PirteiMaasiks)
+
+//            .Include(x => x.ExemptionBalances)
+
+//            .Include(x => x.PirteiAmitOvers)
+
+//            .Include(x => x.TransferDatas)
+
+//            .Include(x => x.TransferInsureds)
+
+//            .Include(x => x.Funds)
+
+//            .Include(x => x.Surrenders)
+
+//            .Include(x => x.RecievingPolicyInfoes)
+
+//            .Include(x => x.SadinValidations.Select(v => v.ValidationDefinition))
+
+//            .Include(x => x.Debts)
+
+//            .Include(x => x.ShiuchPizurs)
+
+//            .Include(x => x.MashovHeaders.Select(m => m.MashovPeruts))
+
+//            .FirstOrDefault(e => e.TransferId == transferId);
+
+//}
+
 

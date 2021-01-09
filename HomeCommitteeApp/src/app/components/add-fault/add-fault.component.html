@@ -1,4 +1,4 @@
-
+<!-- 
 
 <div class="container login-container">
     <div class="row">
@@ -19,4 +19,26 @@
         </div>
     </div> 
 
-</div>  
+</div>   -->
+
+<div>
+    <form [formGroup]="formAddFault" (ngSubmit)="onSubmit()" >
+
+        <div class="example-container">
+
+            <p id="title-log-in">דיווח על תקלה</p>
+          
+            <mat-form-field appearance="fill">
+                <mat-label>פרוט תקלה</mat-label>
+                <textarea formControlName="description" matInput></textarea>
+              </mat-form-field>
+
+              <button type="submit"  mat-flat-button color="warn">דווח</button>
+         
+        </div>
+
+    </form>
+    <button mat-stroked-button color="warn" (click)="onNoClick()">בטל</button>
+</div>
+
+

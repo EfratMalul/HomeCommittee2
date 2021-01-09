@@ -1,4 +1,5 @@
 ﻿using HomeCommittee.BL;
+using HomeCommittee.DAL;
 using HomeCommittee.Entties;
 using System;
 using System.Collections.Generic;
@@ -22,23 +23,10 @@ namespace HomeCommittee.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, notifications);
         }
 
-        [HttpPost]
-        [Route("AddNotificationToSpesficUser/{userId}")]
-        public HttpResponseMessage AddNotificationToSpesficUser(int userId,string message)
-        {
-            int id = NotificationBL.AddNotification(message);
-            if (id != -1)
-            {
-                NotificationBL.AddNotificationForUser(userId, id);
-                return Request.CreateResponse(HttpStatusCode.OK, true);
-            }
-            return Request.CreateResponse(HttpStatusCode.ExpectationFailed, true);
-        }
-       
-        //TODO
+      
         [HttpPost]
         [Route("AddNotificationToSpesficUser")]
-        public HttpResponseMessage AddNotificationForAllUsers(NotificationForUser userNotification)
+        public HttpResponseMessage AddNotificationToSpesficUser(NotificationForUser userNotification)
         {
             int id = NotificationBL.AddNotification(userNotification.message);
             if (id != -1)
@@ -48,6 +36,25 @@ namespace HomeCommittee.Controllers
             }
             return Request.CreateResponse(HttpStatusCode.ExpectationFailed, true);
         }
+
+        [HttpPost]
+        [Route("AddNotificationToAllUserByBuildingId")]
+        public HttpResponseMessage AddNotificationForAllUsers(NotificationForUser userNotification)
+        {
+            int id = NotificationBL.AddNotification(userNotification.message);
+            if (id != -1)
+            {
+                List<tenant_tbl> tenants = TenantBL.GetAllTenantByBuilding(userNotification.userId);
+                foreach (var t in tenants)
+                {
+                    NotificationBL.AddNotificationForUser(t.user_id, id);
+                }
+               
+                return Request.CreateResponse(HttpStatusCode.OK, true);
+            }
+            return Request.CreateResponse(HttpStatusCode.ExpectationFailed, true);
+        }
+
 
         [HttpPost]
         [Route("RemoveUserNotification")]

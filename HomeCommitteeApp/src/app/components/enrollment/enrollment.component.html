@@ -1,7 +1,7 @@
 <mat-horizontal-stepper linear #stepper (selectionChange)="onStepChange($event)">
     <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
-          <ng-template matStepLabel>Fill out your name</ng-template>
+          <ng-template matStepLabel>  הגדר בנין</ng-template>
           <mat-form-field>
             <div class="col-md-6 login-form-1" >
                 <h3>הרשם</h3>
@@ -112,7 +112,7 @@
     </mat-step> -->
     <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
         <form [formGroup]="secondFormGroup">
-            <ng-template matStepLabel>Fill out your address</ng-template>
+            <ng-template matStepLabel>הכנס מיילים של המשתמשים</ng-template>
             <mat-form-field>
                 <mat-label>Address</mat-label>
                 <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
@@ -124,7 +124,7 @@
         </form>
     </mat-step>
     <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
+        <ng-template matStepLabel>סיום</ng-template>
         <p>You are now done.</p>
         <div>
             <button mat-button matStepperPrevious>Back</button>

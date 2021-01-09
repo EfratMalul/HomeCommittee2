@@ -27,6 +27,7 @@ import { SurvyComponent } from './components/survy/survy.component';
 import { CreateSurveyComponent } from './components/create-survey/create-survey.component';
 import { UserAreaComponent } from './components/user-area/user-area.component';
 import { TenantPaymentComponent } from './components/tenant-payment/tenant-payment.component';
+import { AnswerSurveyComponent } from './components/answer-survey/answer-survey.component';
 
 const routes: Routes = [
   {
@@ -89,6 +90,14 @@ const routes: Routes = [
       {path:'survey',component:SurvyComponent},
       {path:'reports',component:ReportsComponent},
     ],
+  },
+  {path:'answerSurvey',
+  component:AnswerSurveyComponent
+
+  },
+  {
+    path: "home/mainFault/fault",
+    component: FaultComponent
   },
   {path:"userArea",component:UserAreaComponent},
  

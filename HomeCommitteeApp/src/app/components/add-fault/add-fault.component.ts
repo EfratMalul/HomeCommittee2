@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Fault } from 'src/app/classes/fault';
 import { FaultService } from 'src/app/service/fault.service';
 import { UserService } from 'src/app/service/user.service';
+import { DialogData } from '../maim/maim.component';
 
 @Component({
   selector: 'app-add-fault',
@@ -16,7 +18,8 @@ export class AddFaultComponent implements OnInit {
     description:new FormControl(''),
  
     });
-  constructor(private faultServise:FaultService,private userService:UserService) { }
+  constructor(private faultServise:FaultService,private userService:UserService,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData, public dialogRef: MatDialogRef<AddFaultComponent>) { }
 
   onSubmit(){
     this.fault=new Fault();
@@ -30,7 +33,12 @@ export class AddFaultComponent implements OnInit {
       console.log(this.fault);
       alert("האוביקט נוסף בהצלחה");
     }));
+    this.onNoClick();
+  };
 
+  onNoClick(): void {
+    this.dialogRef.close();
+    this.formAddFault.reset({ value: "" });
   }
   ngOnInit(): void {
   }

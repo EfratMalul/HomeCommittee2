@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -13,7 +14,9 @@ import { BaseService } from './base.service';
 export class TenantService {
 
   apiClientURL = environment.BaseClientApiUrl;
-  public isUpdateUser: Subject<boolean>;
+  // public isUpdateUser: Subject<boolean>;
+  isUpdateUser = new BehaviorSubject(false);
+  
   tenant: Tenant = new Tenant();
 
   constructor(private baseService: BaseService, private http: HttpClient) { }
@@ -62,3 +65,6 @@ export class TenantService {
     return this.http.post(url, tenant);
   }
 }
+
+
+

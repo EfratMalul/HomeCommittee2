@@ -58,6 +58,12 @@ import { UpdateTenantComponent } from './components/update-tenant/update-tenant.
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatTableModule} from '@angular/material/table';
 
+import { EnterceSurveyComponent } from './components/enterce-survey/enterce-survey.component';
+import { AnswerSurveyComponent } from './components/answer-survey/answer-survey.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { SendPaymentNotificationComponent } from './components/send-payment-notification/send-payment-notification.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,6 +98,9 @@ import {MatTableModule} from '@angular/material/table';
     TenantPaymentComponent,
     NotificationDialogComponent,
     UpdateTenantComponent,
+    EnterceSurveyComponent,
+    AnswerSurveyComponent,
+    SendPaymentNotificationComponent
 
   ],
   imports: [
@@ -113,7 +122,8 @@ import {MatTableModule} from '@angular/material/table';
     MatBadgeModule,
     MatMenuModule,
     MatStepperModule,
-    MatTableModule
+    MatTableModule,
+    MatRadioModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

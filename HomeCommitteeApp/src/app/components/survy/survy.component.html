@@ -1,4 +1,4 @@
-<button mat-flat-button color="warn" (click)="openDialog()">
+<button *ngIf="permission==1" mat-flat-button color="warn" (click)="openDialog()">
     <mat-icon>add</mat-icon> יצירת סקר חדש
 </button>
 <!-- <app-create-survey></app-create-survey> -->
@@ -10,8 +10,8 @@
                 <th class="line-th" scope="col">אנשים שענו </th>
                 <th class="line-th" scope="col">תוצאת הסקר</th>
                 <th class="line-th" scope="col">תאריך</th>
-                <th class="line-th" scope="col">כניסה לסקר</th>
-                <th class="line-th" scope="col">יצירת הזמנה</th>
+                <th class="line-th" scope="col"></th>
+                <th class="line-th" scope="col" *ngIf="permission==1"> </th>
          
                 
             </tr>
@@ -25,16 +25,21 @@
                  </td>
                 <td class="line-td">{{ s.countAnswers }}</td>
                 <td class="line-td"></td>
-                <td class="line-td">{{ s.createDate}}</td>
+                <td class="line-td">{{ s.createDate | date:'shortDate'}}</td>
                 
                 <td class="line-td"><button  mat-flat-button color="warn" (click)="enterceSurvey($event, s)" > כניסה לסקר </button></td>
                 <td class="line-td">
+
                     <button *ngIf="s.status==false" name="1"  mat-flat-button color="warn" (click)="changeStatus($event, s)"  >  הפעל סקר</button>
                     <button *ngIf="s.status==true" name="2"   mat-flat-button color="warn" (click)="changeStatus($event, s)"  >  סגור סקר</button>
+
+                    <button *ngIf="activeSurvy==false&&permission==1"  mat-flat-button color="warn" (click)="clickEvent($event, s)"  >  הפעל סקר</button>
+                    <button *ngIf="activeSurvy==true&&permission==1"   mat-flat-button color="warn" (click)="clickEvent($event, s)"  >  סגור סקר</button>
+
                 </td>
 
             
-                <button mat-menu-item><button mat-icon-button color="red" (click)="removeSurvey($event, s)"  aria-label="Example icon button with a home icon" matTooltip="מחיקה">
+                <button  *ngIf="permission==1" mat-menu-item><button mat-icon-button color="red" (click)="removeSurvey($event, s)"  aria-label="Example icon button with a home icon" matTooltip="מחיקה">
                     <mat-icon>delete</mat-icon>
                  </button></button>
             

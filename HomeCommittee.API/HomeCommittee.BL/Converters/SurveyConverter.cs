@@ -59,7 +59,7 @@ namespace HomeCommittee.BL.Converters
                 CountAnswers = s.CountAnswers,
                 Status = s.Status,
                 BuildingId = s.BuildingId,
-                //SekerPeruts = s.SurveyDetails.Select(x => ToDTO(x)).ToList()
+                SekerPeruts = s.SurveyDetails.Select(x => ToDTO(x)).ToList()
 
             };
 
@@ -73,7 +73,12 @@ namespace HomeCommittee.BL.Converters
                 QuestionSubject = s.QuestionSubject,
                 SurveyHedearId = s.SurveyHedearId,
                 ExtrnalNum1 = s.ExtrnalNum1,
-                  ExtrnalChar2 = s.ExtrnalChar2,
+                ExtrnalNum2 = s.ExtrnalNum2,
+                ExtrnalNum3 = s.ExtrnalNum3,
+                ExtrnalNum4 = s.ExtrnalNum4,
+                ExtrnalNum5 = s.ExtrnalNum5,
+                ExtrnalChar1 = s.ExtrnalChar1,
+                ExtrnalChar2 = s.ExtrnalChar2,
                 ExtrnalChar3 = s.ExtrnalChar3,
                 ExtrnalChar4 = s.ExtrnalChar4,
                 ExtrnalChar5 = s.ExtrnalChar5,

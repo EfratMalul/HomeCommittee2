@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Payment } from 'src/app/classes/payment';
 import { TenantPayment } from 'src/app/classes/tenantPayment';
 import { PaymentService } from 'src/app/service/payment.service';
 import { UserService } from 'src/app/service/user.service';
+import { SendPaymentNotificationComponent } from '../send-payment-notification/send-payment-notification.component';
 
 @Component({
   selector: 'app-tenant-payment',
@@ -14,7 +16,7 @@ export class TenantPaymentComponent implements OnInit {
   orderPayment:TenantPayment[] ;
   myserch: any = '';
   nrSelect:any="noOrder";
-  constructor(private paymentService:PaymentService,private userService:UserService) { }
+  constructor(private paymentService:PaymentService,private userService:UserService,public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -25,6 +27,21 @@ export class TenantPaymentComponent implements OnInit {
       this.paymentService.GetAllPaymentsFromAllTenants(this.userService.user.buildingId).subscribe((p:TenantPayment[])=>{ this.payments=p;});
     
   }
+  openDialog(){
+
+  this.dialog.open(SendPaymentNotificationComponent, {
+    width: '400px'
+  });
+}
+
+
+
+
+
+
+
+
+
   // changePayment(value: string){
   //   switch(value) {
   //     case "NoOrder":

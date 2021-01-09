@@ -30,7 +30,7 @@
           <th class="line-th" scope="col">תאריך</th>
           <th class="line-th" scope="col">יעד</th>
           <th class="line-th" scope="col">תאור</th>
-          <th class="line-th" scope="col"> קוד בנין</th>
+          <!-- <th class="line-th" scope="col"> קוד בנין</th> -->
         </tr>
         </thead>
         <tbody>
@@ -38,15 +38,15 @@
           <!-- <th scope="row">{{ i + 1 }}</th> -->
           <td class="line-td">{{ e.id}} </td>
           <td class="line-td">{{ e.sum }}</td>
-          <td class="line-td">{{ e.date }}</td>
+          <td class="line-td">{{ e.date | date:'shortDate'}}</td>
           <td class="line-td">{{ expenditureService.category[e.destination].value }}</td>
           <td class="line-td">{{ e.description}}</td>
-          <td class="line-td">{{ e.building_id}}</td>
+          <!-- <td class="line-td">{{ e.building_id}}</td> -->
         </tr>
         </tbody>
       </table>
       <!-- <label for="typeahead-basic" id="search_label">חיפוש לפי חודש</label>
       <input id="typeahead-basic"  type="text" [(ngModel)]="myserch"/> -->
       
-      <a icon="arrow-clockwise" class="reTenant" routerLink="reTenant" routerLinkActive="active">חזור</a>
+      <!-- <a icon="arrow-clockwise" class="reTenant" routerLink="reTenant" routerLinkActive="active">חזור</a> -->
     </div>

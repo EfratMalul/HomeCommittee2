@@ -1,11 +1,14 @@
+import { Inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Expenditure } from 'src/app/classes/expenditure';
 import { Payment } from 'src/app/classes/payment';
 import { ExpenditureService } from 'src/app/service/expenditure.service';
 import { PaymentService } from 'src/app/service/payment.service';
 import { TenantService } from 'src/app/service/tenant.service';
 import { UserService } from 'src/app/service/user.service';
+import { DialogData } from '../maim/maim.component';
 
 @Component({
   selector: 'app-add-expenditure',
@@ -26,7 +29,7 @@ export class AddExpenditureComponent implements OnInit {
   p: Payment;
 
   constructor(public expenditureService: ExpenditureService, private userService: UserService, private tenantService: TenantService,
-    private paymentService: PaymentService) { }
+    private paymentService: PaymentService,  @Inject(MAT_DIALOG_DATA) public data: DialogData, public dialogRef: MatDialogRef<AddExpenditureComponent>) { }
   onSubmit() {
     this.expenditure = new Expenditure();
     this.expenditure.sum = this.formAddExpenditure.get("sum").value;
@@ -40,8 +43,9 @@ export class AddExpenditureComponent implements OnInit {
     this.expenditure.type = element1.checked == true ? 1 : 0;
     this.expenditureService.addExpenditure(this.expenditure).subscribe(x => {
       alert("האוביקט נוסף בהצלחה");
+      this.onNoClick();
     })
-
+ 
     // var buildingId=this.userService.user.buildingId;
     // var sum = this.expenditure.sum;
     // var numTenant= this.tenantService.GetNumTenant(buildingId).subscribe(t=> parseInt(t));
@@ -58,7 +62,10 @@ export class AddExpenditureComponent implements OnInit {
 
 
   }
-
+  onNoClick(): void {
+    this.dialogRef.close();
+    this.formAddExpenditure.reset({ value: "" });
+  }
 
 
   ngOnInit(): void {

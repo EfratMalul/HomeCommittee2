@@ -15,13 +15,23 @@ namespace HomeCommittee.BL
         {
             SurveyHedear surveyHedear = SurveyConverter.ToDAL(sekerCotert);
             long surveyHedearId = SurveyDAL.AddNewSurveyHeader(surveyHedear);
-            surveyHedear.SurveyDetails.ToList().ForEach(x => x.SurveyHedearId = surveyHedearId);
-            SurveyDAL.AddNewSurveyDetails(surveyHedear.SurveyDetails);
+            //surveyHedear.SurveyDetails.ToList().ForEach(x => x.SurveyHedearId = surveyHedearId);
+            //SurveyDAL.AddNewSurveyDetails(surveyHedear.SurveyDetails);
         }
         public static List<SekerCotert> GetSurveyByBuildingId(int buildingId)
         {
+
             return SurveyConverter.ListToDTO(SurveyDAL.GetSurveyByBuildingId(buildingId));
+
+            //List<T> u = db.table.where(x => x.user = userid)
+            //List<SekerCotert> x =
+              //return  Converters.SurveyConverter.ListToDTO(SurveyDAL.GetSurveyByBuildingId(buildingId));
+            //x.ForEach(y => y.UserStatus = u.Contains(y.SurveyHedearId.) ? true : false)
+
+            //return x;
+
         }
+
         //public static List<Survey> GetAll()
         //{
         //    return Converters.SurveyConverter.ListToDTO(SurveyDAL.Get());

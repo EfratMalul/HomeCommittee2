@@ -16,17 +16,31 @@ export class ManageTenantsComponent implements OnInit {
 
   tenant_arr: Tenant[];
   myserch: any = '';
-  constructor(private router: Router, public tenantService: TenantService, private userService: UserService,
+  permission= this.userService.user.permission;
+  constructor(private router: Router, private tenantService: TenantService, private userService: UserService,
     public dialog: MatDialog) {
-    this.tenantService.isUpdateUser.subscribe(x => {
-      if (x == true) {
-        this.tenantService.GetAllTenantByBuildingId(this.userService.user.buildingId).subscribe(t => {
-          this.tenant_arr = t;
-        });
-      }
-    });
-  }
+         this.tenantService.isUpdateUser.subscribe((success) => {
 
+          this.tenantService.GetAllTenantByBuildingId(this.userService.user.buildingId).subscribe(t => {
+                 this.tenant_arr = t;
+
+      })
+
+    })
+
+
+
+
+      
+    // this.tenantService.isUpdateUser.subscribe(x => {
+    //   if (x == true) {
+    //     this.tenantService.GetAllTenantByBuildingId(this.userService.user.buildingId).subscribe(t => {
+    //       this.tenant_arr = t;
+    //     });
+    //   }
+    // });
+  }
+ 
   ngOnInit(): void {
     this.tenantService.GetAllTenantByBuildingId(this.userService.user.buildingId).subscribe(t => {
       this.tenant_arr = t;
