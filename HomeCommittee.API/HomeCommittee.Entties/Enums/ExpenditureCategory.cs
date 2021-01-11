@@ -12,11 +12,8 @@ namespace HomeCommittee.Entties.Enums
     {
         [Description("אחר")]
 
-        Other = 0,
-
-        [Description("ביטוח")]
-
-        Insurance = 1,
+        Other = 1,
+        
 
         [Description("גינון")]
 
@@ -56,6 +53,9 @@ namespace HomeCommittee.Entties.Enums
         [Description("תחזוקה")]
 
         Maintenance = 11,
+        [Description("ביטוח")]
+
+        Insurance = 12,
 
     }
 }

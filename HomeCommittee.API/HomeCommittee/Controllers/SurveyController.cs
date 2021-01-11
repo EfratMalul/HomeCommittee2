@@ -44,13 +44,27 @@ namespace HomeCommittee.Controllers
          
             return Request.CreateResponse(HttpStatusCode.OK,true);
         }
-        [HttpDelete]
+
+        [HttpPost]
+        [Route("UpdateCountAnswer")]
+        public HttpResponseMessage UpdateCountAnswer(SekerPerut survey)
+        {
+            SurveyBL.UpdateCountAnswer(survey);
+
+            return Request.CreateResponse(HttpStatusCode.OK, true);
+        }
+
+        [HttpPost]
         [Route("RemoveSurvey")]
         public HttpResponseMessage RemoveSurvey(SekerCotert survey)
         {
             SurveyBL.RemoveSurvey(survey);
             return Request.CreateResponse(HttpStatusCode.OK, true);
                 }
+
+     
+      
+      
 
     }
 }

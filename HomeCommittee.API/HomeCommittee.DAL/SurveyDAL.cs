@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,29 +65,50 @@ namespace HomeCommittee.DAL
         {
             using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
             {
-                List<SurveyHedear>sh = db.SurveyHedear.Include(e => e.SurveyDetails).Where(b => b.BuildingId == buildingId).ToList();
+                List<SurveyHedear> sh = db.SurveyHedear.Include(e => e.SurveyDetails).Where(b => b.BuildingId == buildingId).ToList();
                 return sh;
-               
+
             }
 
         }
+
         public static void ChangeStatus(SurveyHedear survey)
         {
             try
             {
                 using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
                 {
-
-                    db.Entry(survey).State = System.Data.Entity.EntityState.Modified;
+                    db.SurveyHedear.AddOrUpdate(survey);
+                    // db.Entry(survey).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                 }
 
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
+
+        public static void UpdateCountAnswer(SurveyDetails survey)
+        {
+            try
+            {
+                using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+                {
+                    db.SurveyDetails.AddOrUpdate(survey);
+                    // db.Entry(survey).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
 
         public static void DeleteSurvey(SurveyHedear survey)
         {
@@ -94,17 +116,32 @@ namespace HomeCommittee.DAL
             {
                 using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
                 {
-                    
+
                     db.Entry(survey).State = EntityState.Deleted;
+                    List<SurveyDetails> sd = db.SurveyDetails.Where(s => s.SurveyHedearId == survey.SurveyHedearId).ToList();
+                    foreach (var item in sd)
+                    {
+                        db.Entry(item).State = EntityState.Deleted;
+                    }
+                  
                     db.SaveChanges();
                 }
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw e;
             }
         }
 
+        public static void DeleteSurveyDetails(SurveyHedear survey)
+        {
+            using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+            {
+               
+                
+
+            }
+        }
 
     }
 
@@ -119,11 +156,11 @@ namespace HomeCommittee.DAL
 
 
 
- 
+
 
 //מצרפת עוד דגומה מקוד שלי:
 
- 
+
 
 //            using (ClearingHouseEntities clearingHouse = new ClearingHouseEntities())
 

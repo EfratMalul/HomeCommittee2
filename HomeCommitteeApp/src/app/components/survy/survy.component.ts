@@ -16,11 +16,11 @@ import { EnterceSurveyComponent } from '../enterce-survey/enterce-survey.compone
 export class SurvyComponent implements OnInit {
 
   survey: SekerCotert[];
-  permission=this.userService.user.permission;
+  permission = this.userService.user.permission;
 
   constructor(public dialog: MatDialog, private survyServise: SurvyService, private userService: UserService,
     private router: Router) { }
-   
+
   ngOnInit(): void {
 
     this.survyServise.getAllSurvy(this.userService.user.buildingId).subscribe(e => {
@@ -42,19 +42,12 @@ export class SurvyComponent implements OnInit {
   }
 
 
-   changeStatus(event, s){
-      if(s.status=="true"){
-        event.innerHtml="סגור סקר"
-        s.status="false";
-      }
-      else{
-        event.innerHtml="פתח סקר"
-        s.status=="true"
-      }
-      this.survyServise.changeStatusSurvy(s).subscribe(r=>console.log(r));
-   
-     
-   }
+  changeStatus(event, s) {
+    s.status = !s.status;
+    this.survyServise.changeStatusSurvy(s).subscribe(r => console.log(r));
+
+
+  }
   // activeSurvy: boolean=false; 
   // clickEvent(event, s) {
   //   // this.activeSurvy==s.status;
@@ -82,7 +75,7 @@ export class SurvyComponent implements OnInit {
   removeSurvey(event, s) {
 
 
-    // this.survyServise.removeSurvey(s);
+    this.survyServise.removeSurvey(s).subscribe(x => { alert("OK!") });
 
   }
 
@@ -104,17 +97,17 @@ export class SurvyComponent implements OnInit {
 
   enterceSurvey(event, s) {
     if (s.status == true) {
-     // this.router.navigate(['/answerSurvey/'])
-    
-   
+      // this.router.navigate(['/answerSurvey/'])
+
+
       this.dialog.open(EnterceSurveyComponent, {
         width: '600px',
-        height:'700px',
+        height: '700px',
         data: { survey: s }
       });
-     
- 
-  
+
+
+
 
     }
     else {

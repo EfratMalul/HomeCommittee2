@@ -23,26 +23,26 @@ export class ExpenditureComponent implements OnInit {
     this.expenditureService.isAddExpenditure.subscribe((success) => {
 
       this.category = new Array<Category>();
-    this.expenditureService.getAllCategory();
+      this.expenditureService.getAllCategory();
 
-    forkJoin({
-      res1: this.expenditureService.getAllExpenditure(this.userService.user.buildingId),
-     // res2: this.expenditureService.getAllCategory()
+      forkJoin({
+        res1: this.expenditureService.getAllExpenditure(this.userService.user.buildingId),
+        // res2: this.expenditureService.getAllCategory()
+      })
+        .subscribe(({ res1 }) => {
+          this.exppenditure_arr = res1;
+          // for (let i = 1; i < 12; i++) {
+          //   this.expenditureService.category.push({ key: i, value: res2[i] })
+          // }
+
+          // res2.array.forEach(element => {
+          //   this.category.push({ key: element.key, value: element.value });
+          // });
+        });
+
+
+
     })
-      .subscribe(({ res1 }) => {
-        this.exppenditure_arr = res1;
-        // for (let i = 1; i < 12; i++) {
-        //   this.expenditureService.category.push({ key: i, value: res2[i] })
-        // }
-
-        // res2.array.forEach(element => {
-        //   this.category.push({ key: element.key, value: element.value });
-        // });
-      });
-
-
-
-})
   }
 
 
@@ -50,11 +50,11 @@ export class ExpenditureComponent implements OnInit {
 
   ngOnInit(): void {
     this.category = new Array<Category>();
-    this.expenditureService.getAllCategory();
+    // this.expenditureService.getAllCategory();
 
     forkJoin({
       res1: this.expenditureService.getAllExpenditure(this.userService.user.buildingId),
-     // res2: this.expenditureService.getAllCategory()
+      // res2: this.expenditureService.getAllCategory()
     })
       .subscribe(({ res1 }) => {
         this.exppenditure_arr = res1;

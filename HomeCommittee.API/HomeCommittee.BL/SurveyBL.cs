@@ -49,9 +49,24 @@ namespace HomeCommittee.BL
       
 
         }
+        
+               public static void UpdateCountAnswer(SekerPerut s)
+        {
+            //return  Converters.SurveyConverter.ToDTO(SurveyDAL.ChangeStatus(Converters.SurveyConverter.ToDAL(s)));
+
+            SurveyDAL.UpdateCountAnswer(SurveyConverter.ToDAL(s));
+
+
+        }
         public static void RemoveSurvey(SekerCotert s)
         {
-            SurveyDAL.DeleteSurvey(SurveyConverter.ToDAL(s));
+        // List<SekerPerut> ls = SurveyConverter.ToDTO(SurveyDAL.DeleteSurveyDetails(SurveyConverter.ToDAL(s)).ToList() .;
+             
+                         SurveyDAL.DeleteSurvey(SurveyConverter.ToDAL(s));
+       
+
+            //user_notification_tbl u = UserNotificationDAL.GetByUsetIdAndNotificationId(n);
+            //UserNotificationDAL.RemoveUserNotification(u);
         }
     }
 }

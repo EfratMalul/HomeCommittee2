@@ -11,10 +11,10 @@
                     <input type="date" formControlName="date" class="form-control" placeholder="תאריך" value="" />
                 </div>
                 <div class="form-group">
-                    <select>
-                        <option *ngFor="let option of expenditureService.category" formControlName="destination"
-                            [value]="option.value">
-                        </option>
+                    <select formControlName="destination">
+                        <option *ngFor="let option of expenditureService.category" 
+                            [value]="option.key">
+                            {{option.value}}</option>
                     </select>
                     <!-- {{option.value}} -->
                     <!-- <input type="text" formControlName="destination" class="form-control" placeholder="יעד" value="" /> -->
@@ -23,15 +23,24 @@
                     <input type="text" formControlName="description" class="form-control" placeholder="תיאור"
                         value="" />
                 </div>
-           
+<!--            
                 <label>
                     <input type="radio" id="irregular" name="irregular" value="irregular">הוצאה חריגה
-                    <!-- <input id="irregular" type="checkbox" data-toggle="toggle">  -->
+        
                 </label>
                 <label>
                     <input type="radio" id="regular" name="regular" value="regular">הוצאה רגילה
-                    <!-- <input id="regular" type="checkbox" data-toggle="toggle"> -->
-                </label>
+           
+                </label> -->
+
+                <mat-radio-group aria-label="Select an option" [ngModel]="type" formControlName="type">
+                    <mat-radio-button id="irregular" name="type" value=1 >הוצאה חריגה</mat-radio-button>
+                    <mat-radio-button  id="regular" name="type" value=0 >הוצאה רגילה</mat-radio-button>
+                  </mat-radio-group>
+
+                  <!-- <input type="radio" value=1 name="gender" [ngModel]="type" > Male
+                  <input type="radio" value=0 name="gender" [ngModel]="type" > Female -->
+
 
                 <div class="form-group">
                     <input required="required" type="submit" class="btnSubmit" value="הוספה">
@@ -42,7 +51,7 @@
         </div>
     </div>
 </div>
-
+<!-- 
 <h3>הוספת הוצאה</h3>
 <form [formGroup]="formAddExpenditure" (ngSubmit)="onSubmit()">
     <div class="example-container">
@@ -50,8 +59,8 @@
         <mat-form-field appearance="fill">
             <mat-label>סכום</mat-label>
             <input formControlName="sum" type="number" matInput #input placeholder="סכום">
-        </mat-form-field>
-<br/>
+        </mat-form-field> -->
+<!-- <br/>
         <mat-form-field appearance="fill">
             <mat-label>תאריך</mat-label>
             <input formControlName="date" type="date" matInput #input maxlength="10" placeholder="תאריך">
@@ -61,7 +70,7 @@
                 <mat-label>תאור</mat-label>
                 <input formControlName="description" matInput #input placeholder="תאור">
             </mat-form-field>
-            <br/>
+            <br/> -->
             <!-- //select
         <mat-form-field appearance="fill">
             <mat-label>Select me</mat-label>
@@ -73,7 +82,7 @@
             <!-- *ngFor="let option of expenditureService.category" formControlName="destination" -->
             <!-- [value]="option.value" -->
 
-            <label>
+            <!-- <label>
                 <input id="irregular" type="checkbox" data-toggle="toggle"> הוצאה חריגה
             </label>
             <label>
@@ -81,7 +90,7 @@
             </label>
 
             <button type="submit"  mat-flat-button color="warn">הוספה</button>
-            <button mat-stroked-button color="warn" (click)="onNoClick()">בטל</button>
+            <button mat-stroked-button color="warn" (click)="onNoClick()">בטל</button> -->
             <!-- <input required="required" type="submit" class="btnSubmit" value="הוספה"> -->
 
             <!-- //radio -->
@@ -91,9 +100,9 @@
             <mat-radio-button value="always">Always</mat-radio-button>
         </mat-radio-group> -->
 
-
+<!-- 
     </div>
-</form>
+</form> -->
 
 <!-- 
     <div class="form-group">

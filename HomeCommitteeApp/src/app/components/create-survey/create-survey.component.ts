@@ -60,7 +60,6 @@ export class CreateSurveyComponent implements OnInit {
     s.extrnalCount3 = 0;
     s.extrnalCount4 = 0;
     s.extrnalCount5 = 0;
-    s.extrnalCount1 = 0
     this.sekerPeruts.push(s);
     this.formSurvey.get("quession").reset();
     this.formSurvey.get("ansswer1").reset();

@@ -1,11 +1,11 @@
 <h1>סקר {{survey.subject}}</h1>
-<form>
+<!-- <form>
     <div *ngFor="let s of sekerPeruts; index as i">
         <span> שאלה {{i+1}}</span>
         <p id="example-radio-group-label">{{s.questionSubject}}</p>
         <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
             [(ngModel)]="favoriteSeason">
-            <mat-radio-button *ngIf='s.extrnalChar1!=null&&s.extrnalChar1!=""' class="example-radio-button"
+            <mat-radio-button  *ngIf='s.extrnalChar1!=null&&s.extrnalChar1!=""' class="example-radio-button"
                 [value]="s.extrnalChar1">
                 {{s.extrnalChar1}}
             </mat-radio-button>
@@ -29,4 +29,38 @@
 
     </div>
     <button mat-raised-button color="warn">שלח סקר</button>
+</form> -->
+
+<form [formGroup]="formAnswer">
+    <div id="div">
+        <span> שאלה {{mone}}</span>
+        <p id="example-radio-group-label">{{sekerPerut.questionSubject}}</p>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        [(ngModel)]="answer"  formControlName="answer" >
+           
+            <mat-radio-button  *ngIf='sekerPerut.extrnalChar1!=null&&sekerPerut.extrnalChar1!=""' class="example-radio-button"
+                [value]="1">
+                {{sekerPerut.extrnalChar1}}
+            </mat-radio-button>
+            <mat-radio-button *ngIf='sekerPerut.extrnalChar2!=null&&sekerPerut.extrnalChar2!=""' class="example-radio-button"
+                [value]="2">
+                {{sekerPerut.extrnalChar2}}
+            </mat-radio-button>
+            <mat-radio-button *ngIf='sekerPerut.extrnalChar3!=null&&sekerPerut.extrnalChar3!=""' class="example-radio-button"
+                [value]="3" >
+                {{sekerPerut.extrnalChar3}}
+            </mat-radio-button>
+            <mat-radio-button *ngIf='sekerPerut.extrnalChar4!=null&&sekerPerut.extrnalChar4!=""' class="example-radio-button"
+                [value]="4" >
+                {{sekerPerut.extrnalChar4}}
+            </mat-radio-button>
+            <mat-radio-button *ngIf='sekerPerut.extrnalChar5!=null&&sekerPerut.extrnalChar5!=""' class="example-radio-button"
+                [value]="5" >
+                {{sekerPerut.extrnalChar5}}
+            </mat-radio-button>
+        </mat-radio-group>
+     
+    </div>
+    <button *ngIf="mone!=sekerPeruts.length" (click)="nextQuestion()">הבא</button>
+    <button *ngIf="mone==sekerPeruts.length" (click)="nextQuestion()"  mat-raised-button color="warn">שלח סקר</button>
 </form>

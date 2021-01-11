@@ -14,13 +14,15 @@ namespace HomeCommittee.BL.Converters
         {
             return new SurveyHedear
             {
+                SurveyHedearId=s.SurveyHedearId,
                 BuildingId = s.BuildingId,
                 CountAnswers = s.CountAnswers,
                 CreateDate = s.CreateDate,
                 Status = s.Status,
                 Subject = s.Subject,
-               SurveyDetails = {new SurveyDetails() { ExtrnalChar1="1",ExtrnalChar2="2",ExtrnalCount1=1,ExtrnalNum1=2} }
-               //s.SekerPeruts.Select(x => ToDAL(x)).ToList()
+                //SurveyDetails = {new SurveyDetails() { ExtrnalChar1="1",ExtrnalChar2="2",ExtrnalCount1=1,ExtrnalNum1=2} }
+                SurveyDetails= s.SekerPeruts.Select(x => ToDAL(x)).ToList(),
+               
             };
         }
 

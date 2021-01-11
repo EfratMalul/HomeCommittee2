@@ -16,7 +16,7 @@ import { DialogData } from '../maim/maim.component';
   styleUrls: ['./add-expenditure.component.scss']
 })
 export class AddExpenditureComponent implements OnInit {
-
+  type: number;
   expenditure: Expenditure;
   formAddExpenditure = new FormGroup({
 
@@ -25,27 +25,30 @@ export class AddExpenditureComponent implements OnInit {
     destination: new FormControl(),
     description: new FormControl(''),
     // building_id:new FormControl('')
+    type: new FormControl('')
+
   });
   p: Payment;
 
   constructor(public expenditureService: ExpenditureService, private userService: UserService, private tenantService: TenantService,
-    private paymentService: PaymentService,  @Inject(MAT_DIALOG_DATA) public data: DialogData, public dialogRef: MatDialogRef<AddExpenditureComponent>) { }
+    private paymentService: PaymentService, @Inject(MAT_DIALOG_DATA) public data: DialogData, public dialogRef: MatDialogRef<AddExpenditureComponent>) { }
   onSubmit() {
     this.expenditure = new Expenditure();
     this.expenditure.sum = this.formAddExpenditure.get("sum").value;
     this.expenditure.date = this.formAddExpenditure.get("date").value;
-    this.expenditure.destination = this.formAddExpenditure.get("destination").value;
+    this.expenditure.destination = (this.formAddExpenditure.get("destination").value) - 1;
     this.expenditure.description = this.formAddExpenditure.get("description").value;
     this.expenditure.building_id = this.userService.user.buildingId;
 
-    let element1 = <HTMLInputElement>document.getElementById("irregular");
-    let element2 = <HTMLInputElement>document.getElementById("regular");
-    this.expenditure.type = element1.checked == true ? 1 : 0;
+    // let element1 = <HTMLInputElement>document.getElementById("irregular");
+    // let element2 = <HTMLInputElement>document.getElementById("regular");
+    // this.expenditure.type=document.getElementById("irregular").checked==true?1:0
+    this.expenditure.type = this.formAddExpenditure.get("type").value== 1 ? 1 : 0;
     this.expenditureService.addExpenditure(this.expenditure).subscribe(x => {
       alert("האוביקט נוסף בהצלחה");
       this.onNoClick();
     })
- 
+
     // var buildingId=this.userService.user.buildingId;
     // var sum = this.expenditure.sum;
     // var numTenant= this.tenantService.GetNumTenant(buildingId).subscribe(t=> parseInt(t));

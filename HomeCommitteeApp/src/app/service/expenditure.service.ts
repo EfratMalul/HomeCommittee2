@@ -15,33 +15,33 @@ export class ExpenditureService {
   isAddExpenditure = new BehaviorSubject(false);
 
   apiClientURL = environment.BaseClientApiUrl;
-  constructor(private baseServise:BaseService,private http: HttpClient ) { 
-   
-  
+  constructor(private baseServise: BaseService, private http: HttpClient) {
+
+
 
   }
-  getAllExpenditure(buildingId:number):Observable<Expenditure []>{
+  getAllExpenditure(buildingId: number): Observable<Expenditure[]> {
 
-    
-    return this.baseServise.getData("Expenditure","GetAllExpenditure",`${buildingId}`);
-   
+
+    return this.baseServise.getData("Expenditure", "GetAllExpenditure", `${buildingId}`);
+
   }
-  addExpenditure(expenditure:Expenditure):Observable<Object>{
+  addExpenditure(expenditure: Expenditure): Observable<Object> {
     const url = `${this.apiClientURL}Expenditure/AddExpenditure`;
-    return this.http.post(url, expenditure) ;
-  
-     };
+    return this.http.post(url, expenditure);
 
-     getAllCategory() {
-      this.category = new Array<Category>();
-       return this.baseServise.getData("Expenditure","GetAllExpenditureCategory").subscribe(x=>{
-        for (let i = 0; i < 12; i++) {
-          this.category.push({ key: i, value: x[i] })
-        }
-       });
+  };
 
-     } 
-  
- 
+  getAllCategory() {
+    this.category = new Array<Category>();
+    return this.baseServise.getData("Expenditure", "GetAllExpenditureCategory").subscribe(x => {
+      for (let i = 1; i < 13; i++) {
+        this.category.push({ key: i, value: x[i] })
+      }
+    });
+
+  }
+
+
 
 }

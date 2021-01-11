@@ -11,7 +11,7 @@
     <table class="table table-striped">
         <thead>
         <tr>
-          <th class="line-th" scope="col">מזהה תשלום</th>
+          <!-- <th class="line-th" scope="col">מזהה תשלום</th> -->
           <!-- <th class="line-th" scope="col">building id</th> -->
           <th class="line-th" scope="col">סכום</th>
           <th class="line-th" scope="col">תשלום עבור חודש</th>
@@ -23,7 +23,7 @@
     
         <tr *ngFor="let p of paymentsForTenant|search:myserch:0 index as i" [ngStyle]="{'backgroundColor':p.status==true?'green':'red'}" >
         
-         <td class="line-td" scope="row">{{p.id}}</td>
+         <!-- <td class="line-td" scope="row">{{p.id}}</td> -->
         
           <!-- <td class="line-td">{{p.building_id }}</td> -->
           <td class="line-td">{{ p.sum }}</td>
@@ -35,6 +35,6 @@
         </tr>
         </tbody>
       </table>
-      <a icon="arrow-clockwise" class=reTenant routerLink="reTenant" routerLinkActive="active">חזור</a>
+ 
     </div>
     

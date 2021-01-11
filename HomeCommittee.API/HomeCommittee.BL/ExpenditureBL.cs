@@ -33,7 +33,7 @@ namespace HomeCommittee.BL
         {
             Dictionary<int, string> category = new Dictionary<int, string>();
 
-            for (int i = 0; i < Enum.GetNames(typeof(ExpenditureCategory)).Length; i++)
+            for (int i = 1; i <= Enum.GetNames(typeof(ExpenditureCategory)).Length; i++)
             {
 
                 category.Add(i, ((ExpenditureCategory)i).GetDescription());
