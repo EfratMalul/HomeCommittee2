@@ -61,6 +61,7 @@
         </mat-radio-group>
      
     </div>
-    <button *ngIf="mone!=sekerPeruts.length" (click)="nextQuestion()">הבא</button>
+    <!-- <button *ngIf="mone!=sekerPeruts.length" (click)="nextQuestion()">הבא</button> -->
+    <button *ngIf="mone!=sekerPeruts.length" (click)="nextQuestion()"  mat-raised-button color="warn">הבא </button>
     <button *ngIf="mone==sekerPeruts.length" (click)="nextQuestion()"  mat-raised-button color="warn">שלח סקר</button>
 </form>

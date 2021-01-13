@@ -12,6 +12,8 @@ import { BaseService } from './base.service';
 export class FaultService {
 
   isUpdateStatus = new BehaviorSubject(false);
+  isAddFault = new BehaviorSubject(false);
+
   apiClientURL = environment.BaseClientApiUrl;
   constructor(private baseServise:BaseService,private http: HttpClient) { }
 

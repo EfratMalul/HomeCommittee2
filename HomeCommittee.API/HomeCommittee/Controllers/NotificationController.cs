@@ -56,6 +56,28 @@ namespace HomeCommittee.Controllers
         }
 
 
+
+        [HttpPost]
+        [Route("SendNotificationForUserNotPay")]
+        public HttpResponseMessage SendNotificationForUserNotPay(List< NotificationForUser> userNotification)
+        {
+            int id = NotificationBL.AddNotification(userNotification[0].message);
+            if (id != -1)
+            {
+              
+                foreach (var t in userNotification)
+                {
+                    NotificationBL.AddNotificationForUser(t.userId, id);
+                }
+
+                return Request.CreateResponse(HttpStatusCode.OK, true);
+            }
+            return Request.CreateResponse(HttpStatusCode.ExpectationFailed, true);
+        }
+
+
+
+
         [HttpPost]
         [Route("RemoveUserNotification")]
         public HttpResponseMessage RemoveUserNotification(NotificationForUser userNotificatin)

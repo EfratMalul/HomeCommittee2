@@ -18,7 +18,7 @@ export class EnterceSurveyComponent implements OnInit {
   sekerPerut: SekerPerut;
   countOfAnswer: number[] = [0];
   externalChar: string;
- answer: string;
+  answer: string;
   formAnswer = new FormGroup({
     answer: new FormControl('')
   })
@@ -55,32 +55,39 @@ export class EnterceSurveyComponent implements OnInit {
   nextQuestion() {
     if (this.mone <= this.sekerPeruts.length) {
       if (this.mone != 0) {
-        alert(this.formAnswer.get("answer").value);
+        //  alert(this.formAnswer.get("answer").value);
         switch (this.formAnswer.get("answer").value) {
           case 1: {
-            this.sekerPeruts[this.mone-1].extrnalCount1++;
+            this.sekerPeruts[this.mone - 1].extrnalCount1++;
             break;
           }
           case 2: {
-            this.sekerPeruts[this.mone-1].extrnalCount2++;
+            this.sekerPeruts[this.mone - 1].extrnalCount2++;
             break;
           }
           case 3: {
-            this.sekerPeruts[this.mone-1].extrnalCount3++;
+            this.sekerPeruts[this.mone - 1].extrnalCount3++;
             break;
           }
           case 4: {
-            this.sekerPeruts[this.mone-1].extrnalCount4++;
+            this.sekerPeruts[this.mone - 1].extrnalCount4++;
             break;
           }
           case 5: {
-            this.sekerPeruts[this.mone-1].extrnalCount5++;
+            this.sekerPeruts[this.mone - 1].extrnalCount5++;
             break;
           }
         }
 
-        this.surveyService.updateCountAnswer(this.sekerPeruts[this.mone-1]).subscribe(x => { alert("update!") });
-        
+        this.surveyService.updateCountAnswer(this.sekerPeruts[this.mone - 1]).subscribe(x => {
+         
+          if (this.mone-1 == this.sekerPeruts.length)
+            {
+              this.onNoClick();
+              alert("תודה שענית על הסקר")
+            }
+        });
+
       }
       this.sekerPerut = this.sekerPeruts[this.mone++];
 

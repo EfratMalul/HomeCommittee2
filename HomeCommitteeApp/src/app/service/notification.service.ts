@@ -29,6 +29,11 @@ export class NotificationService {
     return this.http.post(url, userNotification);
 
   }
+  SendPaymentNotificationNotPay(userNotification:NotificationForUser[]):Observable<Object>
+  {
+     const url = `${this.apiClientURL}Notification/SendNotificationForUserNotPay`;
+    return this.http.post(url, userNotification);
+  }
 
   removeUserNotification(userNotification: NotificationForUser): Observable<Object> {
     const url = `${this.apiClientURL}Notification/RemoveUserNotification`;

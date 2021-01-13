@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { NotificationForUser } from 'src/app/classes/NotificationForUser';
 import { SekerCotert } from 'src/app/classes/seker-cotert';
 import { Survey } from 'src/app/classes/survey';
+import { NotificationService } from 'src/app/service/notification.service';
 import { SurvyService } from 'src/app/service/survy.service';
 import { UserService } from 'src/app/service/user.service';
 import { CreateSurveyComponent } from '../create-survey/create-survey.component';
@@ -14,12 +16,12 @@ import { EnterceSurveyComponent } from '../enterce-survey/enterce-survey.compone
   styleUrls: ['./survy.component.scss']
 })
 export class SurvyComponent implements OnInit {
-
+  userNotification:NotificationForUser= new NotificationForUser();
   survey: SekerCotert[];
   permission = this.userService.user.permission;
 
   constructor(public dialog: MatDialog, private survyServise: SurvyService, private userService: UserService,
-    private router: Router) { }
+    private router: Router,private notificationServise:NotificationService) { }
 
   ngOnInit(): void {
 
@@ -43,7 +45,24 @@ export class SurvyComponent implements OnInit {
 
 
   changeStatus(event, s) {
+    if(s.status==true)
+    {
+      this.userNotification.userId = this.userService.user.buildingId;
+      this.userNotification.message =  "נסגר "+s.subject+" הסקר ";
+      this.notificationServise.SendPaymentNotification(this.userNotification).subscribe(x => {
+        alert("Close")
+      });
+    }
+       else
+   {
+    this.userNotification.userId = this.userService.user.buildingId;
+    this.userNotification.message = "נפתח "+s.subject+" הסקר ";;
+    this.notificationServise.SendPaymentNotification(this.userNotification).subscribe(x => {
+      alert("Open")
+    });
+   }
     s.status = !s.status;
+    
     this.survyServise.changeStatusSurvy(s).subscribe(r => console.log(r));
 
 
