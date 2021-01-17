@@ -1,4 +1,4 @@
-
+<!-- 
 <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
     <li [ngbNavItem]="1">
       <a ngbNavLink  class=routerHeader routerLink="fault" routerLinkActive="active">צפיה בתקלות </a>
@@ -16,4 +16,9 @@
   
   </ul>
   
-  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  <div [ngbNavOutlet]="nav" class="mt-2"></div> -->
+<p>צפייה בתקלות</p>
+<button  mat-flat-button color="warn" (click)="openDialog()">
+  דווח על תקלה</button>
+
+<app-fault></app-fault>

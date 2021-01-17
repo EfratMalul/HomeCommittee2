@@ -1,6 +1,140 @@
+<mat-horizontal-stepper linear #stepper (selectionChange)="onStepChange($event)">
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>  הגדר בנין</ng-template>
+          <mat-form-field>
+            <div class="col-md-6 login-form-1" >
+                <h3>הרשם</h3>
+                <form [formGroup]="formEnrollment" (ngSubmit)="onSubmit()">
+                    <div class="form-group" >
+                        <input type="text"  formControlName="building" class="form-control" placeholder="building name *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="address" class="form-control" placeholder="Your address building *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="number" formControlName="number" class="form-control" placeholder="Your number building *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="city" class="form-control" placeholder="Your city building *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="number" formControlName="entrance" class="form-control" placeholder="Your entrance building *" value="" />
+                    </div>     
+                    <div class="form-group">
+                        <input type="number" formControlName="zipCode" class="form-control" placeholder="Your zip_code building *" value="" />
+                    </div>    
+                    <div class="form-group">
+                        <input type="number" formControlName="numApartments" class="form-control" placeholder="Your number apartments in building *" value="" />
+                    </div>    
+                       <div class="form-group">
+                        <input required="required" type="submit" class="btnSubmit" value="הרשם">
+                    </div>
+             
+                </form>
+            </div>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+   
+
+        </form>
+      </mat-step>
 
 
+    <!-- <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
 
+        <div>
+            <form [formGroup]="formEnrollment">
+                <ng-template matStepLabel>הגדר בנין</ng-template>
+                <div class="example-container">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">שם בנין</label>
+                        <div class="col-sm-10">
+                            <input value="Submit" type="text" formControlName="building" class="form-control"
+                                id="inputEmail3">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">כתובת </label>
+                        <div class="col-sm-10">
+                            <input type="text" formControlName="address" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">מספר בנין</label>
+                        <div class="col-sm-10">
+                            <input type="number" formControlName="number" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">עיר</label>
+                        <div class="col-sm-10">
+                            <input type="text" formControlName="city" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">כניסה</label>
+                        <div class="col-sm-10">
+                            <input type="number" formControlName="entrance" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">מיקוד</label>
+                        <div class="col-sm-10">
+                            <input type="number" formControlName="zipCode" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">מספר דירות</label>
+                        <div class="col-sm-10">
+                            <input type="number" formControlName="numApartments" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+                    <button type="submit"  mat-button (click)="onSubmit(stepper)" >Next</button> 
+                  
+                </div>
+
+            </form>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step> -->
+    <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>הכנס מיילים של המשתמשים</ng-template>
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>סיום</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>
+
+
+<!-- 
 <div class="container login-container">
     <div class="row">
         <div class="col-md-6 login-form-1" >
@@ -30,11 +164,8 @@
                    <div class="form-group">
                     <input required="required" type="submit" class="btnSubmit" value="הרשם">
                 </div>
-                <!-- <div class="form-group">
-                    <a href="#" class="btnForgetPwd">Forget Password?</a>
-                </div> -->
+         
             </form>
         </div>
     </div>
-</div> 
-
+</div>  -->

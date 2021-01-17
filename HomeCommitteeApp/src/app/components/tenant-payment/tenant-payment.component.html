@@ -1,4 +1,18 @@
 
+<label >חיפוש לפי מזהה דייר</label>
+<input   type="text" [(ngModel)]="myserch" />
+<button mat-raised-button color="warn" (click)="openDialog()">
+  <mat-icon>access_alarms</mat-icon>
+   תזכורת תשלום לכל הדירים</button>
+
+   <button mat-raised-button color="warn" (click)="sendNotificationNotPay()">
+    <mat-icon>access_alarms</mat-icon>
+    תזכורת תשלום לדירים חיבים</button>
+<!-- <select [(ngModel)]='nrSelect' (change)="changePayment($event.target.value)">
+  <option  [value]="NoOrder" selected="selected" >ללא סינון</option>
+  <option   [value]="TenantsPaid">דיירים ששילמו</option>
+  <option   [value]="TenantsNotPaid">דיירים שלא שילמו</option>
+</select> -->
 
 <table class="table table-striped">
  <tbody>
@@ -14,7 +28,7 @@
               </tr>
               </thead>
 
-            <tr  *ngFor="let p of payments"  >
+            <tr  *ngFor="let p of payments|search:myserch:2" [ngStyle]="{'backgroundColor':p.status==true?'#d8eed8':'#dd7b7b'}"  >
              <td class="line-td">{{p.paymentId }}</td>
              <td class="line-td" scope="row">{{p.description}}</td>
             

@@ -1,6 +1,7 @@
 ﻿using HomeCommittee.BL.Converters;
 using HomeCommittee.DAL;
 using HomeCommittee.Entties;
+using HomeCommittee.Entties.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HomeCommittee.BL
 {
-   public  class PaymentBL
+    public class PaymentBL
     {
         //public static void AddPayment(Payment payment)
         //{
@@ -26,10 +27,24 @@ namespace HomeCommittee.BL
         //    return PaymentConverter.ToDTO(PaymentDAL.GetById(id));
         //}
 
+
         public static void AddPayment(Payment payment)
         {
             PaymentDAL.Addpayment(PaymentConverter.ToDAL(payment));
         }
+        public static void AddPayment(Expenditure expenditure)
+        {
+            List<tenant_tbl> tenants = TenantBL.GetAllTenantByBuilding(expenditure.building_id);
+            payment_tbl p = new payment_tbl
+            {
+                building_id = expenditure.building_id,
+                description = expenditure.description,
+                sum = expenditure.sum / tenants.Count,
+                pay_for_date = DateTime.Now,  
+            };
+            PaymentDAL.Addpayment(p);
+        }
+
 
         public static List<Payment> GetPaymentsByBuilding(int buildingId)
         {
@@ -48,6 +63,17 @@ namespace HomeCommittee.BL
             });
             return x;
         }
+        public static List<TenantPayment> GetAllPaymentsFromAllTenants(int buildingId)
+        {
+            //var x= PaymentConverter.ListToDTOTenantPayment(PaymentDAL.GetPaymentsByBuilding(buildingId));
+           List<TenantPayment>tenantPayment=new List<TenantPayment>();
+            var y = TenantBL.GetAllTenantByBuildingId(buildingId);
+            y.ForEach(z =>  {
+                tenantPayment.AddRange(GetPaymentsByUser(buildingId,z.user_id));
+            });
+            return tenantPayment;
+        }
+
 
         //public static List<Payment> GetAlltenantPayment(int buildingId)
         //{

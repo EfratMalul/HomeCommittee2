@@ -21,9 +21,14 @@ namespace HomeCommittee.BL
             return UserNotificationConverter.ToDTO(UserNotificationDAL.GetById(id));
         }
 
-        //public static void Add(Expenditure expenditure)
-        //{
-        //    ExpenditureDAL.Add(ExpenditureConverter.ToDAL(expenditure));
-        //}
+        public static void GetByUsetIdAndNotificationId(NotificationForUser n)
+        {
+            user_notification_tbl u = UserNotificationDAL.GetByUsetIdAndNotificationId(n);
+            UserNotificationDAL.RemoveUserNotification(u);
+           
+        }
+     
+        
+
     }
 }

@@ -19,9 +19,10 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="sum" Type="float" Nullable="false" />
     <Property Name="date" Type="date" Nullable="false" />
-    <Property Name="destination" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="description" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="destination" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="building_id" Type="int" Nullable="false" />
+    <Property Name="type" Type="int" />
   </EntityType>
   <EntityType Name="fault_tbl">
     <Key>
@@ -77,7 +78,6 @@
     <Property Name="date" Type="date" />
     <Property Name="issue" Type="nchar" MaxLength="50" />
     <Property Name="building_id" Type="int" />
-    <Property Name="user_id" Type="int" />
   </EntityType>
   <EntityType Name="survey_tbl">
     <Key>
@@ -124,6 +124,16 @@
     <Property Name="CountAnswers" Type="int" />
     <Property Name="Status" Type="bit" Nullable="false" />
     <Property Name="BuildingId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="tenant_payment_tbl">
     <Key>
@@ -240,18 +250,6 @@
       </Principal>
       <Dependent Role="session_tbl">
         <PropertyRef Name="building_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_session_tbl_user_tbl">
-    <End Role="user_tbl" Type="Self.user_tbl" Multiplicity="0..1" />
-    <End Role="session_tbl" Type="Self.session_tbl" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="user_tbl">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="session_tbl">
-        <PropertyRef Name="user_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -423,6 +421,7 @@
     <EntitySet Name="survey_tbl" EntityType="Self.survey_tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SurveyDetails" EntityType="Self.SurveyDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SurveyHedear" EntityType="Self.SurveyHedear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tenant_payment_tbl" EntityType="Self.tenant_payment_tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tenant_tbl" EntityType="Self.tenant_tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="user_notification_tbl" EntityType="Self.user_notification_tbl" Schema="dbo" store:Type="Tables" />
@@ -447,10 +446,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_session_tbl_building_tbl" Association="Self.FK_session_tbl_building_tbl">
       <End Role="building_tbl" EntitySet="building_tbl" />
-      <End Role="session_tbl" EntitySet="session_tbl" />
-    </AssociationSet>
-    <AssociationSet Name="FK_session_tbl_user_tbl" Association="Self.FK_session_tbl_user_tbl">
-      <End Role="user_tbl" EntitySet="user_tbl" />
       <End Role="session_tbl" EntitySet="session_tbl" />
     </AssociationSet>
     <AssociationSet Name="FK_survey_tbl_building_tbl" Association="Self.FK_survey_tbl_building_tbl">

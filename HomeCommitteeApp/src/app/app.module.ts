@@ -53,8 +53,17 @@ import { NotificationComponent } from './components/notification/notification.co
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenuModule} from '@angular/material/menu';
 import { TenantPaymentComponent } from './components/tenant-payment/tenant-payment.component';
-import { NbThemeModule, NbLayoutModule, NbChatModule } from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NotificationDialogComponent } from './components/notification-dialog/notification-dialog.component';
+import { UpdateTenantComponent } from './components/update-tenant/update-tenant.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatTableModule} from '@angular/material/table';
+
+import { EnterceSurveyComponent } from './components/enterce-survey/enterce-survey.component';
+import { AnswerSurveyComponent } from './components/answer-survey/answer-survey.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { SendPaymentNotificationComponent } from './components/send-payment-notification/send-payment-notification.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,7 +95,13 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     HomeSideNavComponent,
     UserAreaComponent,
     NotificationComponent,
-    TenantPaymentComponent
+    TenantPaymentComponent,
+    NotificationDialogComponent,
+    UpdateTenantComponent,
+    EnterceSurveyComponent,
+    AnswerSurveyComponent,
+    SendPaymentNotificationComponent
+
   ],
   imports: [
     BrowserModule,
@@ -106,6 +121,9 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     MatSidenavModule,
     MatBadgeModule,
     MatMenuModule,
+    MatStepperModule,
+    MatTableModule,
+    MatRadioModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

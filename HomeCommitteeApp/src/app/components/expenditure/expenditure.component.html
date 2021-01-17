@@ -9,7 +9,7 @@
 
 
 
-<div class="warp_table">
+<div class="warp_table" *ngIf="exppenditure_arr!=null">
 
    
      
@@ -18,7 +18,8 @@
 
       <label >חיפוש לפי חודש</label>
       <input   type="text" [(ngModel)]="myserch"/>
-      
+      <label >חיפוש לפי קטגוריה</label>
+      <input   type="text" [(ngModel)]="myserch"/>
 
   
     <table class="table table-striped">
@@ -29,23 +30,23 @@
           <th class="line-th" scope="col">תאריך</th>
           <th class="line-th" scope="col">יעד</th>
           <th class="line-th" scope="col">תאור</th>
-          <th class="line-th" scope="col"> קוד בנין</th>
+          <!-- <th class="line-th" scope="col"> קוד בנין</th> -->
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let e of exppenditure_arr|search:myserch:1 index as i">
           <!-- <th scope="row">{{ i + 1 }}</th> -->
-          <td class="line-td">{{ e.id }} </td>
+          <td class="line-td">{{ e.id}} </td>
           <td class="line-td">{{ e.sum }}</td>
-          <td class="line-td">{{ e.date }}</td>
-          <td class="line-td">{{ e.destination}}</td>
+          <td class="line-td">{{ e.date | date:'shortDate'}}</td>
+          <td class="line-td">{{ expenditureService.category[e.destination].value }}</td>
           <td class="line-td">{{ e.description}}</td>
-          <td class="line-td">{{ e.building_id}}</td>
+          <!-- <td class="line-td">{{ e.building_id}}</td> -->
         </tr>
         </tbody>
       </table>
       <!-- <label for="typeahead-basic" id="search_label">חיפוש לפי חודש</label>
       <input id="typeahead-basic"  type="text" [(ngModel)]="myserch"/> -->
       
-      <a icon="arrow-clockwise" class="reTenant" routerLink="reTenant" routerLinkActive="active">חזור</a>
+      <!-- <a icon="arrow-clockwise" class="reTenant" routerLink="reTenant" routerLinkActive="active">חזור</a> -->
     </div>

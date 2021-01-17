@@ -1,61 +1,56 @@
-
-
 <mat-dialog-content class="mat-typography">
-<p>יצירת סקר חדש</p>
+    <p>יצירת סקר חדש</p>
 
-<form  [formGroup]="formSurvey" (ngSubmit)="onSubmit()" class="example-form" >
-    <p>
-        <mat-form-field appearance="outline">
-          <mat-label>נושא הסקר:</mat-label>
-          <input formControlName="subject" matInput placeholder="נושא הסקר">
-         
-        </mat-form-field>
-      </p>
-<div>
-    <mat-form-field class="example-full-width">
-        <mat-label>שאלה</mat-label>
-        <textarea formControlName="quession" matInput placeholder="הוסף שאלה"></textarea>
-    </mat-form-field>
+    <form [formGroup]="formSurvey"  class="example-form">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>נושא הסקר:</mat-label>
+                <input formControlName="subject" matInput placeholder="נושא הסקר">
 
-    <mat-form-field class="example-full-width">
-        <mat-label>תשובה</mat-label>
-        <input  formControlName="ansswer1" matInput placeholder="הוסף תשובה" value="">
-    </mat-form-field>
+            </mat-form-field>
+        </p>
+        <div>
+            <mat-form-field class="example-full-width">
+                <mat-label>שאלה</mat-label>
+                <textarea formControlName="quession" matInput placeholder="הוסף שאלה"></textarea>
+            </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-        <mat-label>תשובה</mat-label>
-        <input  formControlName="ansswer2"   matInput placeholder="הוסף תשובה" value="">
-    </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>תשובה</mat-label>
+                <input formControlName="ansswer1" matInput placeholder="הוסף תשובה" value="">
+            </mat-form-field>
 
-    <mat-form-field [ngStyle]="{'display':count>=3?'block':'none'}" class="example-full-width">
-        <mat-label>תשובה</mat-label>
-        <input   formControlName="ansswer3"   matInput placeholder="הוסף תשובה" value="">
-    </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>תשובה</mat-label>
+                <input formControlName="ansswer2" matInput placeholder="הוסף תשובה" value="">
+            </mat-form-field>
 
-    <mat-form-field [ngStyle]="{'display':count>=4?'block':'none'}" class="example-full-width">
-        <mat-label>תשובה</mat-label>
-        <input   formControlName="ansswer4"   matInput placeholder="הוסף תשובה" value="">
-    </mat-form-field>
+            <mat-form-field [ngStyle]="{'display':count>=3?'block':'none'}" class="example-full-width">
+                <mat-label>תשובה</mat-label>
+                <input formControlName="ansswer3" matInput placeholder="הוסף תשובה" value="">
+            </mat-form-field>
 
-    <mat-form-field [ngStyle]="{'display':count==5?'block':'none'}" class="example-full-width">
-        <mat-label>תשובה</mat-label>
-        <input   formControlName="ansswer5"   matInput placeholder="הוסף תשובה" value="">
-    </mat-form-field>
+            <mat-form-field [ngStyle]="{'display':count>=4?'block':'none'}" class="example-full-width">
+                <mat-label>תשובה</mat-label>
+                <input formControlName="ansswer4" matInput placeholder="הוסף תשובה" value="">
+            </mat-form-field>
+
+            <mat-form-field [ngStyle]="{'display':count==5?'block':'none'}" class="example-full-width">
+                <mat-label>תשובה</mat-label>
+                <input formControlName="ansswer5" matInput placeholder="הוסף תשובה" value="">
+            </mat-form-field>
 
 
-    <mat-divider></mat-divider>
-    <div class="showInputField"></div> 
-    <button  (click)="addOption()" mat-stroked-button>הוסף אפשרות תשובה</button>
-    <button  (click)="addQuession()" mat-stroked-button>הוסף שאלה</button>
-</div>
+            <mat-divider></mat-divider>
+            <div class="showInputField"></div>
+            <button (click)="addOption()" mat-stroked-button>הוסף אפשרות תשובה</button>
+            <button (click)="addQuession()" mat-stroked-button>הוסף שאלה</button>
+        </div>
 
-    <mat-dialog-actions align="end">
-        <button mat-button mat-dialog-close>ביטול</button>
-        <button mat-button [mat-dialog-close]="true" cdkFocusInitial  type="submit"  >צור סקר</button>
-      </mat-dialog-actions>
+        <mat-dialog-actions align="end">
+            <button mat-button mat-dialog-close>ביטול</button>
+            <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="createSurvy()">צור סקר</button>
+        </mat-dialog-actions>
 
-</form>
+    </form>
 </mat-dialog-content>
-
-  
-   

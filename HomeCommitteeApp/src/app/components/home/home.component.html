@@ -6,7 +6,7 @@
   <p id="user-name">שלום,{{tenantName}}</p>
   <button mat-button [matMenuTriggerFor]="menu"> 
      <div  id="icon-notifications" >
-    <mat-icon  matBadge="10" matBadgeColor="warn">notifications</mat-icon>
+    <mat-icon  matBadge={{numNotification}} matBadgeColor="warn">notifications</mat-icon>
        <!-- <span class="cdk-visually-hidden">
         Example with a home icon with overlaid badge showing the number 15
       </span> -->
@@ -14,7 +14,7 @@
   </button>
 
 <mat-menu #menu="matMenu">
-    <app-notification></app-notification>
+    <app-notification (numOfNotification)="numNotification=$event" ></app-notification>
 
 </mat-menu>
   </div>
@@ -22,7 +22,7 @@
   <div class="under_header"> </div>
  
    <app-user-area></app-user-area>
-   <app-notification></app-notification>
+  
 
    <!-- <div class="row">
     <div class="col-3">

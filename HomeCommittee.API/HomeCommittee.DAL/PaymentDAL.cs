@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,11 +38,11 @@ namespace HomeCommittee.DAL
             {
                 using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
                 {
+                    //db.payment_tbl.AddOrUpdate(payment);
                     db.payment_tbl.Add(payment);
                     db.SaveChanges();
                 }
             }
-
             catch
             {
                 throw;

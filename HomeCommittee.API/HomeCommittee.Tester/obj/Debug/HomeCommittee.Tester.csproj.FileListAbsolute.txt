@@ -6,3 +6,8 @@ I:\projrct\HomeCommittee.API\HomeCommittee.Tester\bin\Debug\HomeCommittee.Tester
 I:\projrct\HomeCommittee.API\HomeCommittee.Tester\bin\Debug\HomeCommittee.Tester.pdb
 I:\projrct\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.dll
 I:\projrct\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.pdb
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\bin\Debug\HomeCommittee.Tester.dll
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\bin\Debug\HomeCommittee.Tester.pdb
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.csprojResolveAssemblyReference.cache
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.dll
+I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.pdb

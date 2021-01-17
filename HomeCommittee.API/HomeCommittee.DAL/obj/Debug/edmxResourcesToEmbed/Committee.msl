@@ -14,18 +14,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="expenditure_tbl">
-      <EntityTypeMapping TypeName="HomeCommitteeDBModel.expenditure_tbl">
-        <MappingFragment StoreEntitySet="expenditure_tbl">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="sum" ColumnName="sum" />
-          <ScalarProperty Name="date" ColumnName="date" />
-          <ScalarProperty Name="destination" ColumnName="destination" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="building_id" ColumnName="building_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="fault_tbl">
       <EntityTypeMapping TypeName="HomeCommitteeDBModel.fault_tbl">
         <MappingFragment StoreEntitySet="fault_tbl">
@@ -80,7 +68,6 @@
     <EntitySetMapping Name="session_tbl">
       <EntityTypeMapping TypeName="HomeCommitteeDBModel.session_tbl">
         <MappingFragment StoreEntitySet="session_tbl">
-          <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="issue" ColumnName="issue" />
@@ -134,6 +121,17 @@
           <ScalarProperty Name="CountAnswers" ColumnName="CountAnswers" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="BuildingId" ColumnName="BuildingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -198,6 +196,19 @@
           <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="survey_id" ColumnName="survey_id" />
           <ScalarProperty Name="voting" ColumnName="voting" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expenditure_tbl">
+      <EntityTypeMapping TypeName="HomeCommitteeDBModel.expenditure_tbl">
+        <MappingFragment StoreEntitySet="expenditure_tbl">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="building_id" ColumnName="building_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="sum" ColumnName="sum" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

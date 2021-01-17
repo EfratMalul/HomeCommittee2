@@ -1,41 +1,54 @@
 <!-- <label for="typeahead-basic">Search for a state:</label>
 <input id="typeahead-basic"  type="text" [(ngModel)]="myserch"/> -->
 <div>
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th class="line-th" scope="col">id</th>
-            <th class="line-th" scope="col">שם פרטי</th>
-            <th class="line-th" scope="col">שם משפחה</th>
-            <th class="line-th" scope="col">קומה</th>
-            <th class="line-th" scope="col">טלפון</th>
-            <th class="line-th" scope="col">מיל</th>
-            <th class="line-th" scope="col">סוג</th>
-            <th class="line-th" scope="col">מספר דירה</th>
-            <th class="line-th" scope="col">מזהה בניין</th>
-        </tr>
-        </thead>
-        <tbody>
+  <label > חיפוש לפי דייר</label>
+  <input   type="text" [(ngModel)]="myserch"/>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <!-- <th class="line-th" scope="col">id</th> -->
+        <th class="line-th" scope="col">שם פרטי</th>
+        <th class="line-th" scope="col">שם משפחה</th>
+        <th class="line-th" scope="col">קומה</th>
+        <th class="line-th" scope="col">מספר דירה</th>
+        <th class="line-th" scope="col">טלפון</th>
+        <th class="line-th" scope="col">מיל</th>
+        <th class="line-th" scope="col">סוג</th>
+        <!-- <th class="line-th" scope="col"> עריכת פרטי דייר</th>
+        <th class="line-th" scope="col">מחיקת דייר</th> -->
+        <!--  <th class="line-th" scope="col">מזהה בניין</th> -->
+      </tr>
+    </thead>
+    <tbody>
 
-            
- 
-        <tr *ngFor="let t of tenant_arr index as i">
-          <!-- <th scope="row">{{ i + 1 }}</th> -->
-          <td class="line-td">{{ t.id }} </td>
-          <td class="line-td">{{ t.first_name }}</td>
-          <td class="line-td">{{ t.last_name }}</td>
-          <td class="line-td">{{ t.floor}}</td>
-          <td class="line-td">{{ t.phone}}</td>
-          <td class="line-td">{{ t.mail}}</td>
-          <td class="line-td">{{ t.type}}</td>
-          <td class="line-td">{{ t.house_num}}</td>
-          <td class="line-td">{{ t.building_id}}</td>
-        
-          <td><a routerLink='/TenantEnrollment/{{t.id}}'>עדכון </a></td>
-          <td><button (click)="delete($event, t)">מחיקה</button></td>
-        </tr>
-        </tbody>
-      </table>
 
-      <a icon="arrow-clockwise" class="reTenant" routerLink="reTenant" routerLinkActive="active">חזור</a>
-    </div>
+
+      <tr *ngFor="let t of tenant_arr|search:myserch:2  index as i">
+        <!-- <th scope="row">{{ i + 1 }}</th> -->
+        <!-- <td class="line-td">{{ t.id }} </td> -->
+        <td class="line-td">{{ t.first_name }}</td>
+        <td class="line-td">{{ t.last_name }}</td>
+        <td class="line-td">{{ t.floor}}</td>
+        <td class="line-td">{{ t.house_num}}</td>
+        <td class="line-td">{{ t.phone}}</td>
+        <td class="line-td">{{ t.mail}}</td>
+        <td class="line-td">{{ t.type}}</td>
+        <td class="line-td">
+           <button *ngIf="permission==1"  mat-icon-button color="primary"  (click)="updateTenant($event, t)"  aria-label="Example icon button with a home icon" matTooltip="עריכה">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+        <!-- <td class="line-td">
+          <button  mat-icon-button color="primary" (click)="removeTenant($event, t)"  aria-label="Example icon button with a home icon" matTooltip="מחיקה">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td> -->
+             <!-- <td class="line-td">{{ t.building_id}}</td> -->
+
+        <!-- <td><a routerLink='/TenantEnrollment/{{t.id}}'>עדכון </a></td> -->
+        <!-- <td><button (click)="delete($event, t)">מחיקה</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+
+</div>

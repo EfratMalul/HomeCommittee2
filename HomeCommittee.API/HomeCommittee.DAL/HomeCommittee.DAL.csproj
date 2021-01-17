@@ -119,6 +119,9 @@
     <Compile Include="survey_tbl.cs">
       <DependentUpon>Committee.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Committee.tt</DependentUpon>
+    </Compile>
     <Compile Include="TenantDAL.cs" />
     <Compile Include="tenant_payment_tbl.cs">
       <DependentUpon>Committee.tt</DependentUpon>

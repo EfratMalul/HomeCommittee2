@@ -3,7 +3,8 @@ export class Expenditure {
     id:number;
     sum:number;
     date:Date;
-    destination:string;
+    destination:number;
     description:string;
     building_id:number;
+    type:number;
 }

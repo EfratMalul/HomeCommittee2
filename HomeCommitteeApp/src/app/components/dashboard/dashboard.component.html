@@ -1,1 +1,11 @@
-<p>dashboard works!</p>
+<div ng-app="app" ng-controller="ChartCtrl">
+    <canvas class="pie chart-pie" chart-data="data1" chart-options="options1" chart-labels="labels3">
+    </canvas>
+
+    <!-- npm install angular-chart.js --save -->
+
+
+    <canvas class="bar chart-bar" chart-data="data2" chart-series="series2" chart-options="options2"
+        chart-labels="labels2">
+    </canvas>
+</div>

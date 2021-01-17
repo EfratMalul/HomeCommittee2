@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { forkJoin } from 'rxjs';
+import { Category } from 'src/app/classes/Category';
+
 import { Expenditure } from 'src/app/classes/expenditure';
 import { ExpenditureService } from 'src/app/service/expenditure.service';
 import { UserService } from 'src/app/service/user.service';
@@ -11,35 +14,78 @@ import { UserService } from 'src/app/service/user.service';
 export class ExpenditureComponent implements OnInit {
   myserch: any = '';
   value = 'f';
-  // exppenditure_arr: Expenditure[] = [
-  //   { id: 1, sum: 200, date: new Date(), destination: "אנסטלטור", description: "בעקבות פיצוץ בצנרת", building_id: 2 },
-  //   { id: 2, sum: 50, date: new Date(), destination: "טמבור", description: "קניית ידית", building_id: 4 },
-  //   { id: 3, sum: 120, date: new Date(), destination: "מינימרכול השכונתי", description: " קניית חומרי נקיון", building_id: 3 },
+  category: Array<Category>;
 
-  // ]
-  // const date: Date = new Date(2018, 0O5, 0O5, 17, 23, 42, 11);
 
   exppenditure_arr: Expenditure[];
-  constructor(private expenditureService: ExpenditureService, private userService: UserService) {
+  constructor(public expenditureService: ExpenditureService, private userService: UserService) {
+
+    this.expenditureService.isAddExpenditure.subscribe((success) => {
+
+      this.category = new Array<Category>();
+      this.expenditureService.getAllCategory();
+
+      forkJoin({
+        res1: this.expenditureService.getAllExpenditure(this.userService.user.buildingId),
+        // res2: this.expenditureService.getAllCategory()
+      })
+        .subscribe(({ res1 }) => {
+          this.exppenditure_arr = res1;
+          // for (let i = 1; i < 12; i++) {
+          //   this.expenditureService.category.push({ key: i, value: res2[i] })
+          // }
+
+          // res2.array.forEach(element => {
+          //   this.category.push({ key: element.key, value: element.value });
+          // });
+        });
+
+
+
+    })
   }
 
 
 
 
   ngOnInit(): void {
+    this.category = new Array<Category>();
+    // this.expenditureService.getAllCategory();
+
+    forkJoin({
+      res1: this.expenditureService.getAllExpenditure(this.userService.user.buildingId),
+      // res2: this.expenditureService.getAllCategory()
+    })
+      .subscribe(({ res1 }) => {
+        this.exppenditure_arr = res1;
+        // for (let i = 1; i < 12; i++) {
+        //   this.expenditureService.category.push({ key: i, value: res2[i] })
+        // }
+
+        // res2.array.forEach(element => {
+        //   this.category.push({ key: element.key, value: element.value });
+        // });
+      });
+
+
+
+
 
     // this.exppenditure_arr=e
-    this.expenditureService.getAllExpenditure(this.userService.user.buildingId).subscribe(e =>
-       {
-      this.exppenditure_arr = e;
-      
-    
+    // this.expenditureService.getAllExpenditure(this.userService.user.buildingId).subscribe(e => {
+    //   this.exppenditure_arr = e;
+    //   var dt = (new Date(this.exppenditure_arr[2].date));
+    //   var dtm = dt.getMonth() + 1;
+    //   console.log("month  " + dtm);
+    // });
 
-      var dt = (new Date(this.exppenditure_arr[2].date));
-      var dtm = dt.getMonth()+1;
-      console.log( "month  "+dtm);
-    });
+    // this.expenditureService.getAllCategory().subscribe(e => {
+    //   debugger;
+    //   e.array.forEach(element => {
+    //     this.category.push({ key: element.key, value: element.value });
 
+    //   });
+    // });
   }
 
 }

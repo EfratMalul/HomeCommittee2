@@ -28,6 +28,13 @@ export class BuildingService {
         map((x: number) => { return x })
       );
     //return this.baseService.postData("Building", "AddBuilding",building)
+ }
+ 
+
+   
+  
 
   }
-}
+  
+
+

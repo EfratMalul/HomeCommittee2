@@ -1,0 +1,19 @@
+
+<div>
+    <form [formGroup]="formNotification"  >
+
+        <div class="example-container">
+
+            <p id="title-log-in">שליחת תזכורת תשלום לכל הדירים </p>
+          
+            <mat-form-field appearance="fill">
+                <mat-label>תזכורת</mat-label>
+                <textarea formControlName="messege" matInput></textarea>
+              </mat-form-field>
+
+            <button  mat-stroked-button (click)="onSubmit()"  color="warn">שלח</button>
+            <button mat-stroked-button color="warn" (click)="onNoClick()">בטל</button>
+        </div>
+
+    </form>
+</div>

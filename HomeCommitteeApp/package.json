@@ -25,6 +25,7 @@
     "@nebular/eva-icons": "^5.1.0",
     "@nebular/theme": "^5.1.0",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
+    "angular-chart.js": "^1.1.1",
     "bootstrap": "^4.5.2",
     "conversational-form": "^1.0.2",
     "eva-icons": "^1.1.3",

@@ -14,12 +14,15 @@ namespace HomeCommittee.BL.Converters
         {
             return new SurveyHedear
             {
+                SurveyHedearId=s.SurveyHedearId,
                 BuildingId = s.BuildingId,
                 CountAnswers = s.CountAnswers,
                 CreateDate = s.CreateDate,
                 Status = s.Status,
                 Subject = s.Subject,
-                SurveyDetails = s.SekerPeruts.Select(x => ToDAL(x)).ToList()
+                //SurveyDetails = {new SurveyDetails() { ExtrnalChar1="1",ExtrnalChar2="2",ExtrnalCount1=1,ExtrnalNum1=2} }
+                SurveyDetails= s.SekerPeruts.Select(x => ToDAL(x)).ToList(),
+               
             };
         }
 
@@ -72,7 +75,12 @@ namespace HomeCommittee.BL.Converters
                 QuestionSubject = s.QuestionSubject,
                 SurveyHedearId = s.SurveyHedearId,
                 ExtrnalNum1 = s.ExtrnalNum1,
-                  ExtrnalChar2 = s.ExtrnalChar2,
+                ExtrnalNum2 = s.ExtrnalNum2,
+                ExtrnalNum3 = s.ExtrnalNum3,
+                ExtrnalNum4 = s.ExtrnalNum4,
+                ExtrnalNum5 = s.ExtrnalNum5,
+                ExtrnalChar1 = s.ExtrnalChar1,
+                ExtrnalChar2 = s.ExtrnalChar2,
                 ExtrnalChar3 = s.ExtrnalChar3,
                 ExtrnalChar4 = s.ExtrnalChar4,
                 ExtrnalChar5 = s.ExtrnalChar5,

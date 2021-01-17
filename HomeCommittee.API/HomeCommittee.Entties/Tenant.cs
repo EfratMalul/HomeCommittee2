@@ -18,7 +18,7 @@ namespace HomeCommittee.Entties
         public bool  type { get; set; }
         public int  house_num { get; set; }
         public int  building_id { get; set; }
-        public string password { get; set; }
+       
         public int user_id { get; set; }
 
     }
