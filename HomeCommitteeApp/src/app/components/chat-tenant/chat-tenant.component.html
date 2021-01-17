@@ -1,4 +1,33 @@
-<div class="myCF">
+<!-- 
+        <nb-chat title="Nebular Conversational UI">
+            <nb-chat-message *ngFor="let msg of messages" [type]="msg.type" [message]="msg.text" [sender]="msg.user"
+                [reply]="msg.reply" [date]="msg.date">
+            </nb-chat-message>
+            <nb-chat-form (send)="sendMessage($event)">
+            </nb-chat-form>
+        </nb-chat> -->
+<div class="inbox_msg">
 
+    <div class="mesgs">
+        <div class="msg_history">
+            <!-- <div class="incoming_msg">
 
+                <div class="received_msg">
+                    <div class="received_withd_msg">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+
+                        </p>
+                        <span class="time_date"> 11:01 AM | June 9</span>
+                    </div>
+                </div>
+            </div> -->
+            <div [ngClass]="{'received_msg':userId==msg.user_id, 'outgoing_msg':userId!=msg.user_id}" *ngFor="let msg of messagesDB">
+                <div *ngIf="userId==msg.user_id" class="incoming_msg_img">{{msg.user}}</div>
+                <div [ngClass]="{'received_withd_msg':userId==msg.user_id, 'sent_msg':userId!=msg.user_id}">
+                    <p>{{msg.issue}}</p>
+                    <span class="time_date"> {{msg.date|date :'hh:mm'}} |{{msg.date|date :'dd MMM'}} </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

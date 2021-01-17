@@ -53,6 +53,8 @@ import { NotificationComponent } from './components/notification/notification.co
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenuModule} from '@angular/material/menu';
 import { TenantPaymentComponent } from './components/tenant-payment/tenant-payment.component';
+import { NbThemeModule, NbLayoutModule, NbChatModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 @NgModule({
   declarations: [
     AppComponent,
@@ -103,7 +105,7 @@ import { TenantPaymentComponent } from './components/tenant-payment/tenant-payme
     MatTooltipModule,
     MatSidenavModule,
     MatBadgeModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

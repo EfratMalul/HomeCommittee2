@@ -46,3 +46,16 @@ I:\projrct\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.Entties.pd
 I:\projrct\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.csprojResolveAssemblyReference.cache
 I:\projrct\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.dll
 I:\projrct\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.pdb
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.BL.dll
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.BL.pdb
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.DAL.dll
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.Entties.dll
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\EntityFramework.dll
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.DAL.pdb
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.DAL.dll.config
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\bin\Debug\HomeCommittee.Entties.pdb
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.csprojAssemblyReference.cache
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.csproj.CopyComplete
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.dll
+C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.BL\obj\Debug\HomeCommittee.BL.pdb

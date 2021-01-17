@@ -23,6 +23,7 @@ namespace HomeCommittee.DAL
             this.user_notification_tbl = new HashSet<user_notification_tbl>();
             this.user_permissions_tbl = new HashSet<user_permissions_tbl>();
             this.vote_tbl = new HashSet<vote_tbl>();
+            this.session_tbl = new HashSet<session_tbl>();
         }
     
         public int id { get; set; }
@@ -41,5 +42,7 @@ namespace HomeCommittee.DAL
         public virtual ICollection<user_permissions_tbl> user_permissions_tbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<vote_tbl> vote_tbl { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<session_tbl> session_tbl { get; set; }
     }
 }

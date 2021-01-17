@@ -1,6 +1,10 @@
-import { ElementRef,ViewChild,Component, OnInit } from '@angular/core';
+import { ElementRef, ViewChild, Component, OnInit } from '@angular/core';
 
 import { ConversationalForm } from 'conversational-form';
+import { Session } from 'src/app/classes/session';
+import { SesionService } from 'src/app/service/sesion.service';
+import { UserService } from 'src/app/service/user.service';
+
 @Component({
   selector: 'app-chat-tenant',
   templateUrl: './chat-tenant.component.html',
@@ -8,42 +12,36 @@ import { ConversationalForm } from 'conversational-form';
 })
 export class ChatTenantComponent implements OnInit {
 
-  @ViewChild('myCF') myCF: ElementRef;
-  cf:any;
+  messagesDB: Session[] = [];
+  messages: any[] = [];
+  builing_id: number;
+  userId;
 
-  formFields = [
-    {
-      'tag': 'input',
-      'type': 'text',
-      'name': 'firstname',
-      'cf-questions': ' אנחנו שמחים שבחרת להשתתף בשיח דיירים',
-      'cf-input-placeholder':'דעתך בנושא:',
-      },
-    
-    {
-      'tag': 'input',
-      'type': 'text',
-      'name': 'lastname',
-      'cf-questions': 'What is your lastname?'
-    }
-  ];
-  constructor() { }
+  constructor(private userService: UserService,
+    public sessionService: SesionService) {
+    this.builing_id = userService.user.buildingId;
+    this.userId=userService.user.id;
+    this.sessionService.getAllSessions(this.builing_id).subscribe(res => {
+      this.messagesDB = res;
+      debugger;
+    })
+    //this.messages = this.chatShowcaseService.loadMessages();
+  }
+
+  sendMessage(event: any) {
+    debugger
+    this.messages.push({
+      text: event.message,
+      date: new Date(),
+      type: 'text',
+      user: 'Jonh Doe'
+    });
+    //const botReply = this.chatShowcaseService.reply(event.message);
+    //if (botReply) {
+    //setTimeout(() => { this.messages.push(event.message) }, 500);
+    //}
+  }
 
   ngOnInit(): void {
-
-    console.log('init', this)
-    this.cf = ConversationalForm.startTheConversation({
-      options: {
-        submitCallback: this.submitCallback.bind(this),
-        preventAutoFocus: true,
-      },
-      tags: this.formFields
-    });
-    this.myCF.nativeElement.appendChild(this.cf.el);
-  }
-  submitCallback() {
-    var formDataSerialized = this.cf.getFormData(true);
-    console.log("Formdata, obj:", formDataSerialized);
-    this.cf.addRobotChatResponse("You are done. Check the dev console for form data output.")
   }
 }

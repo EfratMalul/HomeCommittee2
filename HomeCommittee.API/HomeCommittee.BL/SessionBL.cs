@@ -23,5 +23,10 @@ namespace HomeCommittee.BL
         {
             return Converters.SessionConverter.ToDTO(SessionDAL.GetById(id));
         }
+
+        public static List<Session> GetByBuildingId(int id)
+        {
+            return Converters.SessionConverter.ListToDTO(SessionDAL.GetByBuilding(id));
+        }
     }
 }

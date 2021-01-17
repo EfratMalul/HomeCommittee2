@@ -36,7 +36,6 @@ namespace HomeCommittee.DAL
         public virtual DbSet<survey_tbl> survey_tbl { get; set; }
         public virtual DbSet<SurveyDetails> SurveyDetails { get; set; }
         public virtual DbSet<SurveyHedear> SurveyHedear { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<tenant_payment_tbl> tenant_payment_tbl { get; set; }
         public virtual DbSet<tenant_tbl> tenant_tbl { get; set; }
         public virtual DbSet<user_notification_tbl> user_notification_tbl { get; set; }

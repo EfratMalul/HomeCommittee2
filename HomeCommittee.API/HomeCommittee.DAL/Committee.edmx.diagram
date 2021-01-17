@@ -16,7 +16,6 @@
         <EntityTypeShape EntityType="HomeCommitteeDBModel.survey_tbl" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
         <EntityTypeShape EntityType="HomeCommitteeDBModel.SurveyDetails" Width="1.5" PointX="5.25" PointY="21.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HomeCommitteeDBModel.SurveyHedear" Width="1.5" PointX="3" PointY="22.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="HomeCommitteeDBModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HomeCommitteeDBModel.tenant_payment_tbl" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HomeCommitteeDBModel.tenant_tbl" Width="1.5" PointX="8" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="HomeCommitteeDBModel.user_notification_tbl" Width="1.5" PointX="8" PointY="5.25" IsExpanded="true" />
@@ -41,6 +40,7 @@
         <AssociationConnector Association="HomeCommitteeDBModel.FK_user_notification_tbl_user_tbl" ManuallyRouted="false" />
         <AssociationConnector Association="HomeCommitteeDBModel.FK_user_permissions_tbl_user_tbl" ManuallyRouted="false" />
         <AssociationConnector Association="HomeCommitteeDBModel.FK_vote_tbl_user_tbl" ManuallyRouted="false" />
+        <AssociationConnector Association="HomeCommitteeDBModel.FK_session_tbl_user_tbl" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -17,7 +17,7 @@ namespace HomeCommittee.BL.Converters
         }
         public static Session ToDTO(session_tbl s)
         {
-            return new Session { id = s.id, issue = s.issue, building_id = s.building_id };
+            return new Session { id = s.id,date=s.date.Value, issue = s.issue, building_id = s.building_id,user_id=s.user_id.Value, user=s.user_tbl.user_name };
         }
         public static List<session_tbl> ListToDAL(List<Session> list)
         {

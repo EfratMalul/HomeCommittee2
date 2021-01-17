@@ -92,6 +92,8 @@
     <Property Name="issue" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
     <Property Name="building_id" Type="Int32" />
     <NavigationProperty Name="building_tbl" Relationship="Self.FK_session_tbl_building_tbl" FromRole="session_tbl" ToRole="building_tbl" />
+    <Property Name="user_id" Type="Int32" />
+    <NavigationProperty Name="user_tbl" Relationship="HomeCommitteeDBModel.FK_session_tbl_user_tbl" FromRole="session_tbl" ToRole="user_tbl" />
   </EntityType>
   <EntityType Name="survey_tbl">
     <Key>
@@ -143,16 +145,6 @@
     <Property Name="BuildingId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="building_tbl" Relationship="Self.FK_SurveyHedear_building_tbl" FromRole="SurveyHedear" ToRole="building_tbl" />
     <NavigationProperty Name="SurveyDetails" Relationship="Self.FK_SurveyDetails_SurveyHedear" FromRole="SurveyHedear" ToRole="SurveyDetails" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="tenant_payment_tbl">
     <Key>
@@ -216,6 +208,7 @@
     <NavigationProperty Name="user_notification_tbl" Relationship="Self.FK_user_notification_tbl_user_tbl" FromRole="user_tbl" ToRole="user_notification_tbl" />
     <NavigationProperty Name="user_permissions_tbl" Relationship="Self.FK_user_permissions_tbl_user_tbl" FromRole="user_tbl" ToRole="user_permissions_tbl" />
     <NavigationProperty Name="vote_tbl" Relationship="Self.FK_vote_tbl_user_tbl" FromRole="user_tbl" ToRole="vote_tbl" />
+    <NavigationProperty Name="session_tbl" Relationship="HomeCommitteeDBModel.FK_session_tbl_user_tbl" FromRole="user_tbl" ToRole="session_tbl" />
   </EntityType>
   <EntityType Name="vote_tbl">
     <Key>
@@ -456,7 +449,6 @@
     <EntitySet Name="survey_tbl" EntityType="Self.survey_tbl" />
     <EntitySet Name="SurveyDetails" EntityType="Self.SurveyDetails" />
     <EntitySet Name="SurveyHedear" EntityType="Self.SurveyHedear" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="tenant_payment_tbl" EntityType="Self.tenant_payment_tbl" />
     <EntitySet Name="tenant_tbl" EntityType="Self.tenant_tbl" />
     <EntitySet Name="user_notification_tbl" EntityType="Self.user_notification_tbl" />
@@ -535,5 +527,21 @@
       <End Role="user_tbl" EntitySet="user_tbl" />
       <End Role="vote_tbl" EntitySet="vote_tbl" />
     </AssociationSet>
+    <AssociationSet Name="FK_session_tbl_user_tbl" Association="HomeCommitteeDBModel.FK_session_tbl_user_tbl">
+      <End Role="user_tbl" EntitySet="user_tbl" />
+      <End Role="session_tbl" EntitySet="session_tbl" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_session_tbl_user_tbl">
+    <End Type="HomeCommitteeDBModel.user_tbl" Role="user_tbl" Multiplicity="0..1" />
+    <End Type="HomeCommitteeDBModel.session_tbl" Role="session_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_tbl">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="session_tbl">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
