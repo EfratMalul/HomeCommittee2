@@ -13,33 +13,28 @@ import { UserService } from 'src/app/service/user.service';
 export class ChatTenantComponent implements OnInit {
 
   messagesDB: Session[] = [];
-  messages: any[] = [];
+  message: Session = new Session();
   builing_id: number;
   userId;
 
   constructor(private userService: UserService,
     public sessionService: SesionService) {
     this.builing_id = userService.user.buildingId;
-    this.userId=userService.user.id;
+    this.userId = userService.user.id;
     this.sessionService.getAllSessions(this.builing_id).subscribe(res => {
       this.messagesDB = res;
-      debugger;
     })
-    //this.messages = this.chatShowcaseService.loadMessages();
   }
 
-  sendMessage(event: any) {
-    debugger
-    this.messages.push({
-      text: event.message,
-      date: new Date(),
-      type: 'text',
-      user: 'Jonh Doe'
-    });
-    //const botReply = this.chatShowcaseService.reply(event.message);
-    //if (botReply) {
-    //setTimeout(() => { this.messages.push(event.message) }, 500);
-    //}
+  sendMessage() {
+    this.message.date = new Date();
+    this.message.building_id = this.builing_id;
+    this.message.user_id = this.userId;
+    this.sessionService.addMessage(this.message).subscribe(p=>{
+      this.sessionService.getAllSessions(this.builing_id).subscribe(res => {
+        this.messagesDB = res;
+      })
+    })
   }
 
   ngOnInit(): void {

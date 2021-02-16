@@ -19,7 +19,8 @@ namespace HomeCommittee.BL.Converters
                 date = e.date,
                 destination = e.destination,
                 description = e.description,
-                building_id = e.building_id
+                building_id = e.building_id,
+                type=e.type.Value
             };
         }
 

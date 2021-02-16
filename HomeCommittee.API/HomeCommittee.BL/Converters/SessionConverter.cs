@@ -13,7 +13,7 @@ namespace HomeCommittee.BL.Converters
     {
         public static session_tbl ToDAL(Session s)
         {
-            return new session_tbl { id = s.id, issue = s.issue, building_id = s.building_id };
+            return new session_tbl { id = s.id, issue = s.issue,date=s.date,user_id=s.user_id, building_id = s.building_id };
         }
         public static Session ToDTO(session_tbl s)
         {

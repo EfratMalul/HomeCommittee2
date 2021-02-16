@@ -14,4 +14,9 @@ export class SesionService {
   getAllSessions(buildingId:number):Observable< Session []>{
     return this.baseService.getData("Session","GetByBuilding",`${buildingId}`);
   }
+
+  addMessage(message:Session)
+  {
+    return this.baseService.postData("Session","AddSession",message);
+  }
 }

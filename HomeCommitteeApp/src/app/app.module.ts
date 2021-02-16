@@ -57,11 +57,15 @@ import { NotificationDialogComponent } from './components/notification-dialog/no
 import { UpdateTenantComponent } from './components/update-tenant/update-tenant.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatTableModule} from '@angular/material/table';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 import { EnterceSurveyComponent } from './components/enterce-survey/enterce-survey.component';
 import { AnswerSurveyComponent } from './components/answer-survey/answer-survey.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { SendPaymentNotificationComponent } from './components/send-payment-notification/send-payment-notification.component';
+import { ChartsModule } from 'ng2-charts';
+import { ChartBarComponent } from './components/chart-bar/chart-bar.component';
+import { ChartPieComponent } from './components/chart-pie/chart-pie.component';
 
 
 @NgModule({
@@ -100,7 +104,9 @@ import { SendPaymentNotificationComponent } from './components/send-payment-noti
     UpdateTenantComponent,
     EnterceSurveyComponent,
     AnswerSurveyComponent,
-    SendPaymentNotificationComponent
+    SendPaymentNotificationComponent,
+    ChartBarComponent,
+    ChartPieComponent
 
   ],
   imports: [
@@ -123,9 +129,12 @@ import { SendPaymentNotificationComponent } from './components/send-payment-noti
     MatMenuModule,
     MatStepperModule,
     MatTableModule,
-    MatRadioModule
+    MatRadioModule,
+    ChartsModule
   ],
-  providers: [UserService],
+  providers: [UserService,
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} }],
   bootstrap: [AppComponent],
   entryComponents: [
     LogInComponent

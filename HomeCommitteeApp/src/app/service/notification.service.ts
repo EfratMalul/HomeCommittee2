@@ -13,7 +13,7 @@ export class NotificationService {
   apiClientURL = environment.BaseClientApiUrl;
   constructor(private baseServise: BaseService, private http: HttpClient) { }
 
-  getAllNotifications(userId: number): Observable<Notification[]> {
+  getAllNotifications(userId: number): Observable<NotificationForUser[]> {
     return this.baseServise.getData("Notification", "GetNotificationByUserId", `${userId}`);
   }
 

@@ -1,1 +1,26 @@
-<p>reports works!</p>
+<div class="row" style="margin: 8vw;">
+    <div class="col-3"></div>
+    <div class="col-3">
+        <div class="rad-info-box rad-txt-success">
+            <i class="fa fa-windows"></i>
+            <span class="heading">הוצאות</span>
+            <span class="value"><span>{{sum}} </span>שח</span>
+        </div>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3">
+        <div class="rad-info-box rad-txt-success">
+            <i class="fa fa-windows"></i>
+            <span class="heading">יתרה</span>
+            <span class="value"><span>{{total}} </span>שח</span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <app-chart-pie></app-chart-pie>
+    </div>
+    <div class="col-6">
+        <app-chart-bar></app-chart-bar>
+    </div>
+</div>

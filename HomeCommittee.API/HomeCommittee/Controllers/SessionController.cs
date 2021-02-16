@@ -27,8 +27,12 @@ namespace HomeCommittee.Controllers
 
 
         // POST: api/Session
-        public void Post([FromBody]string value)
+        [Route("AddSession")]
+        [HttpPost]
+        public bool Post([FromBody]Session s)
         {
+             SessionBL.AddSession(s);
+            return true;
         }
 
         // PUT: api/Session/5

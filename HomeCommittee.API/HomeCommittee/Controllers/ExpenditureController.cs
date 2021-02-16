@@ -10,9 +10,15 @@ using System.Web;
 using System.Web.Http;
 using System.ComponentModel;
 using System.Net.Mail;
+using HomeCommittee.Entties.Extensions;
 
 namespace HomeCommittee.Controllers
 {
+    public class ReportExp
+    {
+        public string TypeName { get; set; }
+        public double Value { get; set; }
+    }
     [RoutePrefix("api/Expenditure")]
     public class ExpenditureController : ApiController
     {
@@ -22,6 +28,40 @@ namespace HomeCommittee.Controllers
         {
             List<Expenditure> expenditures = ExpenditureBL.GetByBuildingId(buildingId);
             return Request.CreateResponse(HttpStatusCode.OK, expenditures);
+        }
+
+        [HttpGet]
+        [Route("GetAllExpenditureGroupType/{buildingId}")]
+        public HttpResponseMessage GetAllExpenditureGroupType(int buildingId)
+        {
+            List<Expenditure> expenditures = ExpenditureBL.GetByBuildingId(buildingId);
+            var res = expenditures.GroupBy(p => p.type).ToDictionary(pp=>pp.Key,ppp=>ppp.Sum(s=>s.sum));
+            List<ReportExp> reportExps = new List<ReportExp>();
+            for (int i = 1; i <= Enum.GetNames(typeof(ExpenditureCategory)).Length; i++)
+            {
+                double v = 0;
+                if (res.ContainsKey(i))
+                    v = res[i];
+                reportExps.Add(new ReportExp() { TypeName= ((ExpenditureCategory)i).GetDescription(),Value=v });
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, reportExps);
+        }
+
+        [HttpGet]
+        [Route("GetAllExpenditureGroupDate/{buildingId}")]
+        public HttpResponseMessage GetAllExpenditureGroupDate(int buildingId)
+        {
+            List<Expenditure> expenditures = ExpenditureBL.GetByBuildingId(buildingId);
+            var res = expenditures.GroupBy(p => p.date.Month).ToDictionary(pp => pp.Key, ppp => ppp.Sum(s => s.sum));
+            List<ReportExp> reportExps = new List<ReportExp>();
+            for (int i = 1; i <= 12; i++)
+            {
+                double v = 0;
+                if (res.ContainsKey(i))
+                    v = res[i];
+                reportExps.Add(new ReportExp() { TypeName = i.ToString(), Value = v });
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, reportExps);
         }
 
         [HttpGet]

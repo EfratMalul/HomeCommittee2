@@ -21,10 +21,13 @@ export class ExpenditureService {
 
   }
   getAllExpenditure(buildingId: number): Observable<Expenditure[]> {
-
-
     return this.baseServise.getData("Expenditure", "GetAllExpenditure", `${buildingId}`);
-
+  }
+  getAllExpenditureReport(buildingId: number): Observable<{TypeName:string,Value:number}[]> {
+    return this.baseServise.getData("Expenditure", "GetAllExpenditureGroupType", `${buildingId}`);
+  }
+  getAllExpenditureReportDate(buildingId: number): Observable<{TypeName:string,Value:number}[]> {
+    return this.baseServise.getData("Expenditure", "GetAllExpenditureGroupDate", `${buildingId}`);
   }
   addExpenditure(expenditure: Expenditure): Observable<Object> {
     const url = `${this.apiClientURL}Expenditure/AddExpenditure`;

@@ -13,7 +13,7 @@ export class NotificationComponent implements OnInit {
 
 
 
-  notifications: Notification[];
+  notifications: NotificationForUser[]=[];
   numNotification: number;
   userNotificatin: NotificationForUser = new NotificationForUser();
 

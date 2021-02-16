@@ -18,7 +18,9 @@ namespace HomeCommittee.DAL
         public Nullable<System.DateTime> date { get; set; }
         public string issue { get; set; }
         public Nullable<int> building_id { get; set; }
+        public Nullable<int> user_id { get; set; }
     
         public virtual building_tbl building_tbl { get; set; }
+        public virtual user_tbl user_tbl { get; set; }
     }
 }

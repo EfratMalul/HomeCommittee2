@@ -21,6 +21,14 @@ namespace HomeCommittee.DAL
             }
         }
 
+        public static List<session_tbl> GetByBuilding(int buildingId)
+        {
+            using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+            {
+                return db.session_tbl.Include("user_tbl").Where(p=>p.building_id==buildingId).ToList();
+            }
+        }
+
         public static session_tbl GetById(int id)
         {
             using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
@@ -35,6 +43,7 @@ namespace HomeCommittee.DAL
             {
                 using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
                 {
+                    session.user_tbl = db.user_tbl.Find(session.user_id);
                     db.session_tbl.Add(session);
                     db.SaveChanges();
                 }
