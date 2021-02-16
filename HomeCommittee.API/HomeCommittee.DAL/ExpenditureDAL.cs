@@ -22,7 +22,9 @@ namespace HomeCommittee.DAL
         {
             using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
             {
-                return db.expenditure_tbl.Where(b=>b.building_id== buildingId).ToList();
+                return db.expenditure_tbl.Where(b=>b.building_id
+                == buildingId)
+                .ToList();
             }
 
         }

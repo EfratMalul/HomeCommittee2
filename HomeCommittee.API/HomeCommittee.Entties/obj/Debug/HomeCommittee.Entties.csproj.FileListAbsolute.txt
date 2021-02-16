@@ -40,3 +40,8 @@ C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.En
 C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csproj.CoreCompileInputs.cache
 C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.dll
 C:\Users\user\Documents\GitHub\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.pdb
+I:\HomeCommittee-project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.dll
+I:\HomeCommittee-project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\bin\Debug\HomeCommittee.Entties.pdb
+I:\HomeCommittee-project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.csprojResolveAssemblyReference.cache
+I:\HomeCommittee-project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.dll
+I:\HomeCommittee-project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Entties\obj\Debug\HomeCommittee.Entties.pdb
