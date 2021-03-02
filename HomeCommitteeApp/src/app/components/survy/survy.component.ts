@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NotificationForUser } from 'src/app/classes/NotificationForUser';
 import { SekerCotert } from 'src/app/classes/seker-cotert';
+import { SekerPerut } from 'src/app/classes/seker-perut';
 import { Survey } from 'src/app/classes/survey';
 import { NotificationService } from 'src/app/service/notification.service';
 import { SurvyService } from 'src/app/service/survy.service';
@@ -20,6 +21,7 @@ export class SurvyComponent implements OnInit {
   survey: SekerCotert[];
   permission = this.userService.user.permission;
   countAnswer:number;
+  surveyPerut:SekerPerut[];
 
   constructor(public dialog: MatDialog, private survyServise: SurvyService, private userService: UserService,
     private router: Router,private notificationServise:NotificationService) { }
@@ -29,11 +31,20 @@ export class SurvyComponent implements OnInit {
     this.survyServise.getAllSurvy(this.userService.user.buildingId).subscribe(e => {
       this.survey = e;
 
+      this.surveyPerut=this.survey[0].sekerPeruts;
       console.log(e);
       console.log(this.survey);
 
+
     });
 
+
+  }
+  resultSurvey(event, s):void{
+
+    this.surveyPerut=s.surveyPerut;
+    // console.log(event);
+    // console.log(this.survey);
 
   }
   openDialog() {
