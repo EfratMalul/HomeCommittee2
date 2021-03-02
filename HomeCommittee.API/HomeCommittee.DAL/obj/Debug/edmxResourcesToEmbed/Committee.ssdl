@@ -126,6 +126,16 @@
     <Property Name="Status" Type="bit" Nullable="false" />
     <Property Name="BuildingId" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="tenant_payment_tbl">
     <Key>
       <PropertyRef Name="id" />
@@ -424,6 +434,7 @@
     <EntitySet Name="survey_tbl" EntityType="Self.survey_tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SurveyDetails" EntityType="Self.SurveyDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SurveyHedear" EntityType="Self.SurveyHedear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tenant_payment_tbl" EntityType="Self.tenant_payment_tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tenant_tbl" EntityType="Self.tenant_tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="user_notification_tbl" EntityType="Self.user_notification_tbl" Schema="dbo" store:Type="Tables" />

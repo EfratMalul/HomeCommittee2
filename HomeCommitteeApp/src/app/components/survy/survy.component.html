@@ -24,7 +24,7 @@
                       <span [ngStyle]="{'color': 'red'}" *ngIf="s.status==false"> לא פעיל</span>
                  </td>
                 <td class="line-td">{{ s.countAnswers }}</td>
-                <td class="line-td"></td>
+                <td class="line-td" (click)="countAnswers($event,s)">{{}}</td>
                 <td class="line-td">{{ s.createDate | date:'shortDate'}}</td>
                 
                 <td class="line-td"><button  mat-flat-button color="warn" (click)="enterceSurvey($event, s)" > כניסה לסקר </button></td>

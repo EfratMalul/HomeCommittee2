@@ -50,7 +50,7 @@ namespace HomeCommittee.BL
                     BuildingId = tenant?.building_id ?? -1
                 };
             }
-            return null;
+            return new UserPermission() { Id = -1, Permission = -1, BuildingId =-1 } ;
         }
 
     }

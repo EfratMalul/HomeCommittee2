@@ -18,6 +18,7 @@ export class ExpenditureComponent implements OnInit {
 
 
   exppenditure_arr: Expenditure[];
+
   constructor(public expenditureService: ExpenditureService, private userService: UserService) {
 
     this.expenditureService.isAddExpenditure.subscribe((success) => {
@@ -31,6 +32,8 @@ export class ExpenditureComponent implements OnInit {
       })
         .subscribe(({ res1 }) => {
           this.exppenditure_arr = res1;
+
+          
           // for (let i = 1; i < 12; i++) {
           //   this.expenditureService.category.push({ key: i, value: res2[i] })
           // }

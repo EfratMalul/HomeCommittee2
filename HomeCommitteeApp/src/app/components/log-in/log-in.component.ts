@@ -17,10 +17,12 @@ export class LogInComponent implements OnInit {
   hide = true;
 
   formLogin = new FormGroup({
+    //email : new FormControl('', [Validators.required, Validators.email]),
     name: new FormControl(''),
     password: new FormControl(''),
 
   });
+  email = new FormControl('', [Validators.required, Validators.email]);
   building_id: number;
   constructor(private userService: UserService, private router: Router, private tenantService: TenantService,
     @Inject(MAT_DIALOG_DATA) public data: DialogData, public dialogRef: MatDialogRef<LogInComponent>) {
@@ -31,8 +33,8 @@ export class LogInComponent implements OnInit {
 
     this.userService.CheckUserAndPermissions(this.formLogin.get('password').value, this.formLogin.get('name').value).
       subscribe((user => {
-        if (user != null) {
-          if (user.id != null && user.buildingId != -1 && user.permission != -1) {
+        if (user.id != -1) {
+          // if (user.id != null && user.buildingId != -1 && user.permission != -1) {
             console.log(user);
 
 
@@ -59,33 +61,39 @@ export class LogInComponent implements OnInit {
 
             //      })))
           }
-        }
-        else {
+        // }
+        else if(user.id==-1) {
           // this.building_id=-1;
           alert("היוזר לא משויך לבניין וללא הרשאות");
         }
-
+        this.onNoClick();
       }));
 
-    this.onNoClick();
+   
   };
 
   onNoClick(): void {
     this.dialogRef.close();
     this.formLogin.reset({ value: "" });
   }
-  email = new FormControl('', [Validators.required, Validators.email]);
+  
 
   getErrorMessage() {
-    if (this.email.hasError('required')) {
+    if ( this.email.hasError('required')) {
       return 'You must enter a value';
     }
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+    return  this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
   ngOnInit(): void {
 
   }
+  // forgetPassword():{
+
+    
+
+
+  // }
 
 }

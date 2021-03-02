@@ -18,12 +18,12 @@ namespace HomeCommittee.DAL
         public user_tbl()
         {
             this.fault_tbl = new HashSet<fault_tbl>();
+            this.session_tbl = new HashSet<session_tbl>();
             this.tenant_payment_tbl = new HashSet<tenant_payment_tbl>();
             this.tenant_tbl = new HashSet<tenant_tbl>();
             this.user_notification_tbl = new HashSet<user_notification_tbl>();
             this.user_permissions_tbl = new HashSet<user_permissions_tbl>();
             this.vote_tbl = new HashSet<vote_tbl>();
-            this.session_tbl = new HashSet<session_tbl>();
         }
     
         public int id { get; set; }
@@ -32,6 +32,8 @@ namespace HomeCommittee.DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<fault_tbl> fault_tbl { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<session_tbl> session_tbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tenant_payment_tbl> tenant_payment_tbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -42,7 +44,5 @@ namespace HomeCommittee.DAL
         public virtual ICollection<user_permissions_tbl> user_permissions_tbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<vote_tbl> vote_tbl { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<session_tbl> session_tbl { get; set; }
     }
 }

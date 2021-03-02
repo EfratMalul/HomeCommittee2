@@ -15,5 +15,8 @@ namespace HomeCommittee.Entties
         public string description { get; set; }
         public int  building_id { get; set; }
         public int type { get; set; }
+
+
+
     }
 }

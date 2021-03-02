@@ -19,6 +19,7 @@ export class SurvyComponent implements OnInit {
   userNotification:NotificationForUser= new NotificationForUser();
   survey: SekerCotert[];
   permission = this.userService.user.permission;
+  countAnswer:number;
 
   constructor(public dialog: MatDialog, private survyServise: SurvyService, private userService: UserService,
     private router: Router,private notificationServise:NotificationService) { }
