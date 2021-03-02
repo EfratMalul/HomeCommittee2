@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Category } from '../classes/Category';
 import { Expenditure } from '../classes/expenditure';
+import { ExpenditureBuilding } from '../classes/expenditureBuilding';
 import { BaseService } from './base.service';
 
 @Injectable({
@@ -17,9 +18,15 @@ export class ExpenditureService {
   apiClientURL = environment.BaseClientApiUrl;
   constructor(private baseServise: BaseService, private http: HttpClient) {
 
-
-
   }
+
+  calcPayForMonth( expenditureBuilding:ExpenditureBuilding): Observable<Object>
+  {
+    const url = `${this.apiClientURL}Expenditure/CalcPayForMonth`;
+    return this.http.post(url, expenditureBuilding);
+   
+  }
+
   getAllExpenditure(buildingId: number): Observable<Expenditure[]> {
     return this.baseServise.getData("Expenditure", "GetAllExpenditure", `${buildingId}`);
   }

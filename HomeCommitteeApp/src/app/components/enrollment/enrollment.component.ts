@@ -70,8 +70,8 @@ export class EnrollmentComponent implements OnInit {
   onSubmit() {
    
     console.log(this.formEnrollment.invalid)
-    if (this.formEnrollment.get("building").value && this.formEnrollment.get("address").value && this.formEnrollment.get("number").value && this.formEnrollment.get("city").value
-      && this.formEnrollment.get("entrance").value && this.formEnrollment.get("zipCode").value && this.formEnrollment.get("numApartments").value) {
+    // if (this.formEnrollment.get("building").value && this.formEnrollment.get("address").value && this.formEnrollment.get("number").value && this.formEnrollment.get("city").value
+    //   && this.formEnrollment.get("entrance").value && this.formEnrollment.get("zipCode").value && this.formEnrollment.get("numApartments").value) {
 
   // public onStepChange(event: any): void {
 
@@ -157,11 +157,11 @@ export class EnrollmentComponent implements OnInit {
 
       });
 
-    }
+    // }
 
-    else {
-      alert("עליך למלא את כל הפרטים!")
-    }
+    // else {
+    //   alert("עליך למלא את כל הפרטים!")
+    // }
 
   }
 

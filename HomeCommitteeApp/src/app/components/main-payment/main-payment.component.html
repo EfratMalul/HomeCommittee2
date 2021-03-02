@@ -18,6 +18,14 @@
     </ng-template>
   </li>
 
+  <li [ngbNavItem]="1" *ngIf="isCommittee==true">
+    <a ngbNavLink  class=routerHeader routerLink="paymentForMonth" routerLinkActive="active">חישוב תשלום חודשי ועד בית </a>
+    <ng-template ngbNavContent>
+   
+      <router-outlet></router-outlet>
+    </ng-template>
+  </li>
+
   <!-- <li [ngbNavItem]="2">
     <a ngbNavLink class=routerHeader routerLink="payCommittee" routerLinkActive="active">תשלום לוועד</a>
     <ng-template ngbNavContent>

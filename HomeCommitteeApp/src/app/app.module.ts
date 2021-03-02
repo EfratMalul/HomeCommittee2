@@ -66,6 +66,8 @@ import { SendPaymentNotificationComponent } from './components/send-payment-noti
 import { ChartsModule } from 'ng2-charts';
 import { ChartBarComponent } from './components/chart-bar/chart-bar.component';
 import { ChartPieComponent } from './components/chart-pie/chart-pie.component';
+import { PaymentForMonthComponent } from './components/payment-for-month/payment-for-month.component';
+
 
 
 @NgModule({
@@ -106,7 +108,8 @@ import { ChartPieComponent } from './components/chart-pie/chart-pie.component';
     AnswerSurveyComponent,
     SendPaymentNotificationComponent,
     ChartBarComponent,
-    ChartPieComponent
+    ChartPieComponent,
+    PaymentForMonthComponent
 
   ],
   imports: [

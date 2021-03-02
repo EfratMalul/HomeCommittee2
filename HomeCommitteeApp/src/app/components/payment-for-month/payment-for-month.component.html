@@ -1,0 +1,12 @@
+<div>
+    <form [formGroup]="formPayment" (ngSubmit)="onSubmit()">
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"> עבור חודש מספר:  </label>
+    <div class="col-sm-10">
+        <input formControlName="payForDate" type="number" class="form-control" id="inputEmail4"
+            placeholder={{currentDateString}}>
+    </div>
+</div>
+<button type="submit"  mat-stroked-button color="warn">חשב</button>
+</form>
+</div>
