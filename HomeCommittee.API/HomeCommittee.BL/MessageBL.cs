@@ -23,6 +23,11 @@ namespace HomeCommittee.BL
         {
             return Converters.MessageConverter.ToDTO(MessageDAL.GetById(id));
         }
-      
+
+        public static List<Message> GetByBuildingId(int id)
+        {
+            return Converters.MessageConverter.ListToDTO(MessageDAL.GetByBuilding(id));
+        }
+
     }
 }

@@ -35,8 +35,8 @@ export class UserService {
 
   CheckUserAndPermissions(password: string, name: string): Observable<UserPermission> {
     // console.log("succesfully");
-    let urlParameters = `${name}/${password}`
-    return this.baseService.getData("User", "CheckUserAndPermissions", urlParameters)
+    let urlParameters = {name:name,password:password};
+    return this.baseService.postData("User", "CheckUserAndPermissions", urlParameters)
       .pipe(
         map((x: any) => {
           let result = <UserPermission>formatters(x);

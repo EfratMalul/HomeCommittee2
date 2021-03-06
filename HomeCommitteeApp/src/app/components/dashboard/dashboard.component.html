@@ -1,11 +1,26 @@
-<div ng-app="app" ng-controller="ChartCtrl">
-    <canvas class="pie chart-pie" chart-data="data1" chart-options="options1" chart-labels="labels3">
-    </canvas>
-
-    <!-- npm install angular-chart.js --save -->
-
-
-    <canvas class="bar chart-bar" chart-data="data2" chart-series="series2" chart-options="options2"
-        chart-labels="labels2">
-    </canvas>
+<div class="row" style="margin: 8vw;">
+    <div class="col-3"></div>
+    <div class="col-3">
+        <div class="rad-info-box rad-txt-success">
+            <i class="fa fa-windows"></i>
+            <span class="heading">הוצאות</span>
+            <span class="value"><span>{{sum}} </span>שח</span>
+        </div>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3">
+        <div class="rad-info-box rad-txt-success">
+            <i class="fa fa-windows"></i>
+            <span class="heading">יתרה</span>
+            <span class="value"><span>{{total}} </span>שח</span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <app-chart-pie></app-chart-pie>
+    </div>
+    <div class="col-6">
+        <app-chart-bar></app-chart-bar>
+    </div>
 </div>

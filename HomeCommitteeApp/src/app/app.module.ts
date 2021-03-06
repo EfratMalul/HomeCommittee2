@@ -65,7 +65,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import { SendPaymentNotificationComponent } from './components/send-payment-notification/send-payment-notification.component';
 import { ChartsModule } from 'ng2-charts';
 import { ChartBarComponent } from './components/chart-bar/chart-bar.component';
-import { ChartPieComponent } from './components/chart-pie/chart-pie.component';
+
+import { NgxPayPalModule } from 'ngx-paypal';
 
 
 @NgModule({
@@ -130,7 +131,8 @@ import { ChartPieComponent } from './components/chart-pie/chart-pie.component';
     MatStepperModule,
     MatTableModule,
     MatRadioModule,
-    ChartsModule
+    ChartsModule,
+    NgxPayPalModule,
   ],
   providers: [UserService,
     { provide: MAT_DIALOG_DATA, useValue: {} },

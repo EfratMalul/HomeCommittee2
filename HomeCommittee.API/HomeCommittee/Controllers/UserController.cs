@@ -73,14 +73,14 @@ namespace HomeCommittee.Controllers
             //  return UserConverter.ToDTO(UserDAL.GetByPassword(password));
         }
 
-        [HttpGet]
-        [Route("CheckUserAndPermissions/{name}/{password}")]
+        [HttpPost]
+        [Route("CheckUserAndPermissions")]
 
-        public HttpResponseMessage CheckUserAndPermissions(string name,string password )
+        public HttpResponseMessage CheckUserAndPermissions(Login login)
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, UserBL.CheckUserAndPermissions(password, name));
+                return Request.CreateResponse(HttpStatusCode.OK, UserBL.CheckUserAndPermissions(login.password, login.name));
             }
             catch (Exception ex)
             {

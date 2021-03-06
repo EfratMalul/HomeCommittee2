@@ -1,1 +1,20 @@
-<p>message-board works!</p>
+<div class="inbox_msg">
+    <div class="mesgs">
+        <textarea style="width: 100%; 
+        height: 10vh;" name="newM" placeholder="כתוב את ההודעה שלך כאן" [(ngModel)]="message.description"></textarea>
+        <button mat-raised-button color="warn" (click)="sendMessage()">
+            הוסף הודעה</button>
+    </div>
+    <div class="mesgs">
+        <div class="msg_history">
+            <div 
+                *ngFor="let msg of messagesDB">
+                <div >
+                    <p>{{msg.description}}</p>
+                    <span class="time_date"> {{msg.date|date :'hh:mm'}} |{{msg.date|date :'dd MMM'}} </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

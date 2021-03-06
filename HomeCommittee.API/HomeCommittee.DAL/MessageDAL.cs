@@ -13,6 +13,13 @@ namespace HomeCommittee.DAL
         //add
         //update
         //delete
+        public static List<message_tbl> GetByBuilding(int buildingId)
+        {
+            using (HomeCommitteeDBEntities db = new HomeCommitteeDBEntities())
+            {
+                return db.message_tbl.Where(p => p.building_id == buildingId).ToList();
+            }
+        }
         public static List<message_tbl>Get()
         {
             using(HomeCommitteeDBEntities db=new HomeCommitteeDBEntities())

@@ -1,0 +1,49 @@
+﻿using HomeCommittee.BL;
+using HomeCommittee.Entties;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+
+namespace HomeCommittee.Controllers
+{ 
+    [RoutePrefix("api/Message")]
+    public class MessagesController : ApiController
+    {
+       
+        // GET: api/Session
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET: api/Session/5
+        [Route("GetByBuilding/{id}")]
+        public List<Session> GetByBuilding(int id)
+        {
+            return SessionBL.GetByBuildingId(id);
+        }
+
+
+        // POST: api/Session
+        [Route("AddSession")]
+        [HttpPost]
+        public bool Post([FromBody] Message s)
+        {
+            MessageBL.AddMessage(s);
+            return true;
+        }
+
+        // PUT: api/Session/5
+        public void Put(int id, [FromBody] string value)
+        {
+        }
+
+        // DELETE: api/Session/5
+        public void Delete(int id)
+        {
+        }
+    }
+}
