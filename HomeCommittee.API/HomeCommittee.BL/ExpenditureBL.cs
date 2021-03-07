@@ -19,6 +19,13 @@ namespace HomeCommittee.BL
             return ExpenditureConverter.ListToDTO(ExpenditureDAL.GetByBuildingId(buildingId));
         }
 
+        public static double GetByMonth(ExpenditureBuilding eb)
+        {
+            List<tenant_tbl> tenants = TenantBL.GetAllTenantByBuilding(eb.buildingId);
+            double sum= (ExpenditureDAL.GetByMonth(eb));
+            return sum / tenants.Count;
+        }
+
         public static Expenditure GetById(int id)
         {
             return ExpenditureConverter.ToDTO(ExpenditureDAL.GetById(id));
@@ -26,7 +33,7 @@ namespace HomeCommittee.BL
 
         public static void Add(Expenditure expenditure)
         {
-             ExpenditureDAL.Add(ExpenditureConverter.ToDAL(expenditure));
+            ExpenditureDAL.Add(ExpenditureConverter.ToDAL(expenditure));
         }
 
         public static Dictionary<int, string> GetCategory()

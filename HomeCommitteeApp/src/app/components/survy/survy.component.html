@@ -24,7 +24,13 @@
                       <span [ngStyle]="{'color': 'red'}" *ngIf="s.status==false"> לא פעיל</span>
                  </td>
                 <td class="line-td">{{ s.countAnswers }}</td>
-                <td class="line-td"></td>
+                <!-- (click)="resultSurvey($event,s)" -->
+                <td class="line-td" *ngFor="let surveyP of surveyPerut index as i" >
+                     <label *ngIf="'surveyP.extrnalChar'+'i'!=null"></label>
+                     <label *ngIf="'surveyP.extrnalCount'+'i'!=null"></label>
+                </td>
+                <!-- {{surveyP.extrnalChar}} -->
+                <!-- {{surveyP.extrnalCount}} -->
                 <td class="line-td">{{ s.createDate | date:'shortDate'}}</td>
                 
                 <td class="line-td"><button  mat-flat-button color="warn" (click)="enterceSurvey($event, s)" > כניסה לסקר </button></td>

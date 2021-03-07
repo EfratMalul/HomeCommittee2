@@ -67,6 +67,7 @@ import { ChartsModule } from 'ng2-charts';
 import { ChartBarComponent } from './components/chart-bar/chart-bar.component';
 
 import { NgxPayPalModule } from 'ngx-paypal';
+import { ChartPieComponent } from './components/chart-pie/chart-pie.component';
 
 
 @NgModule({

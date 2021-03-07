@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 
 // import { Payment } from '../classes/payment';
@@ -8,6 +9,7 @@ import { Payment } from 'src/app/classes/payment';
 import { TenantPayment } from 'src/app/classes/tenantPayment';
 import { PaymentService } from 'src/app/service/payment.service';
 import { UserService } from 'src/app/service/user.service';
+import { PayCommitteComponent } from '../pay-committe/pay-committe.component';
 
 @Component({
   selector: 'app-payment',
@@ -30,10 +32,22 @@ export class PaymentComponent implements OnInit {
 
       
   //   )
-  constructor(private paymentService:PaymentService,private userService:UserService) { 
+  constructor(private paymentService:PaymentService,private userService:UserService
+    ,public dialog: MatDialog) { 
 
     const date: Date = new Date(2018, 0O5, 0O5, 17, 23, 42, 11);  
 
+  }
+
+  openDialog(price,id): void {
+    const dialogRef = this.dialog.open(PayCommitteComponent, {
+      width: '250px',
+      data: {name: price,id:id}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
   ngOnInit(): void {

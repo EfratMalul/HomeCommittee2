@@ -28,6 +28,7 @@ import { CreateSurveyComponent } from './components/create-survey/create-survey.
 import { UserAreaComponent } from './components/user-area/user-area.component';
 import { TenantPaymentComponent } from './components/tenant-payment/tenant-payment.component';
 import { AnswerSurveyComponent } from './components/answer-survey/answer-survey.component';
+import { PaymentForMonthComponent } from './components/payment-for-month/payment-for-month.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,7 @@ const routes: Routes = [
       {
         path: 'logIn',
         component: LogInComponent
+        
       },
       {
         path: 'enrollment',
@@ -74,7 +76,8 @@ const routes: Routes = [
       children:[
         {path:'payment',component:PaymentComponent},
         {path:'payCommittee',component:PayCommitteComponent},
-        {path:'tenantPayment',component:TenantPaymentComponent}
+        {path:'tenantPayment',component:TenantPaymentComponent},
+      {path:'paymentForMonth',component:PaymentForMonthComponent}
       
       ]
        },

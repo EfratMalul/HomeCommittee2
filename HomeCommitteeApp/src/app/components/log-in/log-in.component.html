@@ -1,4 +1,3 @@
-
 <div>
     <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
         <div class="example-container">
@@ -6,24 +5,26 @@
             <p id="title-log-in">התחברות</p>
             <mat-form-field appearance="outline">
                 <mat-label>Enter your email</mat-label>
-                <input formControlName="name" matInput placeholder="pat@example.com" [formControl]="email" required>
+                <input formControlName="name" matInput placeholder="pat@example.com" required/>
                 <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Enter your password</mat-label>
-                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'"/>
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
             </mat-form-field>
-            <button type="submit"  mat-flat-button color="warn">התחבר</button>
+            <button type="submit" mat-flat-button color="warn">התחבר</button>
             <button mat-stroked-button color="warn">בטל</button>
+            <!-- <label (click)="forgetPassword()">שכחת סיסמא?</label> -->
+
         </div>
 
     </form>
- 
+
 </div>
 
 <!-- <p>

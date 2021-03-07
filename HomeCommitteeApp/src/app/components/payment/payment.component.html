@@ -30,7 +30,7 @@
           <td class="line-td">{{ p.payForDate| date:'shortDate' }}</td>
           <td class="line-td">{{ p.description }}</td>
           <td class="line-td" *ngIf="p.status==true" >{{ p.paymentDate| date:'shortDate' }}</td>
-          <td class="line-td"  *ngIf="p.status==false"><button>לתשלום</button></td>
+          <td class="line-td"  *ngIf="p.status==false"><button (click)="openDialog()">לתשלום</button></td>
   
         </tr>
         </tbody>

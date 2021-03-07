@@ -11,3 +11,8 @@ I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\bin\Debug
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.csprojResolveAssemblyReference.cache
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.dll
 I:\HomeCommittee\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.pdb
+I:\HomeCommittee-project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\bin\Debug\HomeCommittee.Tester.dll
+I:\HomeCommittee-project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\bin\Debug\HomeCommittee.Tester.pdb
+I:\HomeCommittee-project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.csprojResolveAssemblyReference.cache
+I:\HomeCommittee-project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.dll
+I:\HomeCommittee-project\HomeCommittee2\HomeCommittee.API\HomeCommittee.Tester\obj\Debug\HomeCommittee.Tester.pdb
